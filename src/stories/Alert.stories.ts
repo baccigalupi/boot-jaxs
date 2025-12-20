@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/html'
 import type { AlertProps } from '../components/Alert/Alert'
 import { Alert } from '../components/Alert/Alert'
+import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {
   title: 'Bootstrap/Alert',
   tags: ['autodocs'],
-  render: (args) => Alert(args),
+  render: (args) => renderJaxs(Alert(args)),
   argTypes: {
     message: { control: 'text' },
     type: {

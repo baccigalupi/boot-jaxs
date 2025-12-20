@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/html'
 import type { BadgeProps } from '../components/Badge/Badge'
 import { Badge } from '../components/Badge/Badge'
+import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {
   title: 'Bootstrap/Badge',
   tags: ['autodocs'],
-  render: (args) => Badge(args),
+  render: (args) => renderJaxs(Badge(args)),
   argTypes: {
     label: { control: 'text' },
     variant: {
