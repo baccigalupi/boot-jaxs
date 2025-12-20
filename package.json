@@ -25,5 +25,8 @@
     "storybook": "^8.5.0",
     "typescript": "^5.7.2",
     "vite": "^6.1.7"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
   }
 }
