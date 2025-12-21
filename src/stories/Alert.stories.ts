@@ -7,6 +7,20 @@ const meta = {
   title: 'Bootstrap/Alert',
   tags: ['autodocs'],
   render: (args) => renderJaxs(Alert(args)),
+  parameters: {
+    docs: {
+      source: {
+        language: 'tsx',
+        code: `import { Alert } from './components/Alert/Alert'
+
+<Alert 
+  message="Your message here"
+  type="primary"
+  dismissible={false}
+/>`,
+      },
+    },
+  },
   argTypes: {
     message: { control: 'text' },
     type: {
@@ -30,12 +44,32 @@ export const Primary: Story = {
     message: 'A simple primary alert—check it out!',
     type: 'primary',
   },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Alert 
+  message="A simple primary alert—check it out!"
+  type="primary"
+/>`,
+      },
+    },
+  },
 }
 
 export const Success: Story = {
   args: {
     message: 'Well done! You successfully completed the task.',
     type: 'success',
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Alert 
+  message="Well done! You successfully completed the task."
+  type="success"
+/>`,
+      },
+    },
   },
 }
 
@@ -44,12 +78,32 @@ export const Danger: Story = {
     message: 'Oh snap! Something went wrong.',
     type: 'danger',
   },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Alert 
+  message="Oh snap! Something went wrong."
+  type="danger"
+/>`,
+      },
+    },
+  },
 }
 
 export const Warning: Story = {
   args: {
     message: 'Warning! Better check yourself.',
     type: 'warning',
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Alert 
+  message="Warning! Better check yourself."
+  type="warning"
+/>`,
+      },
+    },
   },
 }
 
@@ -58,5 +112,16 @@ export const Dismissible: Story = {
     message: 'This alert can be dismissed!',
     type: 'info',
     dismissible: true,
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Alert 
+  message="This alert can be dismissed!"
+  type="info"
+  dismissible={true}
+/>`,
+      },
+    },
   },
 }

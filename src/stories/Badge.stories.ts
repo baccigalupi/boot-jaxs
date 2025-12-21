@@ -7,6 +7,20 @@ const meta = {
   title: 'Bootstrap/Badge',
   tags: ['autodocs'],
   render: (args) => renderJaxs(Badge(args)),
+  parameters: {
+    docs: {
+      source: {
+        language: 'tsx',
+        code: `import { Badge } from './components/Badge/Badge'
+
+<Badge 
+  label="Badge text"
+  variant="primary"
+  pill={false}
+/>`,
+      },
+    },
+  },
   argTypes: {
     label: { control: 'text' },
     variant: {
@@ -30,12 +44,26 @@ export const Primary: Story = {
     label: 'Primary',
     variant: 'primary',
   },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Badge label="Primary" variant="primary" />`,
+      },
+    },
+  },
 }
 
 export const Success: Story = {
   args: {
     label: 'Success',
     variant: 'success',
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Badge label="Success" variant="success" />`,
+      },
+    },
   },
 }
 
@@ -44,6 +72,13 @@ export const Danger: Story = {
     label: 'Danger',
     variant: 'danger',
   },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Badge label="Danger" variant="danger" />`,
+      },
+    },
+  },
 }
 
 export const Pill: Story = {
@@ -51,5 +86,12 @@ export const Pill: Story = {
     label: 'Pill Badge',
     variant: 'info',
     pill: true,
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Badge label="Pill Badge" variant="info" pill={true} />`,
+      },
+    },
   },
 }
