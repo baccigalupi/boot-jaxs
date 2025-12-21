@@ -1,36 +1,45 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
+import { componentName } from './component'
 
 export type AlertProps = JaxsTypes.Props<{  
   message: string
+  id: string
   type?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
   dismissible?: boolean
 }>
 
 type ButtonProps = JaxsTypes.Props<{
   dismissible: boolean,
-  onClickEvent: string,
+  onClick: string,
 }>;
 
-const DismissibleButton = ({dismissible, onClickEvent}: ButtonProps) => {
+const DismissibleButton = ({dismissible, onClick}: ButtonProps) => {
   if (!dismissible) return;
 
   return (
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={onClickEvent}></button>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+      onClick={onClick}></button>
   )
 }
 
 const dismissibleClass = (dismissible: boolean) => dismissible ? 'alert-dismissible fade show' : ''
 const alertClassName = (type: string, dismissible: boolean) => `alert alert-${type} ${dismissibleClass(dismissible)}`
+const buildOnClickEvent = (id: string) => `${componentName}:close:${id}`
 
-export const Alert = ({ message, type = 'primary', dismissible = false }: AlertProps) => {
+export const Alert = ({ message, id, type = 'primary', dismissible = false }: AlertProps) => {
   const className = alertClassName(type, dismissible)
+  const onClick = buildOnClickEvent(id)
   
   return (
-    <div class={className} role="alert">
+    <div id={id} class={className} role="alert">
       {message}
-      <DismissibleButton dismissible={dismissible} onClickEvent="foo" />
+      <DismissibleButton dismissible={dismissible} onClick={onClick} />
     </div>
   )
 }

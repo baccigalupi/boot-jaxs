@@ -21,8 +21,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+
+    /* Path mapping */
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"]
+    }
   },
-  "include": ["src", ".storybook"],
+  "include": ["src", ".storybook", "test"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -17,6 +17,7 @@ const meta = {
   message="Your message here"
   type="primary"
   dismissible={false}
+  id="default-alert"
 />`,
       },
     },
@@ -33,6 +34,7 @@ const meta = {
     message: 'This is an alert message',
     type: 'primary',
     dismissible: false,
+    id: 'default-alert',
   },
 } satisfies Meta<AlertProps>
 
@@ -43,6 +45,7 @@ export const Primary: Story = {
   args: {
     message: 'A simple primary alert—check it out!',
     type: 'primary',
+    id: 'primary-alert',
   },
   parameters: {
     docs: {
@@ -50,6 +53,7 @@ export const Primary: Story = {
         code: `<Alert 
   message="A simple primary alert—check it out!"
   type="primary"
+  id="primary-alert"
 />`,
       },
     },
@@ -60,6 +64,7 @@ export const Success: Story = {
   args: {
     message: 'Well done! You successfully completed the task.',
     type: 'success',
+    id: 'success-alert',
   },
   parameters: {
     docs: {
@@ -67,6 +72,7 @@ export const Success: Story = {
         code: `<Alert 
   message="Well done! You successfully completed the task."
   type="success"
+  id="success-alert"
 />`,
       },
     },
@@ -77,6 +83,7 @@ export const Danger: Story = {
   args: {
     message: 'Oh snap! Something went wrong.',
     type: 'danger',
+    id: 'danger-alert',
   },
   parameters: {
     docs: {
@@ -84,6 +91,7 @@ export const Danger: Story = {
         code: `<Alert 
   message="Oh snap! Something went wrong."
   type="danger"
+  id="danger-alert"
 />`,
       },
     },
@@ -94,6 +102,7 @@ export const Warning: Story = {
   args: {
     message: 'Warning! Better check yourself.',
     type: 'warning',
+    id: 'warning-alert',
   },
   parameters: {
     docs: {
@@ -101,6 +110,7 @@ export const Warning: Story = {
         code: `<Alert 
   message="Warning! Better check yourself."
   type="warning"
+  id="warning-alert"
 />`,
       },
     },
@@ -120,6 +130,7 @@ export const Dismissible: Story = {
   message="This alert can be dismissed!"
   type="info"
   dismissible={true}
+  id="dismissible-alert"
 />`,
       },
     },
