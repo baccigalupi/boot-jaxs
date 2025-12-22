@@ -1,7 +1,10 @@
+/** @jsx jsx */
+/** @jsxFrag jsx.fragment */
+import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
+import { renderJaxs } from '../../.storybook/render-jaxs'
 import type { AlertProps } from '../components/alert/alert'
 import { Alert } from '../components/alert/alert'
-import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {
   title: 'Bootstrap/Alert',
@@ -14,16 +17,17 @@ const meta = {
         code: `import { Alert } from './components/alert/alert'
 
 <Alert 
-  message="Your message here"
-  type="primary"
   dismissible={false}
   id="default-alert"
-/>`,
+>
+  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</Alert>
+`,
       },
     },
   },
   argTypes: {
-    message: { control: 'text' },
+    children: { control: 'text' },
     type: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info'],
@@ -31,7 +35,7 @@ const meta = {
     dismissible: { control: 'boolean' },
   },
   args: {
-    message: 'This is an alert message',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     type: 'primary',
     dismissible: false,
     id: 'default-alert',
@@ -43,18 +47,18 @@ type Story = StoryObj<AlertProps>
 
 export const Primary: Story = {
   args: {
-    message: 'A simple primary alert—check it out!',
-    type: 'primary',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     id: 'primary-alert',
   },
   parameters: {
     docs: {
       source: {
         code: `<Alert 
-  message="A simple primary alert—check it out!"
-  type="primary"
-  id="primary-alert"
-/>`,
+  dismissible={false}
+  id="default-alert"
+>
+  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</Alert>`,
       },
     },
   },
@@ -62,7 +66,7 @@ export const Primary: Story = {
 
 export const Success: Story = {
   args: {
-    message: 'Well done! You successfully completed the task.',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     type: 'success',
     id: 'success-alert',
   },
@@ -70,10 +74,11 @@ export const Success: Story = {
     docs: {
       source: {
         code: `<Alert 
-  message="Well done! You successfully completed the task."
   type="success"
   id="success-alert"
-/>`,
+>
+  Well done! You successfully completed the task.
+</Alert>`,
       },
     },
   },
@@ -81,7 +86,7 @@ export const Success: Story = {
 
 export const Danger: Story = {
   args: {
-    message: 'Oh snap! Something went wrong.',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     type: 'danger',
     id: 'danger-alert',
   },
@@ -89,10 +94,11 @@ export const Danger: Story = {
     docs: {
       source: {
         code: `<Alert 
-  message="Oh snap! Something went wrong."
   type="danger"
   id="danger-alert"
-/>`,
+>
+  Oh snap! Something went wrong.
+</Alert>`,
       },
     },
   },
@@ -100,7 +106,7 @@ export const Danger: Story = {
 
 export const Warning: Story = {
   args: {
-    message: 'Warning! Better check yourself.',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     type: 'warning',
     id: 'warning-alert',
   },
@@ -108,10 +114,11 @@ export const Warning: Story = {
     docs: {
       source: {
         code: `<Alert 
-  message="Warning! Better check yourself."
   type="warning"
   id="warning-alert"
-/>`,
+>
+  Warning! Better check yourself.
+</Alert>`,
       },
     },
   },
@@ -119,7 +126,7 @@ export const Warning: Story = {
 
 export const Dismissible: Story = {
   args: {
-    message: 'This alert can be dismissed!',
+    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
     type: 'info',
     dismissible: true,
   },
@@ -127,11 +134,12 @@ export const Dismissible: Story = {
     docs: {
       source: {
         code: `<Alert 
-  message="This alert can be dismissed!"
   type="info"
   dismissible={true}
   id="dismissible-alert"
-/>`,
+>
+  This alert can be dismissed!
+</Alert>`,
       },
     },
   },

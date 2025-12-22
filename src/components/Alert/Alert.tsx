@@ -3,6 +3,7 @@
 import { jsx, JaxsTypes } from 'jaxs'
 import { componentName } from './component'
 import { StyleVariant } from '../types'
+import { alertClassName, buildOnClickEvent } from './presentation-logic'
 
 export type AlertProps = JaxsTypes.Props<{
   message: string
@@ -30,24 +31,18 @@ const DismissibleButton = ({ dismissible, onClick }: ButtonProps) => {
   )
 }
 
-const dismissibleClass = (dismissible: boolean) =>
-  dismissible ? 'alert-dismissible fade show' : ''
-const alertClassName = (type: string, dismissible: boolean) =>
-  `alert alert-${type} ${dismissibleClass(dismissible)}`
-const buildOnClickEvent = (id: string) => `${componentName}:close:${id}`
-
 export const Alert = ({
-  message,
   id,
   type = 'primary',
   dismissible = false,
+  children
 }: AlertProps) => {
   const className = alertClassName(type, dismissible)
-  const onClick = buildOnClickEvent(id)
+  const onClick = buildOnClickEvent(id, componentName)
 
   return (
     <div id={id} class={className} role="alert">
-      {message}
+      {children}
       <DismissibleButton dismissible={dismissible} onClick={onClick} />
     </div>
   )

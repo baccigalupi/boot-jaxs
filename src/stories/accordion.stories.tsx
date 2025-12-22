@@ -2,10 +2,15 @@
 /** @jsxFrag jsx.fragment */
 import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
-import { Accordion, AccordionItem, type AccordionProps, type AccordionItemProps } from '../components/accordion/accordion'
+import {
+  Accordion,
+  AccordionItem,
+  type AccordionProps,
+  type AccordionItemProps,
+} from '../components/accordion/accordion'
 import { renderJaxs } from '../../.storybook/render-jaxs'
 
-const AccordionItemList = ({items}: {items: AccordionItemProps[]}) => {
+const AccordionItemList = ({ items }: { items: AccordionItemProps[] }) => {
   return (
     <>
       {items.map(({ id, title, open, children }: AccordionItemProps) => (
@@ -85,46 +90,52 @@ const meta = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        children: (<>
-          <strong>This is the first item’s accordion body.</strong>
-          It is shown by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It’s also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the first item’s accordion body.</strong>
+            It is shown by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It’s also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        children: (<>
-          <strong>This is the second item’s accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It’s also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>,
-          though the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the second item’s accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It’s also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        children: (<>
-          <strong>This is the third item’s accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or 
-          overriding our default variables. It’s also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>, though
-          the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the third item’s accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It’s also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
     ],
@@ -141,46 +152,52 @@ export const Default: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        children: (<>
-          <strong>This is the first item's accordion body.</strong>
-          It is shown by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the first item's accordion body.</strong>
+            It is shown by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        children: (<>
-          <strong>This is the second item's accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>,
-          though the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the second item's accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        children: (<>
-          <strong>This is the third item's accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or 
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>, though
-          the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the third item's accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
     ],
@@ -233,46 +250,52 @@ export const Flush: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        children: (<>
-          <strong>This is the first item's accordion body.</strong>
-          It is shown by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the first item's accordion body.</strong>
+            It is shown by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        children: (<>
-          <strong>This is the second item's accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>,
-          though the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the second item's accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        children: (<>
-          <strong>This is the third item's accordion body.</strong>
-          It is hidden by default, until the collapse plugin adds the 
-          appropriate classes that we use to style each element. These classes
-          control the overall appearance, as well as the showing and hiding via
-          CSS transitions. You can modify any of this with custom CSS or 
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>, though
-          the transition does limit overflow.
-        </>),
+        children: (
+          <>
+            <strong>This is the third item's accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding
+            via CSS transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </>
+        ),
         open: false,
       },
     ],
