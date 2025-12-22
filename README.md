@@ -2,6 +2,14 @@
 
 A Bootstrap component library built with [Jaxs](https://github.com/baccigalupi/jaxs), TypeScript, and Storybook.
 
+## Components:
+
+* Badge - requires more documentation: 
+    within buttons, offset positioning (passing along other classes)
+* Alert - not hooked up to real event flow in App, so can't close.
+    also: bootstrap docs provide live demo, which would be nice
+
+
 ## Getting Started
 
 ### Installation
