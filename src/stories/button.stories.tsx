@@ -22,9 +22,7 @@ const meta = {
         language: 'tsx',
         code: `import { Button } from './components/button/button'
 
-<Button 
-  variant="primary"
->Primary</Button>`,
+<Button variant="primary" onClick="on-click">Primary</Button>`,
       },
     },
   },
@@ -64,7 +62,7 @@ export const Primary: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button variant="primary">Primary</Button>`,
+        code: `<Button variant="primary" onClick="on-click">Primary</Button>`,
       },
     },
   },
@@ -78,7 +76,7 @@ export const Secondary: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button variant="secondary">Secondary</Button>`,
+        code: `<Button variant="secondary" onClick="on-click">Secondary</Button>`,
       },
     },
   },
@@ -92,7 +90,7 @@ export const Success: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button variant="success">Success!</Button>`,
+        code: `<Button variant="success" onClick="on-click">Success!</Button>`,
       },
     },
   },
@@ -106,7 +104,7 @@ export const Danger: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button variant="danger">Danger!</Button>`,
+        code: `<Button variant="danger" onClick="on-click">Danger!</Button>`,
       },
     },
   },
@@ -120,7 +118,7 @@ export const Outline: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button outline={true}>Outlined Button</Button>`,
+        code: `<Button outline={true} onClick="on-click">Outlined Button</Button>`,
       },
     },
   },
@@ -134,7 +132,7 @@ export const Large: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button size="lg">Large</Button>`,
+        code: `<Button size="lg" onClick="on-click">Large</Button>`,
       },
     },
   },
@@ -148,7 +146,7 @@ export const Small: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button size="sm">Small</Button>`,
+        code: `<Button size="sm" onClick="on-click">Small</Button>`,
       },
     },
   },
@@ -162,7 +160,7 @@ export const Disabled: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button disabled={true}>Disabled</Button>`,
+        code: `<Button disabled={true} onClick="on-click">Disabled</Button>`,
       },
     },
   },
@@ -171,7 +169,7 @@ export const Disabled: Story = {
 export const WithBadge: Story = {
   render: () => {
     return renderJaxs(
-      <Button>
+      <Button onClick="on-click">
         Notifications <Badge label="4" variant="danger" />
       </Button>
     )

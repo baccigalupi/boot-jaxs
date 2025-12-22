@@ -10,7 +10,7 @@ export type ButtonProps = JaxsTypes.Props<{
   outline?: boolean
   disabled?: boolean
   type?: ButtonType
-  onClick?: string
+  onClick: string
 } & HTMLAttributes>
 
 export const Button = (props: ButtonProps) => {
@@ -31,12 +31,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button 
       {...rest}
-      type={type} 
       class={className} 
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    >{children}</button>
   )
 }
