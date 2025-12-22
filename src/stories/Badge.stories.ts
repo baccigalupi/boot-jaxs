@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/html'
-import type { BadgeProps } from '../components/Badge/Badge'
-import { Badge } from '../components/Badge/Badge'
+import type { BadgeProps } from '../components/badge/badge'
+import { Badge } from '../components/badge/badge'
 import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
     docs: {
       source: {
         language: 'tsx',
-        code: `import { Badge } from './components/Badge/Badge'
+        code: `import { Badge } from './components/badge/badge'
 
 <Badge 
   label="Badge text"

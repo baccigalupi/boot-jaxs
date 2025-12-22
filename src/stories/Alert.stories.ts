@@ -11,7 +11,7 @@ const meta = {
     docs: {
       source: {
         language: 'tsx',
-        code: `import { Alert } from './components/Alert/Alert'
+        code: `import { Alert } from './components/alert/alert'
 
 <Alert 
   message="Your message here"

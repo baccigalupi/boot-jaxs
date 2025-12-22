@@ -8,8 +8,14 @@ export type BadgeProps = JaxsTypes.Props<{
   pill?: boolean
 }>
 
+const badgeClass = (variant: string, pill: boolean) => {
+  const pillClass = pill ? ' rounded-pill' : ''
+
+  return `badge bg-${variant}${pillClass}`
+}
+
 export const Badge = ({ label, variant = 'primary', pill = false }: BadgeProps) => {
-  const className = `badge bg-${variant}${pill ? ' rounded-pill' : ''}`
+  const className = badgeClass(variant, pill)
   
   return <span class={className}>{label}</span>
 }
