@@ -19,19 +19,19 @@ export const Button = (props: ButtonProps) => {
   const {
     variant = 'primary',
     size,
+    class: propClass,
+    onClick,
+    children,
     outline = false,
     disabled = false,
     type = 'button',
-    onClick,
-    children,
-    class: propClass,
     ...rest
   } = props
 
   const className = buttonClass({ variant, outline, size, propClass })
-
+  const buttonProps = { type, disabled, ...rest }
   return (
-    <button {...rest} class={className}>
+    <button {...buttonProps} class={className}>
       {children}
     </button>
   )

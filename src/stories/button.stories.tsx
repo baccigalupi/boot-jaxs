@@ -161,6 +161,13 @@ export const Small: Story = {
 }
 
 export const Disabled: Story = {
+  render: () => {
+    return renderJaxs(
+      <Button disabled={true} onClick="on-click">
+        Disabled
+      </Button>,
+    )
+  },
   args: {
     children: <>Disabled</>,
     disabled: true,
