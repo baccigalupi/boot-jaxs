@@ -10,7 +10,12 @@ import { renderJaxs } from '../../.storybook/render-jaxs'
 const meta = {
   title: 'Bootstrap/Button',
   tags: ['autodocs'],
-  render: (args) => renderJaxs(Button(args)),
+  render: (args) => {
+    const {children, ...rest} = args
+    return renderJaxs(
+      <Button {...rest}>{children}</Button>
+    )
+  },
   parameters: {
     docs: {
       source: {
@@ -18,14 +23,12 @@ const meta = {
         code: `import { Button } from './components/button/button'
 
 <Button 
-  label="Button"
   variant="primary"
-/>`,
+>Primary</Button>`,
       },
     },
   },
   argTypes: {
-    label: { control: 'text' },
     variant: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'],
@@ -40,9 +43,9 @@ const meta = {
       control: { type: 'select' },
       options: ['button', 'submit', 'reset'],
     },
+    children: { control: 'text' },
   },
   args: {
-    label: 'Button',
     variant: 'primary',
     outline: false,
     disabled: false,
@@ -55,13 +58,13 @@ type Story = StoryObj<ButtonProps>
 
 export const Primary: Story = {
   args: {
-    label: 'Primary',
+    children: <>Primary</>,
     variant: 'primary',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Primary" variant="primary" />`,
+        code: `<Button variant="primary">Primary</Button>`,
       },
     },
   },
@@ -69,13 +72,13 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary',
+    children: <>Secondary</>,
     variant: 'secondary',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Secondary" variant="secondary" />`,
+        code: `<Button variant="secondary">Secondary</Button>`,
       },
     },
   },
@@ -83,13 +86,13 @@ export const Secondary: Story = {
 
 export const Success: Story = {
   args: {
-    label: 'Success',
+    children: <>Success!</>,
     variant: 'success',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Success" variant="success" />`,
+        code: `<Button variant="success">Success!</Button>`,
       },
     },
   },
@@ -97,13 +100,13 @@ export const Success: Story = {
 
 export const Danger: Story = {
   args: {
-    label: 'Danger',
+    children: <>Danger!</>,
     variant: 'danger',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Danger" variant="danger" />`,
+        code: `<Button variant="danger">Danger!</Button>`,
       },
     },
   },
@@ -111,14 +114,13 @@ export const Danger: Story = {
 
 export const Outline: Story = {
   args: {
-    label: 'Outline Primary',
-    variant: 'primary',
+    children: <>Outlined Button</>,
     outline: true,
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Outline Primary" variant="primary" outline={true} />`,
+        code: `<Button outline={true}>Outlined Button</Button>`,
       },
     },
   },
@@ -126,14 +128,13 @@ export const Outline: Story = {
 
 export const Large: Story = {
   args: {
-    label: 'Large Button',
-    variant: 'primary',
+    children: <>Large</>,
     size: 'lg',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Large Button" variant="primary" size="lg" />`,
+        code: `<Button size="lg">Large</Button>`,
       },
     },
   },
@@ -141,14 +142,13 @@ export const Large: Story = {
 
 export const Small: Story = {
   args: {
-    label: 'Small Button',
-    variant: 'primary',
+    children: <>Small</>,
     size: 'sm',
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Small Button" variant="primary" size="sm" />`,
+        code: `<Button size="sm">Small</Button>`,
       },
     },
   },
@@ -156,14 +156,13 @@ export const Small: Story = {
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled',
-    variant: 'primary',
+    children: <>Disabled</>,
     disabled: true,
   },
   parameters: {
     docs: {
       source: {
-        code: `<Button label="Disabled" variant="primary" disabled={true} />`,
+        code: `<Button disabled={true}>Disabled</Button>`,
       },
     },
   },
@@ -172,10 +171,13 @@ export const Disabled: Story = {
 export const WithBadge: Story = {
   render: () => {
     return renderJaxs(
-      <Button variant="primary">
-        Notifications <Badge label="4" variant="light" />
+      <Button>
+        Notifications <Badge label="4" variant="danger" />
       </Button>
     )
+  },
+  args: {
+    children: <>Notifications <Badge label="4" variant="danger" /></>,
   },
   parameters: {
     docs: {
