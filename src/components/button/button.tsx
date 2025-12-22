@@ -5,7 +5,6 @@ import { buttonClass } from './presentation-logic'
 import { ButtonVariant, ButtonType, ButtonSize, HTMLAttributes } from '../types'
 
 export type ButtonProps = JaxsTypes.Props<{
-  label?: string
   variant?: ButtonVariant
   size?: ButtonSize
   outline?: boolean

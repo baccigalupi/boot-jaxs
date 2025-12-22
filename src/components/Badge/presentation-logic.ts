@@ -1,7 +1,14 @@
 import { StyleVariant } from '../types'
+import { addClassesToBase } from '@components/presentation-logic'
 
-export const badgeClass = (variant: StyleVariant = 'primary', pill: boolean = false) => {
-  const pillClass = pill ? ' rounded-pill' : ''
+type BadgeClassProps = {
+  variant?: StyleVariant
+  pill?: boolean
+  propClass?: string
+}
+export const badgeClass = ({variant = 'primary', pill = false, propClass}: BadgeClassProps) => {
+  const pillClass = pill ? 'rounded-pill' : ''
+  const baseClass = addClassesToBase(`badge bg-${variant}`, pillClass)
 
-  return `badge bg-${variant}${pillClass}`
+  return addClassesToBase(baseClass, propClass)
 }
