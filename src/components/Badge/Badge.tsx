@@ -2,10 +2,11 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { badgeClass } from './presentation-logic'
+import { StyleVariant } from '../types'
 
 export type BadgeProps = JaxsTypes.Props<{
   label: string
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
+  variant?: StyleVariant
   pill?: boolean
 }>
 

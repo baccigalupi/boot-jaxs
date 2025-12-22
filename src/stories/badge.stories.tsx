@@ -1,6 +1,9 @@
+/** @jsx jsx */
+/** @jsxFrag jsx.fragment */
+import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
-import type { BadgeProps } from '../components/badge/badge'
-import { Badge } from '../components/badge/badge'
+import { Badge, type BadgeProps } from '@components/badge/badge'
+import { Button } from '@components/button/button'
 import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {
@@ -91,6 +94,33 @@ export const Pill: Story = {
     docs: {
       source: {
         code: `<Badge label="Pill Badge" variant="info" pill={true} />`,
+      },
+    },
+  },
+}
+
+export const InButton: Story = {
+  render: () => {
+    return renderJaxs(
+      <Button>
+        Notifications
+        <Badge variant="light" label="23" />
+      </Button>
+    )
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Badges can be used within buttons to display notification counts or other contextual information.',
+      },
+      source: {
+        language: 'tsx',
+        code: `import { Badge } from './components/badge/badge'
+
+<button type="button" class="btn btn-primary">
+  Notifications
+  <Badge variant="light" label="23">
+</button>`,
       },
     },
   },

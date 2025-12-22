@@ -2,11 +2,12 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { componentName } from './component'
+import { StyleVariant } from '../types'
 
 export type AlertProps = JaxsTypes.Props<{  
   message: string
   id: string
-  type?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
+  type?: StyleVariant
   dismissible?: boolean
 }>
 
