@@ -28,7 +28,16 @@ const meta = {
     label: { control: 'text' },
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+      options: [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+      ],
     },
     pill: { control: 'boolean' },
   },
@@ -105,13 +114,14 @@ export const InButton: Story = {
       <Button>
         Notifications
         <Badge variant="light" label="23" />
-      </Button>
+      </Button>,
     )
   },
   parameters: {
     docs: {
       description: {
-        story: 'Badges can be used within buttons to display notification counts or other contextual information.',
+        story:
+          'Badges can be used within buttons to display notification counts or other contextual information.',
       },
       source: {
         language: 'tsx',

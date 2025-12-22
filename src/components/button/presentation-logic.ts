@@ -14,7 +14,9 @@ export const buttonClass = ({
   outline = false,
   size,
 }: ButtonClassProps): string => {
-  const variantClass = outline ? `btn btn-outline-${variant}` : `btn btn-${variant}`
+  const variantClass = outline
+    ? `btn btn-outline-${variant}`
+    : `btn btn-${variant}`
   const sizeClass = size ? `btn-${size}` : ''
   const baseClass = addClassesToBase(variantClass, sizeClass)
 

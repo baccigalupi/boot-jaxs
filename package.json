@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "prettier . --write"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.5.0",
@@ -26,6 +27,7 @@
     "eslint": "^9.18.0",
     "eslint-plugin-storybook": "^0.12.0",
     "jsdom": "^27.3.0",
+    "prettier": "^3.7.4",
     "storybook": "^8.5.0",
     "typescript": "^5.7.2",
     "vite": "^6.1.7",

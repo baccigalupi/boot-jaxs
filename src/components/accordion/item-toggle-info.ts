@@ -1,4 +1,4 @@
-import { addClassesToBase } from "@components/presentation-logic"
+import { addClassesToBase } from '@components/presentation-logic'
 
 export class ItemToggleInfo {
   open: boolean
@@ -16,7 +16,10 @@ export class ItemToggleInfo {
   }
 
   accordionCollapseClass(): string {
-    return addClassesToBase('accordion-collapse collapse', this.visibilityClass())
+    return addClassesToBase(
+      'accordion-collapse collapse',
+      this.visibilityClass(),
+    )
   }
 
   accordionButtonClass(): string {

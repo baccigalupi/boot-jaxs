@@ -29,7 +29,9 @@ describe('itemToggleInfo', () => {
   describe('accordionCollapseClass', () => {
     it('returns collapse classes with show when open is true', () => {
       const info = itemToggleInfo(true)
-      expect(info.accordionCollapseClass()).toBe('accordion-collapse collapse show')
+      expect(info.accordionCollapseClass()).toBe(
+        'accordion-collapse collapse show',
+      )
     })
 
     it('returns collapse classes without show when open is false', () => {

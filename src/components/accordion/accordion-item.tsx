@@ -9,20 +9,28 @@ type AccordionItemExampleProps = JaxsTypes.Props<{
   title: string
 }>
 
-export const AccordionItemExample = ({open, id, title, children}: AccordionItemExampleProps) => {
+export const AccordionItemExample = ({
+  open,
+  id,
+  title,
+  children,
+}: AccordionItemExampleProps) => {
   const toggleInfo = itemToggleInfo(open)
-  
+
   return (
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class={toggleInfo.accordionButtonClass()} type="button" aria-expanded={toggleInfo.ariaExpanded()} aria-controls={id}>
+        <button
+          class={toggleInfo.accordionButtonClass()}
+          type="button"
+          aria-expanded={toggleInfo.ariaExpanded()}
+          aria-controls={id}
+        >
           {title}
         </button>
       </h2>
       <div id={id} class={toggleInfo.accordionCollapseClass()}>
-        <div class="accordion-body">
-          {children}
-        </div>
+        <div class="accordion-body">{children}</div>
       </div>
     </div>
   )

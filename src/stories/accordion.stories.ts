@@ -48,19 +48,22 @@ const meta = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        content: 'This is the first item\'s accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.',
+        content:
+          "This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
         expanded: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        content: 'This is the second item\'s accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.',
+        content:
+          "This is the second item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
         expanded: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        content: 'This is the third item\'s accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.',
+        content:
+          "This is the third item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
         expanded: false,
       },
     ],
@@ -77,19 +80,20 @@ export const Default: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        content: 'This is the first item\'s accordion body. It is shown by default.',
+        content:
+          "This is the first item's accordion body. It is shown by default.",
         expanded: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        content: 'This is the second item\'s accordion body.',
+        content: "This is the second item's accordion body.",
         expanded: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        content: 'This is the third item\'s accordion body.',
+        content: "This is the third item's accordion body.",
         expanded: false,
       },
     ],
@@ -118,19 +122,21 @@ export const AlwaysOpen: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        content: 'This is the first item\'s accordion body. Multiple items can be open at once.',
+        content:
+          "This is the first item's accordion body. Multiple items can be open at once.",
         expanded: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        content: 'This is the second item\'s accordion body. Multiple items can be open at once.',
+        content:
+          "This is the second item's accordion body. Multiple items can be open at once.",
         expanded: true,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        content: 'This is the third item\'s accordion body.',
+        content: "This is the third item's accordion body.",
         expanded: false,
       },
     ],
@@ -160,19 +166,19 @@ export const Flush: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        content: 'This is the first item\'s accordion body with flush styling.',
+        content: "This is the first item's accordion body with flush styling.",
         expanded: true,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        content: 'This is the second item\'s accordion body with flush styling.',
+        content: "This is the second item's accordion body with flush styling.",
         expanded: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        content: 'This is the third item\'s accordion body with flush styling.',
+        content: "This is the third item's accordion body with flush styling.",
         expanded: false,
       },
     ],
@@ -201,19 +207,19 @@ export const AllClosed: Story = {
       {
         id: 'item1',
         title: 'Accordion Item #1',
-        content: 'This is the first item\'s accordion body.',
+        content: "This is the first item's accordion body.",
         expanded: false,
       },
       {
         id: 'item2',
         title: 'Accordion Item #2',
-        content: 'This is the second item\'s accordion body.',
+        content: "This is the second item's accordion body.",
         expanded: false,
       },
       {
         id: 'item3',
         title: 'Accordion Item #3',
-        content: 'This is the third item\'s accordion body.',
+        content: "This is the third item's accordion body.",
         expanded: false,
       },
     ],

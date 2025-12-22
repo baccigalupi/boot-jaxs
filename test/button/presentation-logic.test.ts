@@ -9,25 +9,34 @@ describe('buttonClass', () => {
   })
 
   it('when a variant is passed in, it uses that styling', () => {
-    const className = buttonClass({variant: 'success'})
+    const className = buttonClass({ variant: 'success' })
 
     expect(className).toBe('btn btn-success')
   })
 
   it('when outline is true, it uses outline styling', () => {
-    const className = buttonClass({variant: 'danger', outline: true})
-    
+    const className = buttonClass({ variant: 'danger', outline: true })
+
     expect(className).toBe('btn btn-outline-danger')
   })
 
   it('when a size is passed in, it uses it', () => {
-    const className = buttonClass({variant: 'primary', outline: false, size: 'sm'})
-    
+    const className = buttonClass({
+      variant: 'primary',
+      outline: false,
+      size: 'sm',
+    })
+
     expect(className).toBe('btn btn-primary btn-sm')
   })
 
   it('concatenates other classes passed along', () => {
-    const className = buttonClass({variant: 'primary', outline: false, size: 'lg', propClass: 'my-custom-class'})
+    const className = buttonClass({
+      variant: 'primary',
+      outline: false,
+      size: 'lg',
+      propClass: 'my-custom-class',
+    })
 
     expect(className).toBe('btn btn-primary btn-lg my-custom-class')
   })

@@ -1,5 +1,11 @@
 // Global HTML attribute types
-type AutoCapitalizeValues = 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'
+type AutoCapitalizeValues =
+  | 'off'
+  | 'none'
+  | 'on'
+  | 'sentences'
+  | 'words'
+  | 'characters'
 type Direction = 'ltr' | 'rtl' | 'auto'
 type Translate = 'yes' | 'no'
 
@@ -17,18 +23,17 @@ export type HTMLAttributes = {
   translate?: Translate
 }
 
-export type StyleVariant = 
-  | 'primary' 
-  | 'secondary' 
-  | 'success' 
-  | 'danger' 
-  | 'warning' 
-  | 'info' 
-  | 'light' 
+export type StyleVariant =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'light'
   | 'dark'
 
 // Button specific types
 export type ButtonVariant = StyleVariant | 'link'
 export type ButtonType = 'button' | 'submit' | 'reset'
 export type ButtonSize = 'sm' | 'lg'
-

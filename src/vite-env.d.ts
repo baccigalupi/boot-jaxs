@@ -1,6 +1,6 @@
 declare module '*.css' {
-  const content: string;
-  export default content;
+  const content: string
+  export default content
 }
 
-declare module 'bootstrap/dist/css/bootstrap.min.css';
+declare module 'bootstrap/dist/css/bootstrap.min.css'

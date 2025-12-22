@@ -4,11 +4,10 @@ A Bootstrap component library built with [Jaxs](https://github.com/baccigalupi/j
 
 ## Components:
 
-* Badge - requires more documentation: 
-    within buttons, offset positioning (passing along other classes)
-* Alert - not hooked up to real event flow in App, so can't close.
-    also: bootstrap docs provide live demo, which would be nice
-
+- Badge - requires more documentation:
+  within buttons, offset positioning (passing along other classes)
+- Alert - not hooked up to real event flow in App, so can't close.
+  also: bootstrap docs provide live demo, which would be nice
 
 ## Getting Started
 
@@ -66,6 +65,7 @@ export const MyComponent = ({ message }: Props) => {
 ### TypeScript Configuration
 
 The project is configured to use JAXS with JSX:
+
 - `jsx: "react"`
 - `jsxFactory: "jsx"`
 - `jsxFragmentFactory: "jsx.fragment"`
@@ -73,9 +73,9 @@ The project is configured to use JAXS with JSX:
 - Path alias `@components/*` maps to `./src/components/*`
 
 All `.tsx` files should include JSX pragma comments:
+
 ```tsx
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx } from 'jaxs'
 ```
-

@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [],
   resolve: {
     alias: {
-      '@components': path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src/components'),
+      '@components': path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        './src/components',
+      ),
     },
   },
 })

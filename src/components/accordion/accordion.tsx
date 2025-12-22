@@ -9,8 +9,8 @@ export type AccordionProps = JaxsTypes.Props<{
 }>
 
 export const Accordion = ({ id, children, flush = false }: AccordionProps) => {
-  const className = accordionClass({flush})
-  
+  const className = accordionClass({ flush })
+
   return (
     <div class={className} id={id}>
       {children}

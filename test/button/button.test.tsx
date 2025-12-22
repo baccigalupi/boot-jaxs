@@ -1,4 +1,4 @@
-import /** @jsx jsx */ { jsx } from 'jaxs'
+import { /** @jsx jsx */ jsx } from 'jaxs'
 import { describe, it, expect } from 'vitest'
 import { Button } from '@components/button/button'
 import { renderToString } from '../support/render-to-string'

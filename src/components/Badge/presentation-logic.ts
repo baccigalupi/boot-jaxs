@@ -6,7 +6,11 @@ type BadgeClassProps = {
   pill?: boolean
   propClass?: string
 }
-export const badgeClass = ({variant = 'primary', pill = false, propClass}: BadgeClassProps) => {
+export const badgeClass = ({
+  variant = 'primary',
+  pill = false,
+  propClass,
+}: BadgeClassProps) => {
   const pillClass = pill ? 'rounded-pill' : ''
   const baseClass = addClassesToBase(`badge bg-${variant}`, pillClass)
 

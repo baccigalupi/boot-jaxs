@@ -11,10 +11,8 @@ const meta = {
   title: 'Bootstrap/Button',
   tags: ['autodocs'],
   render: (args) => {
-    const {children, ...rest} = args
-    return renderJaxs(
-      <Button {...rest}>{children}</Button>
-    )
+    const { children, ...rest } = args
+    return renderJaxs(<Button {...rest}>{children}</Button>)
   },
   parameters: {
     docs: {
@@ -29,7 +27,17 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'],
+      options: [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+        'link',
+      ],
     },
     size: {
       control: { type: 'select' },
@@ -171,16 +179,21 @@ export const WithBadge: Story = {
     return renderJaxs(
       <Button onClick="on-click">
         Notifications <Badge label="4" variant="danger" />
-      </Button>
+      </Button>,
     )
   },
   args: {
-    children: <>Notifications <Badge label="4" variant="danger" /></>,
+    children: (
+      <>
+        Notifications <Badge label="4" variant="danger" />
+      </>
+    ),
   },
   parameters: {
     docs: {
       description: {
-        story: 'Buttons can contain badges to display notification counts or other contextual information.',
+        story:
+          'Buttons can contain badges to display notification counts or other contextual information.',
       },
       source: {
         language: 'tsx',
