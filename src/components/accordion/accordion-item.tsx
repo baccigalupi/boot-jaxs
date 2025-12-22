@@ -3,18 +3,18 @@
 import { jsx, JaxsTypes } from 'jaxs'
 import { itemToggleInfo } from './item-toggle-info'
 
-type AccordionItemExampleProps = JaxsTypes.Props<{
+export type AccordionItemProps = JaxsTypes.Props<{
   open: boolean
   id: string
   title: string
 }>
 
-export const AccordionItemExample = ({
+export const AccordionItem = ({
   open,
   id,
   title,
   children,
-}: AccordionItemExampleProps) => {
+}: AccordionItemProps) => {
   const toggleInfo = itemToggleInfo(open)
 
   return (

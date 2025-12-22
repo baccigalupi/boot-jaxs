@@ -2,6 +2,7 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { accordionClass } from './presentation-logic'
+export { AccordionItem, type AccordionItemProps } from './accordion-item'
 
 export type AccordionProps = JaxsTypes.Props<{
   id: string
