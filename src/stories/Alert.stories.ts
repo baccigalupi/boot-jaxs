@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/html'
-import type { AlertProps } from '../components/Alert/Alert'
-import { Alert } from '../components/Alert/Alert'
+import type { AlertProps } from '../components/alert/alert'
+import { Alert } from '../components/alert/alert'
 import { renderJaxs } from '../../.storybook/render-jaxs'
 
 const meta = {

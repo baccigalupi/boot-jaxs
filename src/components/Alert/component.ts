@@ -7,7 +7,7 @@ const initialState = [] as BootJaxsAlertState
 const alertMatch = (listKey: string, eventKey: string) => listKey === eventKey
 const getAlertId = (eventName: string) => eventName.split(':').pop() || ''
 
-export const removeAlert: JaxsTypes.BusListener<MouseEvent>= (event: MouseEvent, listenerKit: JaxsTypes.ListenerKit) => {
+export const removeAlert: JaxsTypes.BusListener<unknown> = (_payload: unknown, listenerKit: JaxsTypes.ListenerKit) => {
   const { state, eventName } = listenerKit
   const store = state.store<BootJaxsAlertState>(componentName)
   const id = getAlertId(eventName)
@@ -15,7 +15,7 @@ export const removeAlert: JaxsTypes.BusListener<MouseEvent>= (event: MouseEvent,
   store.update(updatedValue)
 }
 
-export const addAlert: JaxsTypes.BusListener<MouseEvent>= (event: MouseEvent, listenerKit: JaxsTypes.ListenerKit) => {
+export const addAlert: JaxsTypes.BusListener<unknown>= (_payload: unknown, listenerKit: JaxsTypes.ListenerKit) => {
   const { state, eventName } = listenerKit
   const store = state.store<BootJaxsAlertState>(componentName)
   const id = getAlertId(eventName)
