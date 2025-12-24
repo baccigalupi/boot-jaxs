@@ -2,12 +2,12 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { buttonClass } from './presentation-logic'
-import { ButtonVariant, ButtonType, ButtonSize, HTMLAttributes } from '../types'
+import { ButtonVariant, ButtonType, Size, HTMLAttributes } from '../types'
 
 export type ButtonProps = JaxsTypes.Props<
   {
     variant?: ButtonVariant
-    size?: ButtonSize
+    size?: Size
     outline?: boolean
     disabled?: boolean
     type?: ButtonType

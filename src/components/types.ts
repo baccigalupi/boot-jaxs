@@ -36,4 +36,4 @@ export type StyleVariant =
 // Button specific types
 export type ButtonVariant = StyleVariant | 'link'
 export type ButtonType = 'button' | 'submit' | 'reset'
-export type ButtonSize = 'sm' | 'lg'
+export type Size = 'sm' | 'lg'

@@ -1,11 +1,11 @@
 import { addClassesToBase } from '@components/presentation-logic'
-import { ButtonVariant, ButtonSize } from '../types'
+import { ButtonVariant, Size } from '../types'
 
 type ButtonClassProps = {
   variant?: ButtonVariant
   propClass?: string
   outline?: boolean
-  size?: ButtonSize
+  size?: Size
 }
 
 export const buttonClass = ({
