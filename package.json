@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "jaxs": "^0.7.2"
+    "jaxs": "0.7.3"
   }
 }
