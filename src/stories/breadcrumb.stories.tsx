@@ -10,7 +10,7 @@ import { Badge } from '@components/badge/badge'
 const meta = {
   title: 'Bootstrap/Breadcrumb',
   tags: ['autodocs'],
-  render: (args) => renderJaxs(
+  render: (_args) => renderJaxs(
     <Breadcrumb>
       <BreadcrumbItem href="#">Home</BreadcrumbItem>
       <BreadcrumbItem href="#">Library</BreadcrumbItem>

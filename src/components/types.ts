@@ -37,3 +37,4 @@ export type StyleVariant =
 export type ButtonVariant = StyleVariant | 'link'
 export type ButtonType = 'button' | 'submit' | 'reset'
 export type Size = 'sm' | 'lg'
+export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
