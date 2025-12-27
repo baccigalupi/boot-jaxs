@@ -4,9 +4,11 @@ import { jsx, JaxsTypes } from 'jaxs'
 import type { HTMLAttributes } from '../types'
 import { addClassesToBase } from '@components/presentation-logic'
 
-export type ButtonToolbarProps = JaxsTypes.Props<{
-  ariaLabel?: string
-} & HTMLAttributes>
+export type ButtonToolbarProps = JaxsTypes.Props<
+  {
+    ariaLabel?: string
+  } & HTMLAttributes
+>
 
 export const ButtonToolbar = ({
   ariaLabel,
@@ -17,12 +19,7 @@ export const ButtonToolbar = ({
   const classes = addClassesToBase('btn-toolbar', propClasses)
 
   return (
-    <div 
-      class={classes} 
-      role='toolbar' 
-      aria-label={ariaLabel}
-      {...rest}
-    >
+    <div class={classes} role="toolbar" aria-label={ariaLabel} {...rest}>
       {children}
     </div>
   )

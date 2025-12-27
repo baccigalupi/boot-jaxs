@@ -4,10 +4,12 @@ import { jsx, JaxsTypes } from 'jaxs'
 import type { HTMLAttributes, Size } from '../types'
 import { buildGroupClass } from './presentation-logic'
 
-export type ButtonGroupVerticalProps = JaxsTypes.Props<{
-  size?: Size
-  ariaLabel?: string
-} & HTMLAttributes>
+export type ButtonGroupVerticalProps = JaxsTypes.Props<
+  {
+    size?: Size
+    ariaLabel?: string
+  } & HTMLAttributes
+>
 
 export const ButtonGroupVertical = ({
   size,
@@ -19,12 +21,7 @@ export const ButtonGroupVertical = ({
   const classes = buildGroupClass('btn-group-vertical', size, propClasses)
 
   return (
-    <div 
-      class={classes} 
-      role='group' 
-      aria-label={ariaLabel}
-      {...rest}
-    >
+    <div class={classes} role="group" aria-label={ariaLabel} {...rest}>
       {children}
     </div>
   )

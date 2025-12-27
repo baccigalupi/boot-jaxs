@@ -11,10 +11,8 @@ export const Breadcrumb = ({
   ...rest
 }: BreadcrumbProps) => {
   return (
-    <nav aria-label='breadcrumb' class={propClasses} {...rest}>
-      <ol class="breadcrumb">
-        {children}
-      </ol>
+    <nav aria-label="breadcrumb" class={propClasses} {...rest}>
+      <ol class="breadcrumb">{children}</ol>
     </nav>
   )
 }

@@ -12,5 +12,9 @@ export const CardGroup = ({
   ...props
 }: CardGroupProps) => {
   const combinedClasses = addClassesToBase('card-group', className)
-  return <div {...props} class={combinedClasses}>{children}</div>
+  return (
+    <div {...props} class={combinedClasses}>
+      {children}
+    </div>
+  )
 }

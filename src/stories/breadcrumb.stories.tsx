@@ -10,13 +10,14 @@ import { Badge } from '@components/badge/badge'
 const meta = {
   title: 'Bootstrap/Breadcrumb',
   tags: ['autodocs'],
-  render: (_args) => renderJaxs(
-    <Breadcrumb>
-      <BreadcrumbItem href="#">Home</BreadcrumbItem>
-      <BreadcrumbItem href="#">Library</BreadcrumbItem>
-      <BreadcrumbItem active>Data</BreadcrumbItem>
-    </Breadcrumb>
-  ),
+  render: (_args) =>
+    renderJaxs(
+      <Breadcrumb>
+        <BreadcrumbItem href="#">Home</BreadcrumbItem>
+        <BreadcrumbItem href="#">Library</BreadcrumbItem>
+        <BreadcrumbItem active>Data</BreadcrumbItem>
+      </Breadcrumb>,
+    ),
   parameters: {
     docs: {
       source: {
@@ -38,13 +39,14 @@ export default meta
 type Story = StoryObj
 
 export const Default: Story = {
-  render: () => renderJaxs(
-    <Breadcrumb>
-      <BreadcrumbItem href="#">Home</BreadcrumbItem>
-      <BreadcrumbItem href="#">Library</BreadcrumbItem>
-      <BreadcrumbItem active>Data</BreadcrumbItem>
-    </Breadcrumb>
-  ),
+  render: () =>
+    renderJaxs(
+      <Breadcrumb>
+        <BreadcrumbItem href="#">Home</BreadcrumbItem>
+        <BreadcrumbItem href="#">Library</BreadcrumbItem>
+        <BreadcrumbItem active>Data</BreadcrumbItem>
+      </Breadcrumb>,
+    ),
   parameters: {
     docs: {
       source: {
@@ -59,11 +61,12 @@ export const Default: Story = {
 }
 
 export const SingleItem: Story = {
-  render: () => renderJaxs(
-    <Breadcrumb>
-      <BreadcrumbItem active>Home</BreadcrumbItem>
-    </Breadcrumb>
-  ),
+  render: () =>
+    renderJaxs(
+      <Breadcrumb>
+        <BreadcrumbItem active>Home</BreadcrumbItem>
+      </Breadcrumb>,
+    ),
   parameters: {
     docs: {
       source: {
@@ -76,12 +79,15 @@ export const SingleItem: Story = {
 }
 
 export const CustomChildren: Story = {
-  render: () => renderJaxs(
-    <Breadcrumb>
-      <BreadcrumbItem href="#">Home</BreadcrumbItem>
-      <BreadcrumbItem href="#library" active><Badge label='Library'/></BreadcrumbItem>
-    </Breadcrumb>
-  ),
+  render: () =>
+    renderJaxs(
+      <Breadcrumb>
+        <BreadcrumbItem href="#">Home</BreadcrumbItem>
+        <BreadcrumbItem href="#library" active>
+          <Badge label="Library" />
+        </BreadcrumbItem>
+      </Breadcrumb>,
+    ),
   parameters: {
     docs: {
       source: {

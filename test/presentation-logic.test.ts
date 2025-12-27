@@ -19,4 +19,24 @@ describe('addClassesToBase', () => {
 
     expect(result).toBe('btn btn-primary btn-lg')
   })
+
+  it('takes an array of new classes instead of just one', () => {
+    const result = addClassesToBase('btn btn-primary', [
+      'btn-lg',
+      'my-custom-class',
+    ])
+
+    expect(result).toBe('btn btn-primary btn-lg my-custom-class')
+  })
+
+  it('handles non-string values in the array of new classes', () => {
+    const result = addClassesToBase('btn btn-primary', [
+      'btn-lg',
+      undefined,
+      'my-custom-class',
+      null,
+    ])
+
+    expect(result).toBe('btn btn-primary btn-lg my-custom-class')
+  })
 })

@@ -1,4 +1,4 @@
-import { addClassesToBase } from "@components/presentation-logic";
+import { addClassesToBase } from '@components/presentation-logic'
 
 export class ActiveInfo {
   active: boolean

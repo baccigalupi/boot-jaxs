@@ -35,7 +35,7 @@ export const Alert = ({
   id,
   type = 'primary',
   dismissible = false,
-  children
+  children,
 }: AlertProps) => {
   const className = alertClassName(type, dismissible)
   const onClick = buildOnClickEvent(id, componentName)

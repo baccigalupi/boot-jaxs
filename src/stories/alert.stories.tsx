@@ -35,7 +35,15 @@ const meta = {
     dismissible: { control: 'boolean' },
   },
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     type: 'primary',
     dismissible: false,
     id: 'default-alert',
@@ -47,7 +55,15 @@ type Story = StoryObj<AlertProps>
 
 export const Primary: Story = {
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     id: 'primary-alert',
   },
   parameters: {
@@ -66,7 +82,15 @@ export const Primary: Story = {
 
 export const Success: Story = {
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     type: 'success',
     id: 'success-alert',
   },
@@ -86,7 +110,15 @@ export const Success: Story = {
 
 export const Danger: Story = {
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     type: 'danger',
     id: 'danger-alert',
   },
@@ -106,7 +138,15 @@ export const Danger: Story = {
 
 export const Warning: Story = {
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     type: 'warning',
     id: 'warning-alert',
   },
@@ -126,7 +166,15 @@ export const Warning: Story = {
 
 export const Dismissible: Story = {
   args: {
-    children: <>A simple alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</>,
+    children: (
+      <>
+        A simple alert with{' '}
+        <a href="#" class="alert-link">
+          an example link
+        </a>
+        . Give it a click if you like.
+      </>
+    ),
     type: 'info',
     dismissible: true,
   },

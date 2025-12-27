@@ -6,11 +6,7 @@ import { addClassesToBase } from '../presentation-logic'
 
 export type CardProps = JaxsTypes.Props<HTMLAttributes>
 
-export const Card = ({
-  children,
-  class: className,
-  ...props
-}: CardProps) => {
+export const Card = ({ children, class: className, ...props }: CardProps) => {
   const classes = addClassesToBase('card', className)
 
   return (
