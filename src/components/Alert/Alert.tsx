@@ -4,6 +4,7 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { componentName } from './component'
 import { StyleVariant } from '../types'
 import { alertClassName, buildOnClickEvent } from './presentation-logic'
+import { CloseButton } from '@components/close-button/close-button'
 
 export type AlertProps = JaxsTypes.Props<{
   message: string
@@ -20,15 +21,7 @@ type ButtonProps = JaxsTypes.Props<{
 const DismissibleButton = ({ dismissible, onClick }: ButtonProps) => {
   if (!dismissible) return
 
-  return (
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-      onClick={onClick}
-    ></button>
-  )
+  return <CloseButton onClick={onClick} />
 }
 
 export const Alert = ({
