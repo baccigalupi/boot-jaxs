@@ -8,7 +8,11 @@ export { CarouselCaption } from './carousel-caption'
 export { CarouselInner } from './carousel-inner'
 export { CarouselItem } from './carousel-item'
 export { CarouselIndicators } from './carousel-indicators'
-export { CarouselControls, CarouselControlNext, CarouselControlPrevious } from './carousel-control'
+export {
+  CarouselControls,
+  CarouselControlNext,
+  CarouselControlPrevious,
+} from './carousel-control'
 
 export type CarouselProps = JaxsTypes.Props<
   {

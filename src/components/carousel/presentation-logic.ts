@@ -27,6 +27,6 @@ export const caroselItemClasses = ({
 }: CaroselItemClassesArguments) => {
   const baseClass = 'carousel-item'
   const activeCrass = active ? 'active' : ''
-  
+
   return addClassesToBase(baseClass, [activeCrass, propClasses])
 }

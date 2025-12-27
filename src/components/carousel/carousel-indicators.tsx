@@ -6,10 +6,12 @@ import { createIndicatorsInfo } from './indicators-info'
 import { addClassesToBase } from '@components/presentation-logic'
 import { Map } from '@components/map'
 
-export type CarouselIndicatorsProps = JaxsTypes.Props<{
-  numberOfSlides: number
-  currentSlide?: number
-} & HTMLAttributes>
+export type CarouselIndicatorsProps = JaxsTypes.Props<
+  {
+    numberOfSlides: number
+    currentSlide?: number
+  } & HTMLAttributes
+>
 
 export const CarouselIndicators = ({
   numberOfSlides,
@@ -17,7 +19,7 @@ export const CarouselIndicators = ({
   class: propClasses,
   ...props
 }: CarouselIndicatorsProps) => {
-  const indicators = createIndicatorsInfo({numberOfSlides, currentSlide})
+  const indicators = createIndicatorsInfo({ numberOfSlides, currentSlide })
   const classes = addClassesToBase('carousel-indicators', propClasses)
 
   return (
@@ -32,7 +34,11 @@ type IndicatorButtonProps = JaxsTypes.Props<{
   ariaCurrent: BooleanString
   ariaLabel: string
 }>
-const IndicatorButton = ({class: propsClasses, ariaCurrent, ariaLabel}: IndicatorButtonProps) => {
+const IndicatorButton = ({
+  class: propsClasses,
+  ariaCurrent,
+  ariaLabel,
+}: IndicatorButtonProps) => {
   // Note attribute 'data-bs-target' this is required by Bootstrap for styling,
   // but Jaxs stores the data in other ways.
   return (

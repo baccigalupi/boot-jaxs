@@ -51,7 +51,10 @@ describe('carousel presentation logic', () => {
     })
 
     it('appends class names from props when provided', () => {
-      const className = caroselItemClasses({ active: false, propClasses: 'my-item-class' })
+      const className = caroselItemClasses({
+        active: false,
+        propClasses: 'my-item-class',
+      })
 
       expect(className).toBe('carousel-item my-item-class')
     })

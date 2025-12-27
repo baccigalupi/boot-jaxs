@@ -34,7 +34,7 @@ describe('addClassesToBase', () => {
       'btn-lg',
       undefined,
       'my-custom-class',
-      null,
+      undefined,
     ])
 
     expect(result).toBe('btn btn-primary btn-lg my-custom-class')

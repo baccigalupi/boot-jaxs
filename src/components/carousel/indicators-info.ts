@@ -7,7 +7,7 @@ export class IndicatorInfo {
   currentSlide: number
   slideId: number
 
-  constructor({currentSlide, slideId}: IndicatorInfoArguments) {
+  constructor({ currentSlide, slideId }: IndicatorInfoArguments) {
     this.currentSlide = currentSlide
     this.slideId = slideId
   }
@@ -37,7 +37,9 @@ export class IndicatorInfo {
   }
 }
 
-export const createIndicatorInfo = (args: IndicatorInfoArguments): IndicatorInfo => {
+export const createIndicatorInfo = (
+  args: IndicatorInfoArguments,
+): IndicatorInfo => {
   return new IndicatorInfo(args)
 }
 
@@ -50,7 +52,7 @@ export class IndicatorsInfo {
   numberOfSlides: number
   currentSlide: number
 
-  constructor({numberOfSlides, currentSlide}: IndicatorsInfoArguments) {
+  constructor({ numberOfSlides, currentSlide }: IndicatorsInfoArguments) {
     this.numberOfSlides = numberOfSlides
     this.currentSlide = currentSlide
   }
@@ -62,7 +64,7 @@ export class IndicatorsInfo {
     for (let index = 0; index < this.numberOfSlides; index++) {
       const indicatorInfo = createIndicatorInfo({
         currentSlide: this.currentSlide,
-        slideId: index
+        slideId: index,
       })
       this.indicators.push(indicatorInfo)
     }
@@ -71,6 +73,8 @@ export class IndicatorsInfo {
   }
 }
 
-export const createIndicatorsInfo = (args: IndicatorsInfoArguments): IndicatorInfo[] => {
+export const createIndicatorsInfo = (
+  args: IndicatorsInfoArguments,
+): IndicatorInfo[] => {
   return new IndicatorsInfo(args).create()
 }

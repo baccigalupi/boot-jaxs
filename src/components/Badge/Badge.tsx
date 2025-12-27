@@ -24,5 +24,9 @@ export const Badge = ({
 }: BadgeProps) => {
   const className = badgeClass({ variant, pill, propClass })
 
-  return <span class={className}>{label}</span>
+  return (
+    <span class={className} {...rest}>
+      {label}
+    </span>
+  )
 }

@@ -10,31 +10,23 @@ import { CardHeader } from '@components/card/card-header'
 import { CardFooter } from '@components/card/card-footer'
 import { CardText } from '@components/card/card-text'
 import { Link } from '@components/link/link'
+import { PlaceholderImage } from '@components/placeholder-image'
 
-// Placeholder image
-const ImageCap = ({ class: className }: { class: string }) => (
-  <svg
-    aria-label="Placeholder: Image cap"
-    class={`bd-placeholder-img ${className}`}
+const ImageTop = () => (
+  <PlaceholderImage
+    class="bd-placeholder-img card-img-top"
     height="180"
-    preserveAspectRatio="xMidYMid slice"
-    role="img"
-    width="100%"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title>Placeholder</title>
-    <rect width="100%" height="100%" fill="#868e96"></rect>
-    <text
-      x="50%"
-      y="50%"
-      fill="#dee2e6"
-      dominant-baseline="middle"
-      text-anchor="middle"
-      dy=".3em"
-    >
-      Placeholder image
-    </text>
-  </svg>
+    fontSize="1rem"
+    color="#666666"
+  />
+)
+const ImageBottom = () => (
+  <PlaceholderImage
+    class="bd-placeholder-img card-img-bottom"
+    height="180"
+    fontSize="1rem"
+    color="#666666"
+  />
 )
 
 const meta = {
@@ -43,7 +35,7 @@ const meta = {
   render: () =>
     renderJaxs(
       <Card class="w-50">
-        <ImageCap class="card-img-top" />
+        <ImageTop />
         <CardBody>
           <h5 class="card-title">Card title</h5>
           <CardText>
@@ -66,7 +58,7 @@ import { CardText } from './components/card/card-text'
 import { Button } from './components/button/button'
 
 <Card class="w-50">
-  <ImageCap class='card-img-top'/>
+  <ImageTop />
   <CardBody>
     <h5 class="card-title">Card title</h5>
     <CardText>
@@ -90,7 +82,7 @@ export const Basic: Story = {
   render: () =>
     renderJaxs(
       <Card class="w-50">
-        <ImageCap class="card-img-top" />
+        <ImageTop />
         <CardBody>
           <h5 class="card-title">Card title</h5>
           <CardText>
@@ -176,7 +168,7 @@ export const WithImagesOnBottom: Story = {
             another option with the image on the bottom.
           </CardText>
         </CardBody>
-        <ImageCap class="card-img-bottom" />
+        <ImageBottom />
       </Card>,
     ),
   parameters: {
@@ -195,7 +187,7 @@ import { CardText } from './components/card/card-text'
       another option with the image on the bottom.
     </CardText>
   </CardBody>
-  <ImageCap class="card-img-bottom"/>
+  <ImageBottom />
 </Card>
 `,
       },
