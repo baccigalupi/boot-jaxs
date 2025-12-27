@@ -17,6 +17,7 @@ component's store or listeners.
 - Button & Button Group
 - Breadcrumb
 - Card
+- Close Button (receives correct onClick event from connected universe)
 
 ### Dynamic or interactive
 
@@ -33,6 +34,8 @@ and I'm hoping through building these components out, it will be easy and clear.
   some of the interactions. Interval customization is not yet configured in, nor
   are some of the other connective data that are only useful with the
   interaction models setup.
+- Collapse: Similar to Accordion and Carousel. Parts of the dom are independent
+  and need state and events/handlers to connect the logic.
 
 ## Installation
 
