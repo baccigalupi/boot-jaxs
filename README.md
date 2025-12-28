@@ -36,6 +36,10 @@ and I'm hoping through building these components out, it will be easy and clear.
   interaction models setup.
 - Collapse: Similar to Accordion and Carousel. Parts of the dom are independent
   and need state and events/handlers to connect the logic.
+- Dropdown: CSS handled, but not for menu alignment. That feels like a non-MVP
+  task. The Direction of the pop is handled though with additional CSS and also
+  the up direction puts the menu before the trigger. Another thing not handled
+  is non-list menus, like forms.
 
 ## Installation
 

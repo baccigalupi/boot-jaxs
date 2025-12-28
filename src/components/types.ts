@@ -40,3 +40,4 @@ export type Size = 'sm' | 'lg'
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type CaroselRide = 'carousel' | 'true' | undefined
 export type BooleanString = 'true' | 'false'
+export type ContentDirection = 'up' | 'down' | 'start' | 'end'

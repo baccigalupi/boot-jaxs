@@ -1,3 +1,5 @@
+import { BooleanString } from './types'
+
 type MaybeStringArray = (string | undefined)[]
 
 export const addClassesToBase = (
@@ -19,4 +21,8 @@ const filterClassList = (classList: MaybeStringArray): string[] => {
     (className): className is string =>
       typeof className === 'string' && className.trim() !== '',
   )
+}
+
+export const booleanToString = (value: boolean): BooleanString => {
+  return value ? 'true' : 'false'
 }
