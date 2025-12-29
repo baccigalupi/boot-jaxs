@@ -18,6 +18,8 @@ component's store or listeners.
 - Breadcrumb
 - Card
 - Close Button (receives correct onClick event from connected universe)
+- List Group, ListGroupActionItem is a link, and so requires either `href` and
+  `onClick` properties or custom data connections
 
 ### Dynamic or interactive
 

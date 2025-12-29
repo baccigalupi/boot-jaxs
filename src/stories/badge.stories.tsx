@@ -111,7 +111,7 @@ export const Pill: Story = {
 export const InButton: Story = {
   render: () => {
     return renderJaxs(
-      <Button>
+      <Button onClick="on-click">
         Notifications
         <Badge variant="light" label="23" />
       </Button>,
