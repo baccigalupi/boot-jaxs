@@ -3,7 +3,7 @@
 import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
 import { renderJaxs } from '../../.storybook/render-jaxs'
-import { Card } from '@components/card/card'
+import { Card, CardTitle, CardSubtitle } from '@components/card/card'
 import { CardBody } from '@components/card/card-body'
 import { CardGroup } from '@components/card/card-group'
 import { CardHeader } from '@components/card/card-header'
@@ -60,7 +60,7 @@ import { Button } from './components/button/button'
 <Card class="w-50">
   <ImageTop />
   <CardBody>
-    <h5 class="card-title">Card title</h5>
+    <CardTitle>Card title</CardTitle>
     <CardText>
       Some quick example text to build on the card title and make up the
       bulk of the card's content.
@@ -84,7 +84,7 @@ export const Basic: Story = {
       <Card class="w-50">
         <ImageTop />
         <CardBody>
-          <h5 class="card-title">Card title</h5>
+          <CardTitle>Card title</CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -111,8 +111,10 @@ export const TitlesTextLinks: Story = {
     renderJaxs(
       <Card class="w-25">
         <CardBody>
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <CardTitle>Card title</CardTitle>
+          <CardSubtitle class="mb-2 text-body-secondary">
+            Card subtitle
+          </CardSubtitle>
           <CardText>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -136,8 +138,8 @@ import { Button } from './components/button/button'
 
 <Card class="w-25">
   <CardBody>
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+    <CardTitle>Card title</CardTitle>
+    <CardSubtitle class="mb-2 text-body-secondary">Card subtitle</CardSubtitle>
     <CardText>
       Some quick example text to build on the card title and make up the
       bulk of the card's content.
@@ -161,8 +163,10 @@ export const WithImagesOnBottom: Story = {
     renderJaxs(
       <Card class="w-50">
         <CardBody>
-          <h5 class="card-title">Image is on the bottom</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <CardTitle>Image is on the bottom</CardTitle>
+          <CardSubtitle class="mb-2 text-body-secondary">
+            Card subtitle
+          </CardSubtitle>
           <CardText>
             Previous example showed the image at the top of the card. This is
             another option with the image on the bottom.
@@ -180,8 +184,8 @@ import { CardText } from './components/card/card-text'
 
 <Card class='w-50'>
   <CardBody>
-    <h5 class="card-title">Image is on the bottom</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+    <CardTitle>Image is on the bottom</CardTitle>
+    <CardSubtitle class="mb-2 text-body-secondary">Card subtitle</CardSubtitle>
     <CardText>
       Previous example showed the image at the top of the card. This is
       another option with the image on the bottom.
@@ -234,7 +238,7 @@ export const WithHeaderFooter: Story = {
       <Card class="text-center">
         <CardHeader>Featured</CardHeader>
         <CardBody>
-          <h5 class="card-title">Special title treatment</h5>
+          <CardTitle>Special title treatment</CardTitle>
           <CardText>
             With supporting text below as a natural lead-in to additional
             content.
@@ -257,7 +261,7 @@ import { CardText } from './components/card/card-text'
 <Card class="text-center">
   <CardHeader>Featured</CardHeader>
   <CardBody>
-    <h5 class="card-title">Special title treatment</h5>
+    <CardTitle>Special title treatment</CardTitle>
     <CardText>
       With supporting text below as a natural lead-in to additional
       content.
@@ -280,7 +284,7 @@ export const InCardGroup: Story = {
       <CardGroup class="row">
         <Card class="col col-sm-6 mb-3 mb-sm-0">
           <CardBody>
-            <h5 class="card-title">Special title treatment</h5>
+            <CardTitle>Special title treatment</CardTitle>
             <CardText>
               With supporting text below as a natural lead-in to additional
               content.
@@ -292,7 +296,7 @@ export const InCardGroup: Story = {
         </Card>
         <Card class="col col-sm-6">
           <CardBody>
-            <h5 class="card-title">Special title treatment</h5>
+            <CardTitle>Special title treatment</CardTitle>
             <CardText>
               With supporting text below as a natural lead-in to additional
               content.
@@ -316,14 +320,14 @@ import { Link } from './components/button/link'
 <CardGroup class='row'>
   <Card class="col col-sm-6 mb-3 mb-sm-0">
     <CardBody>
-      <h5 class="card-title">Special title treatment</h5>
+      <CardTitle>Special title treatment</CardTitle>
       <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
       <Link href="#" class="btn btn-primary">Go somewhere</Link>
     </CardBody>
   </Card>
   <Card class="col col-sm-6">
     <CardBody>
-      <h5 class="card-title">Special title treatment</h5>
+      <CardTitle>Special title treatment</CardTitle>
       <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
       <Link href="#" class="btn btn-primary">Go somewhere</Link>
     </CardBody>

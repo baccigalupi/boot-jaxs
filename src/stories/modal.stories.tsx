@@ -10,6 +10,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  ModalTitle,
 } from '../components/modal/modal'
 import { Button } from '../components/button/button'
 
@@ -18,10 +19,14 @@ const meta = {
   tags: ['autodocs'],
   render: () =>
     renderJaxs(
-      <Modal id="example-modal" visible={true} class="bg-secondary-subtle position-static d-block">
+      <Modal
+        id="example-modal"
+        visible={true}
+        class="bg-secondary-subtle position-static d-block"
+      >
         <ModalContent>
           <ModalHeader>
-            <h5 class="modal-title">Modal title</h5>
+            <ModalTitle>Modal title</ModalTitle>
           </ModalHeader>
           <ModalBody>Modal body text goes here.</ModalBody>
           <ModalFooter>
@@ -51,7 +56,7 @@ import { Button } from './components/button/button'
 <Modal id="example-modal" visible={true}>
   <ModalContent>
     <ModalHeader>
-      <h5 class="modal-title">Modal title</h5>
+      <ModalTitle>Modal title</ModalTitle>
     </ModalHeader>
     <ModalBody>Modal body text goes here.</ModalBody>
     <ModalFooter>
@@ -80,15 +85,19 @@ export const Scrollable: Story = {
   render: () =>
     renderJaxs(
       <div class="vh-100 d-flex align-items-center">
-        <Modal id="scrollable-modal" visible={true} class="bg-secondary-subtle position-static d-block">
+        <Modal
+          id="scrollable-modal"
+          visible={true}
+          class="bg-secondary-subtle position-static d-block"
+        >
           <ModalContent scrollable={true}>
             <ModalHeader>
-              <h5 class="modal-title">Scrollable modal</h5>
+              <ModalTitle>Scrollable modal</ModalTitle>
             </ModalHeader>
             <ModalBody>
               <p>
-                This is a scrollable modal. When content exceeds the modal height,
-                the modal body will scroll.
+                This is a scrollable modal. When content exceeds the modal
+                height, the modal body will scroll.
               </p>
               {Array.from({ length: 20 }, (_, i) => (
                 <p>Paragraph {i + 1} of repeated content.</p>

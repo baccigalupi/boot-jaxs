@@ -12,6 +12,7 @@ import {
   CarouselCaption,
 } from '@components/carousel/carousel'
 import { PlaceholderImage } from '@components/placeholder-image'
+import { Header } from '@components/header/header'
 
 const meta = {
   title: 'Bootstrap/Carousel',
@@ -170,7 +171,7 @@ export const WithCaptions: Story = {
               height="400px"
             />
             <CarouselCaption>
-              <h5>First Slide Label</h5>
+              <Header level="h5">First Slide Label</Header>
               <p>
                 Some representative placeholder content for the first slide.
               </p>
@@ -185,7 +186,7 @@ export const WithCaptions: Story = {
               height="400px"
             />
             <CarouselCaption>
-              <h5>Second Slide Label</h5>
+              <Header level="h5">Second Slide Label</Header>
               <p>
                 Some representative placeholder content for the second slide.
               </p>
@@ -200,7 +201,7 @@ export const WithCaptions: Story = {
               height="400px"
             />
             <CarouselCaption>
-              <h5>Third Slide Label</h5>
+              <Header level="h5">Third Slide Label</Header>
               <p>
                 Some representative placeholder content for the third slide.
               </p>

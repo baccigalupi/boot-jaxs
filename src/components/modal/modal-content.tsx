@@ -16,11 +16,14 @@ export const ModalContent = ({
   scrollable = false,
   ...props
 }: ModalContentProps) => {
-  const dialogClasses = modalDialogClassName({ scrollable, propClasses: className })
+  const dialogClasses = modalDialogClassName({
+    scrollable,
+    propClasses: className,
+  })
 
   return (
     <div class={dialogClasses} {...props}>
-      <div class='modal-content'>{children}</div>
+      <div class="modal-content">{children}</div>
     </div>
   )
 }

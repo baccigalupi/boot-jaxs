@@ -18,7 +18,7 @@ export const Modal = ({
   visible = false,
   ...props
 }: ModalProps) => {
-  const modalClasses = modalClassName({visible, propClasses})
+  const modalClasses = modalClassName({ visible, propClasses })
   const ariaHidden = visible ? 'false' : 'true'
   // TODO: aria-labelledby should point to the id of the modal title
 
@@ -41,3 +41,4 @@ export { ModalContent } from './modal-content'
 export { ModalHeader } from './modal-header'
 export { ModalBody } from './modal-body'
 export { ModalFooter } from './modal-footer'
+export { ModalTitle } from './modal-title'

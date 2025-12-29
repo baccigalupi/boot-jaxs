@@ -15,3 +15,6 @@ export const Card = ({ children, class: className, ...props }: CardProps) => {
     </div>
   )
 }
+
+export { CardTitle } from './card-title'
+export { CardSubtitle } from './card-subtitle'

@@ -1,14 +1,17 @@
 import { addClassesToBase } from '@components/presentation-logic'
 
 type modalClassNameProps = {
-  propClasses?: string,
+  propClasses?: string
   visible?: boolean
 }
-export const modalClassName = ({propClasses, visible=false}: modalClassNameProps): string => {
+export const modalClassName = ({
+  propClasses,
+  visible = false,
+}: modalClassNameProps): string => {
   // 'fade show'
   // 'position-static d-block'
   const visibilityClass = visible ? 'fade show dislpay-block' : ''
-  
+
   return addClassesToBase('modal', [visibilityClass, propClasses])
 }
 

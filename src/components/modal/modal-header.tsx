@@ -9,9 +9,7 @@ type ModalHeaderCloseButtonProps = {
   show: boolean
 }
 
-const ModalHeaderCloseButton = ({
-  show,
-}: ModalHeaderCloseButtonProps) => {
+const ModalHeaderCloseButton = ({ show }: ModalHeaderCloseButtonProps) => {
   if (!show) return
 
   return <CloseButton aria-label="Close" />
