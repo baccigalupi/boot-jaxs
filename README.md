@@ -42,6 +42,8 @@ and I'm hoping through building these components out, it will be easy and clear.
   task. The Direction of the pop is handled though with additional CSS and also
   the up direction puts the menu before the trigger. Another thing not handled
   is non-list menus, like forms.
+- Modal: styling and scrolling working. Needs connective tissue between
+  components and data.
 
 ## Installation
 
