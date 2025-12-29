@@ -22,6 +22,9 @@ component's store or listeners.
   `onClick` properties or custom data connections
 - Header: H1-H6 components allowing override with styling to look like another
   heading
+- Navbar. The hamburger button requires interactivity, and the visuals can
+  be seen via using developer tools in the desktop browser to show in phone
+  mode.
 
 ### Dynamic or interactive
 

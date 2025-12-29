@@ -52,7 +52,7 @@ export const SemanticVsVisual: Story = {
         <Header level="h4" class="h2">
           Semantic h4 styled as h2
         </Header>
-      </div>
+      </div>,
     ),
   parameters: {
     docs: {
