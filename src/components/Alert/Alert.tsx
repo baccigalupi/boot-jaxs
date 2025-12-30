@@ -2,21 +2,24 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { componentName } from './component'
-import { StyleVariant } from '../types'
+import { HTMLAttributes, StyleVariant } from '../types'
 import { alertClassName, buildOnClickEvent } from './presentation-logic'
 import { CloseButton } from '@components/close-button/close-button'
 
-export type AlertProps = JaxsTypes.Props<{
-  message: string
-  id: string
-  type?: StyleVariant
-  dismissible?: boolean
-}>
+export type AlertProps = JaxsTypes.Props<
+  {
+    id: string
+    variant?: StyleVariant
+    dismissible?: boolean
+  } & HTMLAttributes
+>
 
-type ButtonProps = JaxsTypes.Props<{
-  dismissible: boolean
-  onClick: string
-}>
+type ButtonProps = JaxsTypes.Props<
+  {
+    dismissible: boolean
+    onClick: string
+  } & HTMLAttributes
+>
 
 const DismissibleButton = ({ dismissible, onClick }: ButtonProps) => {
   if (!dismissible) return
@@ -26,11 +29,12 @@ const DismissibleButton = ({ dismissible, onClick }: ButtonProps) => {
 
 export const Alert = ({
   id,
-  type = 'primary',
+  variant = 'primary',
   dismissible = false,
+  class: propClasses,
   children,
 }: AlertProps) => {
-  const className = alertClassName(type, dismissible)
+  const className = alertClassName(variant, dismissible, propClasses)
   const onClick = buildOnClickEvent(id, componentName)
 
   return (

@@ -34,7 +34,7 @@ export type StyleVariant =
   | 'dark'
 
 // Button specific types
-export type ButtonVariant = StyleVariant | 'link'
+export type ButtonVariant = StyleVariant | 'link' | 'none'
 export type ButtonType = 'button' | 'submit' | 'reset'
 export type Size = 'sm' | 'lg'
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'

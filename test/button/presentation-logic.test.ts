@@ -20,6 +20,18 @@ describe('buttonClass', () => {
     expect(className).toBe('btn btn-outline-danger')
   })
 
+  it('when the variant is "none" it does not create a variant class', () => {
+    const className = buttonClass({ variant: 'none' })
+
+    expect(className).toBe('btn')
+  })
+
+  it('when the variant is "none" and outline is true, it doesn\'t create an outline class', () => {
+    const className = buttonClass({ variant: 'none', outline: true })
+
+    expect(className).toBe('btn')
+  })
+
   it('when a size is passed in, it uses it', () => {
     const className = buttonClass({
       variant: 'primary',

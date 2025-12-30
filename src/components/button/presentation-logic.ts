@@ -14,11 +14,20 @@ export const buttonClass = ({
   outline = false,
   size,
 }: ButtonClassProps): string => {
-  const variantClass = outline
-    ? `btn btn-outline-${variant}`
-    : `btn btn-${variant}`
   const sizeClass = size ? `btn-${size}` : ''
-  const baseClass = addClassesToBase(variantClass, sizeClass)
+  const variantClass = calculateVariantClass(variant, outline)
+  return addClassesToBase('btn', [variantClass, sizeClass, propClass])
+}
 
-  return addClassesToBase(baseClass, propClass)
+const calculateVariantClass = (
+  variant: ButtonVariant,
+  outline: boolean,
+): string => {
+  if (variant === 'none') {
+    return ''
+  } else if (outline) {
+    return `btn-outline-${variant}`
+  } else {
+    return `btn-${variant}`
+  }
 }
