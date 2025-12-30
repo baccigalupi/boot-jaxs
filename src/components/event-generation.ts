@@ -1,13 +1,34 @@
-export const baseEvent = 'boot-jaxs'
+type ComponentAction = { component: string; action: string }
 
-export const createEventName = (
+export const baseEvent = 'boot-jaxs'
+export const componentNamePrefix = ({ component }: { component: string }) => {
+  return `${baseEvent}:${component}`
+}
+
+export const generateEvent = (
   component: string,
   action: string,
   id?: string,
 ) => {
+  const prefix = componentNamePrefix({ component })
   if (id) {
-    return `${baseEvent}:${component}:${action}:${id}`
+    return `${prefix}:${action}:${id}`
   } else {
-    return `${baseEvent}:${component}:${action}`
+    return `${prefix}:${action}`
   }
+}
+
+export const eventGeneratorFor = ({
+  component,
+  action,
+}: {
+  component: string
+  action: string
+}) => {
+  return (id: string) => generateEvent(component, action, id)
+}
+
+export const generateMatcher = ({ component, action }: ComponentAction) => {
+  const prefix = `${baseEvent}:${component}:${action}`
+  return new RegExp(`${prefix}:(.+)`)
 }

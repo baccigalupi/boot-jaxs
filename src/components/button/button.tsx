@@ -31,7 +31,7 @@ export const Button = (props: ButtonProps) => {
   const className = buttonClass({ variant, outline, size, propClass })
   const buttonProps = { type, disabled, ...rest }
   return (
-    <button {...buttonProps} class={className}>
+    <button onClick={onClick} {...buttonProps} class={className}>
       {children}
     </button>
   )

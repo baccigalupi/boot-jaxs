@@ -3,7 +3,7 @@
 import { jsx } from 'jaxs'
 
 import { Alert } from '../components/alert/alert'
-import { PageNavbar } from './app/navbar'
+import { PageNavbar } from './app/page-navbar'
 
 export const App = () => {
   return (

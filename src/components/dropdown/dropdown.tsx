@@ -1,11 +1,5 @@
 export { Dropdown, type DropdownProps } from './dropdown-container'
-export {
-  DropdownMenu,
-  DropUpMenu,
-  DropEndMenu,
-  DropStartMenu,
-  type DropdownMenuProps,
-} from './dropdown-menu'
+export { DropdownMenu, type DropdownMenuProps } from './dropdown-menu'
 export { DropdownItem, type DropdownItemProps } from './dropdown-item'
 export { DropdownDivider, type DropdownDividerProps } from './dropdown-divider'
 export { DropdownHeader, type DropdownHeaderProps } from './dropdown-header'

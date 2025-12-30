@@ -9,6 +9,16 @@
   display: inline-block;
 }
 
+.dropdown {
+  min-width: 10rem; /*
+    min-width for dropdowns is set as --bs-dropdown-min-width defaults to 10rem
+    var(--bs-dropdown-min-width) doesn't work :( TODO: investigate
+  */
+}
+.dropdown.dropend, .dropdown.dropstart {
+  min-width: 0;
+}
+
 .dropdown-menu-direction-down {
   top: 100%;
   left: 0px;

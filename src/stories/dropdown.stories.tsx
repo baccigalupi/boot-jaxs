@@ -6,9 +6,6 @@ import { renderJaxs } from '../../.storybook/render-jaxs'
 import {
   Dropdown,
   DropdownMenu,
-  DropUpMenu,
-  DropEndMenu,
-  DropStartMenu,
   DropdownItem,
   DropdownDivider,
   DropdownHeader,
@@ -22,10 +19,10 @@ const meta = {
   render: () =>
     renderJaxs(
       <Dropdown id="example-dropdown">
-        <DropdownButton variant="primary" onClick="toggle-dropdown">
+        <DropdownButton variant="primary" dropdownId="example-dropdown">
           Dropdown button
         </DropdownButton>
-        <DropdownMenu>
+        <DropdownMenu dropdownId="example-dropdown">
           <DropdownItem href="#" onClick="action-1">
             Action
           </DropdownItem>
@@ -42,13 +39,13 @@ const meta = {
     docs: {
       source: {
         language: 'tsx',
-        code: `import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from './components/dropdown/dropdown'
+        code: `import { Dropdown, DropdownButton, DropdownMenu, DropdownItem } from './components/dropdown/dropdown'
 
-<Dropdown>
-  <DropdownButton variant="primary" onClick="toggle-dropdown">
+<Dropdown id="example-dropdown">
+  <DropdownButton variant="primary" dropdownId="example-dropdown">
     Dropdown button
   </DropdownButton>
-  <DropdownMenu>
+  <DropdownMenu dropdownId="example-dropdown">
     <DropdownItem href="#" onClick="action-1">Action</DropdownItem>
     <DropdownItem href="#" onClick="action-2">Another action</DropdownItem>
     <DropdownItem href="#" onClick="action-3">Something else here</DropdownItem>
@@ -66,10 +63,10 @@ export const Default: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="default-dropdown">
-        <DropdownButton variant="primary" onClick="toggle-dropdown">
+        <DropdownButton variant="primary" dropdownId="default-dropdown">
           Dropdown button
         </DropdownButton>
-        <DropdownMenu show={true}>
+        <DropdownMenu dropdownId="default-dropdown">
           <DropdownItem href="#" onClick="action-1">
             Action
           </DropdownItem>
@@ -91,11 +88,11 @@ export const DropdownButtonWithSplit: Story = {
         <DropdownButtonSplit
           variant="success"
           onClick="main-action"
-          toggleOnClick="toggle-split-dropdown"
+          dropdownId="split-button-dropdown"
         >
           Main Action
         </DropdownButtonSplit>
-        <DropdownMenu show={true}>
+        <DropdownMenu dropdownId="split-button-dropdown">
           <DropdownItem href="#" onClick="action-1">
             Action
           </DropdownItem>
@@ -112,30 +109,25 @@ export const DropdownButtonWithSplit: Story = {
     docs: {
       source: {
         code: `<Dropdown id="split-button-dropdown">
-    DropdownButtonSplit
-      variant="success"
-      onClick="main-action"
-      toggleOnClick="toggle-split-dropdown"
-    >
-      Main Action
-    </DropdownButtonSplit>
-    <DropdownToggle
-      variant="success"
-      split={true}
-      onClick="toggle-split-dropdown"
-    />
-    <DropdownMenu show={true}>
-      <DropdownItem href="#" onClick="action-1">
-        Action
-      </DropdownItem>
-      <DropdownItem href="#" onClick="action-2">
-        Another action
-      </DropdownItem>
-      <DropdownItem href="#" onClick="action-3">
-        Something else here
-      </DropdownItem>
-    </DropdownMenu>
-  </Dropdown>`,
+  <DropdownButtonSplit
+    variant="success"
+    onClick="main-action"
+    dropdownId="split-button-dropdown"
+  >
+    Main Action
+  </DropdownButtonSplit>
+  <DropdownMenu show={true} dropdownId="split-button-dropdown">
+    <DropdownItem href="#" onClick="action-1">
+      Action
+    </DropdownItem>
+    <DropdownItem href="#" onClick="action-2">
+      Another action
+    </DropdownItem>
+    <DropdownItem href="#" onClick="action-3">
+      Something else here
+    </DropdownItem>
+  </DropdownMenu>
+</Dropdown>`,
       },
     },
   },
@@ -145,10 +137,10 @@ export const WithDividers: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="dropdown-with-dividers">
-        <DropdownButton variant="secondary" onClick="toggle-dividers">
+        <DropdownButton variant="secondary" dropdownId="dropdown-with-dividers">
           Dropdown with dividers
         </DropdownButton>
-        <DropdownMenu show={true}>
+        <DropdownMenu dropdownId="dropdown-with-dividers">
           <DropdownItem href="#">Action</DropdownItem>
           <DropdownItem href="#">Another action</DropdownItem>
           <DropdownItem href="#">Something else here</DropdownItem>
@@ -161,8 +153,10 @@ export const WithDividers: Story = {
     docs: {
       source: {
         code: `<Dropdown id="dropdown-with-dividers">
-  <DropdownButton variant="secondary">Dropdown with dividers</DropdownButton>
-  <DropdownMenu>
+  <DropdownButton variant="secondary" dropdownId="dropdown-with-dividers">
+    Dropdown with dividers
+  </DropdownButton>
+  <DropdownMenu show={true} dropdownId="dropdown-with-dividers">
     <DropdownItem href="#">Action</DropdownItem>
     <DropdownItem href="#">Another action</DropdownItem>
     <DropdownItem href="#">Something else here</DropdownItem>
@@ -179,10 +173,10 @@ export const WithHeaders: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="dropdown-with-headers">
-        <DropdownButton variant="primary" onClick="toggle-headers">
+        <DropdownButton variant="primary" dropdownId="dropdown-with-headers">
           Dropdown with headers
         </DropdownButton>
-        <DropdownMenu show={true}>
+        <DropdownMenu dropdownId="dropdown-with-headers">
           <DropdownHeader>Dropdown header</DropdownHeader>
           <DropdownItem href="#">Action</DropdownItem>
           <DropdownItem href="#">Another action</DropdownItem>
@@ -196,8 +190,10 @@ export const WithHeaders: Story = {
     docs: {
       source: {
         code: `<Dropdown id="dropdown-with-headers">
-  <DropdownButton variant="primary" onClick="toggle-headers">Dropdown with headers</DropdownButton>
-  <DropdownMenu show={true}>
+  <DropdownButton variant="primary" dropdownId="dropdown-with-headers">
+    Dropdown with headers
+  </DropdownButton>
+  <DropdownMenu dropdownId="dropdown-with-headers">
     <DropdownHeader>Dropdown header</DropdownHeader>
     <DropdownItem href="#">Action</DropdownItem>
     <DropdownItem href="#">Another action</DropdownItem>
@@ -215,10 +211,10 @@ export const ActiveAndDisabled: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="dropdown-with-states">
-        <DropdownButton variant="primary" onClick="toggle-states">
+        <DropdownButton variant="primary" dropdownId="dropdown-with-states">
           Dropdown with states
         </DropdownButton>
-        <DropdownMenu show={true}>
+        <DropdownMenu dropdownId="dropdown-with-states">
           <DropdownItem href="#active" active={true}>
             Active item
           </DropdownItem>
@@ -232,9 +228,11 @@ export const ActiveAndDisabled: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Dropdown>
-  <DropdownButton variant="primary" onClick="toggle-states">Dropdown</DropdownButton>
-  <DropdownMenu show={true}>
+        code: `<Dropdown id="dropdown-with-states">
+  <DropdownButton variant="primary" dropdownId="dropdown-with-states">
+    Dropdown with states
+  </DropdownButton>
+  <DropdownMenu dropdownId="dropdown-with-states">
     <DropdownItem href="#active" active={true}>Active item</DropdownItem>
     <DropdownItem href="#regular">Regular item</DropdownItem>
     <DropdownItem href="#disabled" disabled={true}>Disabled item</DropdownItem>
@@ -249,12 +247,12 @@ export const Dropup: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="dropup" class="dropup">
-        <DropUpMenu show={true}>
+        <DropdownMenu dropDirection="up" dropdownId="dropup">
           <DropdownItem href="#item-1">Item 1</DropdownItem>
           <DropdownItem href="#item-2">Item 2</DropdownItem>
           <DropdownItem href="#item-3">Item 3</DropdownItem>
-        </DropUpMenu>
-        <DropdownButton onClick="toggle-dropdown">Drop-up</DropdownButton>
+        </DropdownMenu>
+        <DropdownButton dropdownId="dropup">Drop-up</DropdownButton>
       </Dropdown>,
     ),
   parameters: {
@@ -265,12 +263,12 @@ export const Dropup: Story = {
       },
       source: {
         code: `<Dropdown id="dropup" class='dropup'>
-  <DropUpMenu show={true} >
+  <DropdownMenu dropDirection="up" dropdownId="dropup">
     <DropdownItem href="#item-1">Item 1</DropdownItem>
     <DropdownItem href="#item-2">Item 2</DropdownItem>
     <DropdownItem href="#item-3">Item 3</DropdownItem>
-  </DropUpMenu>
-  <DropdownButton onClick="toggle-dropdown">Drop-up</DropdownButton>
+  </DropdownMenu>
+  <DropdownButton dropdownId="dropup">Drop-up</DropdownButton>
 </Dropdown>`,
       },
     },
@@ -281,28 +279,28 @@ export const DropEnd: Story = {
   render: () =>
     renderJaxs(
       <Dropdown id="dropend" class="dropend">
-        <DropdownButton onClick="toggle-dropdown">Drop-end</DropdownButton>
-        <DropEndMenu show={true}>
+        <DropdownButton dropdownId="dropend">Drop-end</DropdownButton>
+        <DropdownMenu dropDirection="end" dropdownId="dropend">
           <DropdownItem href="#item-1">Item 1</DropdownItem>
           <DropdownItem href="#item-2">Item 2</DropdownItem>
           <DropdownItem href="#item-3">Item 3</DropdownItem>
-        </DropEndMenu>
+        </DropdownMenu>
       </Dropdown>,
     ),
   parameters: {
     docs: {
       description: {
         story:
-          'Dropdowns are kind of misnamed and can drop in any direction. This one drops upwards, maybe because it is at the bottom of the page?',
+          'Dropdowns are kind of misnamed and can drop in any direction. This one drops to the end (right in LTR languages).',
       },
       source: {
         code: `<Dropdown id="dropend" class='dropend'>
-  <DropUpMenu show={true} >
+  <DropdownButton dropdownId="dropend">Drop-end</DropdownButton>
+  <DropdownMenu dropDirection="end" dropdownId="dropend">
     <DropdownItem href="#item-1">Item 1</DropdownItem>
     <DropdownItem href="#item-2">Item 2</DropdownItem>
     <DropdownItem href="#item-3">Item 3</DropdownItem>
-  </DropUpMenu>
-  <DropdownButton onClick="toggle-dropdown">Drop-up</DropdownButton>
+  </DropdownMenu>
 </Dropdown>`,
       },
     },
@@ -314,12 +312,15 @@ export const DropStart: Story = {
     renderJaxs(
       <div class="d-flex justify-content-center">
         <Dropdown id="dropstart" class="dropstart">
-          <DropdownButton onClick="toggle-dropdown">Drop-start</DropdownButton>
-          <DropStartMenu show={true}>
+          <DropdownButton dropdownId="dropstart">Drop-start</DropdownButton>
+          <DropdownMenu
+            dropDirection="start"
+            dropdownId="dropstart"
+          >
             <DropdownItem href="#item-1">Item 1</DropdownItem>
             <DropdownItem href="#item-2">Item 2</DropdownItem>
             <DropdownItem href="#item-3">Item 3</DropdownItem>
-          </DropStartMenu>
+          </DropdownMenu>
         </Dropdown>
       </div>,
     ),
@@ -327,17 +328,17 @@ export const DropStart: Story = {
     docs: {
       description: {
         story:
-          'Dropdowns are kind of misnamed and can drop in any direction. This one drops upwards, maybe because it is at the bottom of the page?',
+          'Dropdowns are kind of misnamed and can drop in any direction. This one drops to the start (left in LTR languages).',
       },
       source: {
         code: `<div class="d-flex justify-content-center">
   <Dropdown id="dropstart" class="dropstart">
-    <DropdownButton onClick="toggle-dropdown">Drop-start</DropdownButton>
-    <DropStartMenu show={true}>
+    <DropdownButton dropdownId="dropstart">Drop-start</DropdownButton>
+    <DropdownMenu dropDirection="start" dropdownId="dropstart">
       <DropdownItem href="#item-1">Item 1</DropdownItem>
       <DropdownItem href="#item-2">Item 2</DropdownItem>
       <DropdownItem href="#item-3">Item 3</DropdownItem>
-    </DropStartMenu>
+    </DropdownMenu>
   </Dropdown>
 </div>`,
       },

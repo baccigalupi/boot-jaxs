@@ -1,14 +1,15 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx } from 'jaxs'
+import { jsx, JaxsTypes } from 'jaxs'
 import { Button, ButtonProps } from '@components/button/button'
 import { addClassesToBase } from '@components/presentation-logic'
+import { generateToggleEvent } from './interactions'
 
-export type DropdownButtonProps = ButtonProps & {
-  onClick?: string
-  dropdownId: string
-}
-
+export type DropdownButtonProps = JaxsTypes.Props<
+  {
+    dropdownId: string
+  } & Omit<ButtonProps, 'onClick'>
+>
 export const DropdownButton = ({
   class: propsClass,
   dropdownId,
@@ -16,7 +17,7 @@ export const DropdownButton = ({
   ...props
 }: DropdownButtonProps) => {
   const classes = addClassesToBase('dropdown-toggle', propsClass)
-  const onClick = ``
+  const onClick = generateToggleEvent(dropdownId)
 
   return (
     <Button class={classes} onClick={onClick} {...props}>
