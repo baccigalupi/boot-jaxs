@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
-import { componentName } from './component'
+import { componentName } from './interactions'
 import { HTMLAttributes, StyleVariant } from '../types'
 import { alertClassName, buildOnClickEvent } from './presentation-logic'
 import { CloseButton } from '@components/close-button/close-button'

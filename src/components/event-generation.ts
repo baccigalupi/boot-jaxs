@@ -1,3 +1,5 @@
+import { JaxsTypes } from 'jaxs'
+
 type ComponentAction = { component: string; action: string }
 
 export const baseEvent = 'boot-jaxs'
@@ -34,14 +36,25 @@ export const generateMatcher = ({ component, action }: ComponentAction) => {
 }
 
 export const eventIdMatch = (matcher: RegExp) => (eventName: string) => {
-  return eventName.match(matcher)?.[1]
+  return eventName.match(matcher)?.[1] || ''
 }
 
-export const createEventManagers = (componentAction: ComponentAction) => {
+export const getStoreName = (component: string) => {
+  return componentNamePrefix({ component })
+}
+
+export const getStore = <T>(componentAction: ComponentAction) => {
+  const name = getStoreName(componentAction.component)
+  return (state: JaxsTypes.State) => state.store<T>(name)
+}
+
+export const createEventManagers = <T>(componentAction: ComponentAction) => {
   const matcher = generateMatcher(componentAction)
   return {
     matcher: matcher,
     eventGenerator: eventGeneratorFor(componentAction),
     match: eventIdMatch(matcher),
+    getStoreName: getStoreName(componentAction.component),
+    getStore: getStore<T>(componentAction),
   }
 }
