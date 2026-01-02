@@ -1,14 +1,9 @@
 import { JaxsTypes, ListStore } from 'jaxs'
-import { createEventManagers, getStoreName } from '@components/event-generation'
+import { createEventManagers, createStore } from '@components/event-generation'
 
 export const componentName = 'alert'
 export type AlertsState = string[]
 const initialState = [] as AlertsState
-
-const createStore = (app: JaxsTypes.App) => {
-  const storeName = getStoreName(componentName)
-  return app.state.create<AlertsState>(storeName, initialState)
-}
 
 const add = createEventManagers<AlertsState>({
   component: componentName,
@@ -39,7 +34,7 @@ export const addAlert: JaxsTypes.BusListener<unknown> = ({
 }
 
 export const registerComponent = (app: JaxsTypes.App) => {
-  createStore(app)
+  createStore(app, componentName, initialState)
 
   app.subscribe(remove.matcher, removeAlert)
   app.subscribe(add.matcher, addAlert)

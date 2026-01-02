@@ -48,6 +48,15 @@ export const getStore = <T>(componentAction: ComponentAction) => {
   return (state: JaxsTypes.State) => state.store<T>(name)
 }
 
+export const createStore = <T>(
+  app: JaxsTypes.App,
+  componentName: string,
+  initialState: T,
+) => {
+  const storeName = getStoreName(componentName)
+  return app.state.create<T>(storeName, initialState)
+}
+
 export const createEventManagers = <T>(componentAction: ComponentAction) => {
   const matcher = generateMatcher(componentAction)
   return {

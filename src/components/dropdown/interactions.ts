@@ -1,41 +1,36 @@
 import { JaxsTypes, ListStore } from 'jaxs'
 import {
-  componentNamePrefix,
+  getStoreName,
   createEventManagers,
+  createStore,
 } from '@components/event-generation'
 import { onDocumentClick } from '@components/document'
 
 // Initial setup
 export const component = 'dropdown'
-export const dropdownStoreName = componentNamePrefix({ component })
-const initialState: DropdownsState = []
+export const dropdownStoreName = getStoreName(component)
 export type DropdownsState = string[] // array of dropdown ids that are open
-export const createDropdownStore = (app: JaxsTypes.App) => {
-  return app.state.create<DropdownsState>(dropdownStoreName, initialState)
-}
+const initialState: DropdownsState = []
 
 // Close handling
-export const close = createEventManagers({
+export const close = createEventManagers<DropdownsState>({
   component,
   action: 'close',
+})
+
+export const toggle = createEventManagers<DropdownsState>({
+  component,
+  action: 'toggle',
 })
 
 export const closeDropdown = ({
   eventName,
   state,
 }: JaxsTypes.ListenerKit<Event | null>) => {
-  const dropdownId = close.match(eventName)
-  if (!dropdownId) return
-
-  const store = state.store<DropdownsState>(dropdownStoreName)
-  ListStore.remove(store, dropdownId)
+  const id = close.match(eventName)
+  const store = close.getStore(state)
+  ListStore.remove(store, id)
 }
-
-// Toggle handling
-export const toggle = createEventManagers({
-  component,
-  action: 'toggle',
-})
 
 const toggleDropdown: JaxsTypes.BusListener<MouseEvent> = ({
   eventName,
@@ -43,19 +38,18 @@ const toggleDropdown: JaxsTypes.BusListener<MouseEvent> = ({
   publish,
   payload: event,
 }: JaxsTypes.ListenerKit<Event>) => {
-  const dropdownId = toggle.match(eventName)
-  if (!dropdownId) return
+  const id = toggle.match(eventName)
 
   // to avoid the document listener automatically firing to close the dropdown
   event.stopPropagation()
 
-  const store = state.store<DropdownsState>(dropdownStoreName)
+  const store = toggle.getStore(state)
 
-  if (ListStore.includes(store, dropdownId)) {
-    ListStore.remove(store, dropdownId)
+  if (ListStore.includes(store, id)) {
+    ListStore.remove(store, id)
   } else {
-    onDocumentClick(() => publish(close.eventGenerator(dropdownId), null))
-    ListStore.push(store, dropdownId)
+    onDocumentClick(() => publish(close.eventGenerator(id), null))
+    ListStore.push(store, id)
   }
 }
 
@@ -66,6 +60,6 @@ export const subscribeToDropdownEvents = (app: JaxsTypes.App) => {
 }
 
 export const registerDropdown = (app: JaxsTypes.App) => {
-  createDropdownStore(app)
+  createStore(app, component, initialState)
   subscribeToDropdownEvents(app)
 }
