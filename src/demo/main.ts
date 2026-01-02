@@ -6,5 +6,5 @@ import { registerDropdown } from '@components/dropdown/interactions'
 
 const app = createApp()
 registerDropdown(app)
-app.subscribe(/.*/, console.log) // to show all events for debugging
+// app.subscribe(/.*/, console.log) // to show all events for debugging
 app.render(App(), '#app')

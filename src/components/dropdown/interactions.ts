@@ -1,4 +1,4 @@
-import { JaxsTypes } from 'jaxs'
+import { JaxsTypes, ListStore } from 'jaxs'
 import {
   componentNamePrefix,
   createEventManagers,
@@ -28,7 +28,7 @@ export const closeDropdown = ({
   if (!dropdownId) return
 
   const store = state.store<DropdownsState>(dropdownStoreName)
-  removeDropdownFromStore(store, dropdownId)
+  ListStore.remove(store, dropdownId)
 }
 
 // Toggle handling
@@ -46,24 +46,17 @@ const toggleDropdown: JaxsTypes.BusListener<MouseEvent> = ({
   const dropdownId = toggle.match(eventName)
   if (!dropdownId) return
 
+  // to avoid the document listener automatically firing to close the dropdown
   event.stopPropagation()
 
   const store = state.store<DropdownsState>(dropdownStoreName)
-  if (store.value.includes(dropdownId)) {
-    removeDropdownFromStore(store, dropdownId)
+
+  if (ListStore.includes(store, dropdownId)) {
+    ListStore.remove(store, dropdownId)
   } else {
     onDocumentClick(() => publish(close.eventGenerator(dropdownId), null))
-    store.update((currentState) => [...currentState, dropdownId])
+    ListStore.push(store, dropdownId)
   }
-}
-
-const removeDropdownFromStore = (
-  store: JaxsTypes.Store<DropdownsState>,
-  id: string,
-) => {
-  store.update((currentState) =>
-    currentState.filter((dropdownId) => dropdownId !== id),
-  )
 }
 
 // Registration
