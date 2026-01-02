@@ -23,15 +23,9 @@ const meta = {
           Dropdown button
         </DropdownButton>
         <DropdownMenu dropdownId="example-dropdown">
-          <DropdownItem href="#" onClick="action-1">
-            Action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-2">
-            Another action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-3">
-            Something else here
-          </DropdownItem>
+          <DropdownItem href="#">Action</DropdownItem>
+          <DropdownItem href="#">Another action</DropdownItem>
+          <DropdownItem href="#">Something else here</DropdownItem>
         </DropdownMenu>
       </Dropdown>,
     ),
@@ -46,9 +40,9 @@ const meta = {
     Dropdown button
   </DropdownButton>
   <DropdownMenu dropdownId="example-dropdown">
-    <DropdownItem href="#" onClick="action-1">Action</DropdownItem>
-    <DropdownItem href="#" onClick="action-2">Another action</DropdownItem>
-    <DropdownItem href="#" onClick="action-3">Something else here</DropdownItem>
+    <DropdownItem href="#">Action</DropdownItem>
+    <DropdownItem href="#">Another action</DropdownItem>
+    <DropdownItem href="#">Something else here</DropdownItem>
   </DropdownMenu>
 </Dropdown>`,
       },
@@ -67,15 +61,9 @@ export const Default: Story = {
           Dropdown button
         </DropdownButton>
         <DropdownMenu dropdownId="default-dropdown">
-          <DropdownItem href="#" onClick="action-1">
-            Action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-2">
-            Another action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-3">
-            Something else here
-          </DropdownItem>
+          <DropdownItem href="#">Action</DropdownItem>
+          <DropdownItem href="#">Another action</DropdownItem>
+          <DropdownItem href="#">Something else here</DropdownItem>
         </DropdownMenu>
       </Dropdown>,
     ),
@@ -93,15 +81,9 @@ export const DropdownButtonWithSplit: Story = {
           Main Action
         </DropdownButtonSplit>
         <DropdownMenu dropdownId="split-button-dropdown">
-          <DropdownItem href="#" onClick="action-1">
-            Action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-2">
-            Another action
-          </DropdownItem>
-          <DropdownItem href="#" onClick="action-3">
-            Something else here
-          </DropdownItem>
+          <DropdownItem href="#">Action</DropdownItem>
+          <DropdownItem href="#">Another action</DropdownItem>
+          <DropdownItem href="#">Something else here</DropdownItem>
         </DropdownMenu>
       </Dropdown>,
     ),
@@ -117,13 +99,13 @@ export const DropdownButtonWithSplit: Story = {
     Main Action
   </DropdownButtonSplit>
   <DropdownMenu show={true} dropdownId="split-button-dropdown">
-    <DropdownItem href="#" onClick="action-1">
+    <DropdownItem href="#">
       Action
     </DropdownItem>
-    <DropdownItem href="#" onClick="action-2">
+    <DropdownItem href="#">
       Another action
     </DropdownItem>
-    <DropdownItem href="#" onClick="action-3">
+    <DropdownItem href="#">
       Something else here
     </DropdownItem>
   </DropdownMenu>
@@ -215,9 +197,7 @@ export const ActiveAndDisabled: Story = {
           Dropdown with states
         </DropdownButton>
         <DropdownMenu dropdownId="dropdown-with-states">
-          <DropdownItem href="#active" active={true}>
-            Active item
-          </DropdownItem>
+          <DropdownItem href={location.pathname}>Active item</DropdownItem>
           <DropdownItem href="#regular">Regular item</DropdownItem>
           <DropdownItem href="#disabled" disabled={true}>
             Disabled item
@@ -233,7 +213,7 @@ export const ActiveAndDisabled: Story = {
     Dropdown with states
   </DropdownButton>
   <DropdownMenu dropdownId="dropdown-with-states">
-    <DropdownItem href="#active" active={true}>Active item</DropdownItem>
+    <DropdownItem href={location.pathname}>Active item</DropdownItem>
     <DropdownItem href="#regular">Regular item</DropdownItem>
     <DropdownItem href="#disabled" disabled={true}>Disabled item</DropdownItem>
   </DropdownMenu>
@@ -313,10 +293,7 @@ export const DropStart: Story = {
       <div class="d-flex justify-content-center">
         <Dropdown id="dropstart" class="dropstart">
           <DropdownButton dropdownId="dropstart">Drop-start</DropdownButton>
-          <DropdownMenu
-            dropDirection="start"
-            dropdownId="dropstart"
-          >
+          <DropdownMenu dropDirection="start" dropdownId="dropstart">
             <DropdownItem href="#item-1">Item 1</DropdownItem>
             <DropdownItem href="#item-2">Item 2</DropdownItem>
             <DropdownItem href="#item-3">Item 3</DropdownItem>

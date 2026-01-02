@@ -3,7 +3,7 @@
 import { jsx, JaxsTypes } from 'jaxs'
 import { Button, ButtonProps } from '@components/button/button'
 import { addClassesToBase } from '@components/presentation-logic'
-import { generateToggleEvent } from './interactions'
+import { toggle } from './interactions'
 
 export type DropdownButtonProps = JaxsTypes.Props<
   {
@@ -17,7 +17,7 @@ export const DropdownButton = ({
   ...props
 }: DropdownButtonProps) => {
   const classes = addClassesToBase('dropdown-toggle', propsClass)
-  const onClick = generateToggleEvent(dropdownId)
+  const onClick = toggle.eventGenerator(dropdownId)
 
   return (
     <Button class={classes} onClick={onClick} {...props}>

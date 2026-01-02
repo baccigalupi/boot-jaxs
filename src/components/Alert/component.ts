@@ -8,8 +8,7 @@ const alertMatch = (listKey: string, eventKey: string) => listKey === eventKey
 const getAlertId = (eventName: string) => eventName.split(':').pop() || ''
 
 export const removeAlert: JaxsTypes.BusListener<unknown> = (
-  _payload: unknown,
-  listenerKit: JaxsTypes.ListenerKit,
+  listenerKit: JaxsTypes.ListenerKit<any>,
 ) => {
   const { state, eventName } = listenerKit
   const store = state.store<BootJaxsAlertState>(componentName)
@@ -21,8 +20,7 @@ export const removeAlert: JaxsTypes.BusListener<unknown> = (
 }
 
 export const addAlert: JaxsTypes.BusListener<unknown> = (
-  _payload: unknown,
-  listenerKit: JaxsTypes.ListenerKit,
+  listenerKit: JaxsTypes.ListenerKit<any>,
 ) => {
   const { state, eventName } = listenerKit
   const store = state.store<BootJaxsAlertState>(componentName)

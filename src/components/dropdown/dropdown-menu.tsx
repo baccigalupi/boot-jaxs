@@ -35,7 +35,9 @@ export const DropdownMenuTemplate = ({
   )
 }
 
-export const menuViewModel = (subscriptions: {[dropdownStoreName]: DropdownsState}) => {
+export const menuViewModel = (subscriptions: {
+  [dropdownStoreName]: DropdownsState
+}) => {
   const dropdowns = subscriptions[dropdownStoreName]
   return { dropdowns }
 }

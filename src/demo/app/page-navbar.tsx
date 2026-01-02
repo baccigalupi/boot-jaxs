@@ -48,12 +48,12 @@ export const PageNavbar = () => {
               variant="none"
               class="nav-link bg-secondary-subtle"
             >
-              User Settings
+              Menu
             </DropdownButton>
             <DropdownMenu dropdownId="user-settings">
-              <DropdownItem>
-                <NavLink href="/logout">Logout</NavLink>
-              </DropdownItem>
+              <DropdownItem href="/action-1">Action 1</DropdownItem>
+              <DropdownItem href="/action-2">Action 2</DropdownItem>
+              <DropdownItem href="/action-3">Action 3</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavItem>

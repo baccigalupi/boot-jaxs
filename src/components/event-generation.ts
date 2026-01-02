@@ -32,3 +32,16 @@ export const generateMatcher = ({ component, action }: ComponentAction) => {
   const prefix = `${baseEvent}:${component}:${action}`
   return new RegExp(`${prefix}:(.+)`)
 }
+
+export const eventIdMatch = (matcher: RegExp) => (eventName: string) => {
+  return eventName.match(matcher)?.[1]
+}
+
+export const createEventManagers = (componentAction: ComponentAction) => {
+  const matcher = generateMatcher(componentAction)
+  return {
+    matcher: matcher,
+    eventGenerator: eventGeneratorFor(componentAction),
+    match: eventIdMatch(matcher),
+  }
+}

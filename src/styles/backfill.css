@@ -15,7 +15,8 @@
     var(--bs-dropdown-min-width) doesn't work :( TODO: investigate
   */
 }
-.dropdown.dropend, .dropdown.dropstart {
+.dropdown.dropend,
+.dropdown.dropstart {
   min-width: 0;
 }
 
