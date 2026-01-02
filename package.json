@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "jaxs": "0.8.0"
+    "jaxs": "0.9.0"
   }
 }
