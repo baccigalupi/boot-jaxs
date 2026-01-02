@@ -28,7 +28,7 @@ component's store or listeners.
 
 ### Dynamic or interactive
 
-This is the set of components that are interactive. It is the good place where 
+This is the set of components that are interactive. It is the good place where
 Bootstrap goes beyond a great styling system, require a data store and event
 listeners.
 
@@ -44,9 +44,10 @@ and I'm hoping through building these components out, it will be easy and clear.
   interaction models setup.
 - Collapse: Similar to Accordion and Carousel. Parts of the dom are independent
   and need state and events/handlers to connect the logic.
-- Dropdown: Still in progress, menu alignment, story size.
 - Modal: styling and scrolling working. Needs connective tissue between
   components and data.
+
+- Dropdown
 
 ## Installation
 

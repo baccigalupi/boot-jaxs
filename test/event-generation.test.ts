@@ -3,6 +3,7 @@ import {
   generateEvent,
   eventGeneratorFor,
   generateMatcher,
+  createEventManagers,
 } from '@components/event-generation'
 
 describe('event generation', () => {
@@ -40,5 +41,15 @@ describe('event generation', () => {
 
     expect(matcher.test(event)).toBe(true)
     expect(event.match(matcher)?.[1]).toBe('my-dropdown')
+  })
+
+  it('createEventManagers returns event generator, a regex matcher and a function that provide the matched id', () => {
+    const componentAction = { component: 'dropdown', action: 'close' }
+    const close = createEventManagers(componentAction)
+
+    const event = close.eventGenerator('settings-menu')
+
+    expect(close.matcher.test(event)).toBe(true)
+    expect(close.match(event)).toBe('settings-menu')
   })
 })

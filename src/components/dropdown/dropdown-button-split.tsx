@@ -5,7 +5,7 @@ import { Button, ButtonProps } from '../button/button'
 import { ButtonGroup } from '@components/button-group/button-group'
 import { addClassesToBase } from '@components/presentation-logic'
 import { buttonClass } from '../button/presentation-logic'
-import { generateToggleEvent } from './interactions'
+import { toggle } from './interactions'
 
 export type DropdownButtonSplitProps = JaxsTypes.Props<
   ButtonProps & { dropdownId: string }
@@ -27,7 +27,7 @@ export const DropdownButtonSplit = ({
     'dropdown-toggle dropdown-toggle-split',
     buttonClasses,
   )
-  const onToggle = generateToggleEvent(dropdownId)
+  const onToggle = toggle.eventGenerator(dropdownId)
 
   return (
     <ButtonGroup>
