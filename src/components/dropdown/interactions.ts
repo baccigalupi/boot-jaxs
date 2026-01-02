@@ -1,4 +1,4 @@
-import { JaxsTypes, Update } from 'jaxs'
+import { JaxsTypes, ListStore } from 'jaxs'
 import {
   componentNamePrefix,
   createEventManagers,
@@ -28,7 +28,7 @@ export const closeDropdown = ({
   if (!dropdownId) return
 
   const store = state.store<DropdownsState>(dropdownStoreName)
-  Update.ListStore.remove(store, dropdownId)
+  ListStore.remove(store, dropdownId)
 }
 
 // Toggle handling
@@ -51,11 +51,11 @@ const toggleDropdown: JaxsTypes.BusListener<MouseEvent> = ({
 
   const store = state.store<DropdownsState>(dropdownStoreName)
 
-  if (store.value.includes(dropdownId)) {
-    Update.ListStore.remove(store, dropdownId)
+  if (ListStore.includes(store, dropdownId)) {
+    ListStore.remove(store, dropdownId)
   } else {
     onDocumentClick(() => publish(close.eventGenerator(dropdownId), null))
-    Update.ListStore.push(store, dropdownId)
+    ListStore.push(store, dropdownId)
   }
 }
 
