@@ -15,5 +15,10 @@ export const alertClassName = (
   ])
 }
 
-export const buildOnClickEvent = (id: string, componentName: string) =>
-  `${componentName}:close:${id}`
+export const hideAlert = (
+  alerts: string[],
+  id: string,
+  dismissible: boolean,
+) => {
+  return dismissible && !alerts.includes(id)
+}

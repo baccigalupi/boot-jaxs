@@ -10,7 +10,7 @@ export const App = () => {
     <div class="container my-5">
       <PageNavbar />
 
-      <Alert id="info-alert" variant="info" dismissible={true} class="mb-4">
+      <Alert id="welcome-alert" variant="info" dismissible={true} class="mb-4">
         Welcome to the Boot-Jaxs component library! This is a demo page to
         experiment with components.
       </Alert>

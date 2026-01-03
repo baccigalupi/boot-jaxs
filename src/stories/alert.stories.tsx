@@ -3,8 +3,7 @@
 import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
 import { renderJaxs } from '../../.storybook/render-jaxs'
-import type { AlertProps } from '../components/alert/alert'
-import { Alert } from '../components/alert/alert'
+import { type AlertProps, Alert } from '@components/alert/alert'
 
 const meta = {
   title: 'Bootstrap/Alert',
@@ -28,7 +27,7 @@ const meta = {
   },
   argTypes: {
     children: { control: 'text' },
-    type: {
+    variant: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info'],
     },
@@ -44,7 +43,7 @@ const meta = {
         . Give it a click if you like.
       </>
     ),
-    type: 'primary',
+    variant: 'primary',
     dismissible: false,
     id: 'default-alert',
   },
@@ -91,7 +90,7 @@ export const Success: Story = {
         . Give it a click if you like.
       </>
     ),
-    type: 'success',
+    variant: 'success',
     id: 'success-alert',
   },
   parameters: {
@@ -119,7 +118,7 @@ export const Danger: Story = {
         . Give it a click if you like.
       </>
     ),
-    type: 'danger',
+    variant: 'danger',
     id: 'danger-alert',
   },
   parameters: {
@@ -147,7 +146,7 @@ export const Warning: Story = {
         . Give it a click if you like.
       </>
     ),
-    type: 'warning',
+    variant: 'warning',
     id: 'warning-alert',
   },
   parameters: {
@@ -175,8 +174,9 @@ export const Dismissible: Story = {
         . Give it a click if you like.
       </>
     ),
-    type: 'info',
+    variant: 'info',
     dismissible: true,
+    id: 'dismissible-alert',
   },
   parameters: {
     docs: {

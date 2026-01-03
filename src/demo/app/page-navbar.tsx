@@ -17,7 +17,7 @@ import {
 
 export const PageNavbar = () => {
   return (
-    <Navbar class="navbar-expand-lg bg-body-tertiary">
+    <Navbar class="navbar-expand-lg bg-body-tertiary mb-2">
       <NavbarBrandLink href="/">
         Boot-Jaxs <Badge variant="secondary" label="v0.1.0" />
       </NavbarBrandLink>

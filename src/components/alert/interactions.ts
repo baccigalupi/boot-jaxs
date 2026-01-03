@@ -1,17 +1,23 @@
 import { JaxsTypes, ListStore } from 'jaxs'
-import { createEventManagers, createStore } from '@components/event-generation'
+import {
+  createEventManagers,
+  createStore,
+  getStoreName,
+} from '@components/event-generation'
 
-export const componentName = 'alert'
+export const component = 'alert'
 export type AlertsState = string[]
 const initialState = [] as AlertsState
+export const storeName = getStoreName(component)
+export const viewModelSubscriptions = [storeName]
 
-const add = createEventManagers<AlertsState>({
-  component: componentName,
+export const add = createEventManagers<AlertsState>({
+  component,
   action: 'add',
 })
 
-const remove = createEventManagers<AlertsState>({
-  component: componentName,
+export const remove = createEventManagers<AlertsState>({
+  component,
   action: 'remove',
 })
 
@@ -33,9 +39,14 @@ export const addAlert: JaxsTypes.BusListener<unknown> = ({
   ListStore.appendIfUnique(store, id)
 }
 
-export const registerComponent = (app: JaxsTypes.App) => {
-  createStore(app, componentName, initialState)
+export const registerAlerts = (app: JaxsTypes.App) => {
+  createStore(app, component, initialState)
 
   app.subscribe(remove.matcher, removeAlert)
   app.subscribe(add.matcher, addAlert)
+}
+
+export const viewModel = (subscriptions: { [storeName]: AlertsState }) => {
+  const alerts = subscriptions[storeName]
+  return { alerts }
 }

@@ -47,7 +47,12 @@ and I'm hoping through building these components out, it will be easy and clear.
 - Modal: styling and scrolling working. Needs connective tissue between
   components and data.
 
+- Alert: dismissible ones have state interactions. Others are purely
+  presentational.
+  - Auto-close decay
 - Dropdown
+  - Menu alignment. Probably could be handled by bootstrap flex system, but
+    need a demo.
 
 ## Installation
 
