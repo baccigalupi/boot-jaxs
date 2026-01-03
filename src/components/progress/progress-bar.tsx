@@ -2,7 +2,7 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes, StyleVariant } from '../types'
-import { progressBarClass } from './presentation-logic'
+import { progressBarClass, widthStyle } from './presentation-logic'
 
 export type ProgressBarProps = JaxsTypes.Props<
   HTMLAttributes & {
@@ -25,14 +25,10 @@ export const ProgressBar = ({
   animated = false,
   label,
   class: propClasses,
-  style,
   ...props
 }: ProgressBarProps) => {
   const classes = progressBarClass({ striped, animated, variant, propClasses })
-
-  const percentage = ((value - min) / (max - min)) * 100
-  const widthStyle = `width: ${percentage}%`
-  const combinedStyle = [style, widthStyle].filter(Boolean).join('; ')
+  const style = widthStyle({ value, min, max })
 
   return (
     <div
@@ -41,7 +37,7 @@ export const ProgressBar = ({
       aria-valuenow={value}
       aria-valuemin={min}
       aria-valuemax={max}
-      style={combinedStyle}
+      style={style}
       {...props}
     >
       {label || ''}

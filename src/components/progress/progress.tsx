@@ -3,6 +3,7 @@
 import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { addClassesToBase } from '../presentation-logic'
+import { heightStyle } from './presentation-logic'
 
 export type ProgressProps = JaxsTypes.Props<
   HTMLAttributes & {
@@ -14,23 +15,15 @@ export const Progress = ({
   children,
   height,
   class: propClasses,
-  style,
   ...props
 }: ProgressProps) => {
   const classes = addClassesToBase('progress', propClasses)
-
-  const heightStyle = height
-    ? typeof height === 'number'
-      ? `height: ${height}px`
-      : `height: ${height}`
-    : undefined
-
-  const combinedStyle = [style, heightStyle].filter(Boolean).join('; ')
+  const style = heightStyle(height)
 
   return (
     <div
       class={classes}
-      {...(combinedStyle && { style: combinedStyle })}
+      style={style}
       {...props}
     >
       {children}
