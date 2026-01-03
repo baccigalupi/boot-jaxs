@@ -15,7 +15,7 @@ export type SpinnerProps = JaxsTypes.Props<
 
 const SpinnerLabel = ({ label }: { label?: string }) => {
   if (!label) return
-  
+
   return <span class="visually-hidden">{label}</span>
 }
 

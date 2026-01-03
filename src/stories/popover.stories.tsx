@@ -9,12 +9,10 @@ import { Button } from '../components/button/button'
 const PopoverTop = () => {
   return (
     <div class="position-relative" style="height: 200px; padding-top: 100px;">
-      <Button onClick='open-popover'variant="secondary">
+      <Button onClick="open-popover" variant="secondary">
         Basic popover!
       </Button>
-      <Popover show={true}>
-        Popover content
-      </Popover>
+      <Popover show={true}>Popover content</Popover>
     </div>
   )
 }

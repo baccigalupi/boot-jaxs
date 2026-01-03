@@ -21,11 +21,7 @@ export const Progress = ({
   const style = heightStyle(height)
 
   return (
-    <div
-      class={classes}
-      style={style}
-      {...props}
-    >
+    <div class={classes} style={style} {...props}>
       {children}
     </div>
   )

@@ -26,4 +26,10 @@ describe('CloseButton', () => {
 
     expect(html).toContain('disabled')
   })
+
+  it('does not render when dismissible is false', () => {
+    const component = <CloseButton dismissible={false} onClick="handle-close" />
+
+    expect(component).toBe(undefined)
+  })
 })
