@@ -4,12 +4,14 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { navLinkClass } from './presentation-logic'
 
-export type NavLinkProps = JaxsTypes.Props<HTMLAttributes & {
-  active?: boolean
-  disabled?: boolean
-  href?: string
-  target?: string
-}>
+export type NavLinkProps = JaxsTypes.Props<
+  HTMLAttributes & {
+    active?: boolean
+    disabled?: boolean
+    href?: string
+    target?: string
+  }
+>
 
 export const NavLink = ({
   children,

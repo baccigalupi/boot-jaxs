@@ -11,8 +11,9 @@ const BasicPlaceholder = () => {
   return (
     <div>
       <p aria-hidden="true">
-        <Placeholder width={6} /> <Placeholder width={8} /> <Placeholder width={6} />{' '}
-        <Placeholder width={7} /> <Placeholder width={4} /> <Placeholder width={6} />{' '}
+        <Placeholder width={6} /> <Placeholder width={8} />{' '}
+        <Placeholder width={6} /> <Placeholder width={7} />{' '}
+        <Placeholder width={4} /> <Placeholder width={6} />{' '}
         <Placeholder width={8} />
       </p>
     </div>
@@ -135,15 +136,19 @@ const PlaceholderWithAnimation = () => {
     <div>
       <h6>Glow Animation</h6>
       <p aria-hidden="true">
-        <Placeholder animation="glow" width={7} /> <Placeholder animation="glow" width={4} />{' '}
-        <Placeholder animation="glow" width={4} /> <Placeholder animation="glow" width={6} />{' '}
+        <Placeholder animation="glow" width={7} />{' '}
+        <Placeholder animation="glow" width={4} />{' '}
+        <Placeholder animation="glow" width={4} />{' '}
+        <Placeholder animation="glow" width={6} />{' '}
         <Placeholder animation="glow" width={8} />
       </p>
 
       <h6 class="mt-4">Wave Animation</h6>
       <p aria-hidden="true">
-        <Placeholder animation="wave" width={7} /> <Placeholder animation="wave" width={4} />{' '}
-        <Placeholder animation="wave" width={4} /> <Placeholder animation="wave" width={6} />{' '}
+        <Placeholder animation="wave" width={7} />{' '}
+        <Placeholder animation="wave" width={4} />{' '}
+        <Placeholder animation="wave" width={4} />{' '}
+        <Placeholder animation="wave" width={6} />{' '}
         <Placeholder animation="wave" width={8} />
       </p>
     </div>

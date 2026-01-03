@@ -36,7 +36,8 @@ const BasicTabs = () => {
             <strong>Home tab content.</strong> Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
           </p>
         </TabPane>
         <TabPane id="profile">
@@ -83,10 +84,10 @@ const PillsTabs = () => {
       <TabContent>
         <TabPane id="pills-home" active={true}>
           <p class="mt-3">
-            <strong>Home pills content.</strong> This is some placeholder content
-            the home tab's associated content. Clicking another tab will toggle
-            the visibility of this one for the next. The tab JavaScript swaps
-            classes to control the content visibility and styling.
+            <strong>Home pills content.</strong> This is some placeholder
+            content the home tab's associated content. Clicking another tab will
+            toggle the visibility of this one for the next. The tab JavaScript
+            swaps classes to control the content visibility and styling.
           </p>
         </TabPane>
         <TabPane id="pills-profile">
@@ -174,9 +175,9 @@ const VerticalTabs = () => {
       </Nav>
       <TabContent>
         <TabPane id="v-pills-home" active={true}>
-          <strong>Home vertical content.</strong> This is some placeholder content
-          the home tab's associated content. Clicking another tab will toggle the
-          visibility of this one for the next.
+          <strong>Home vertical content.</strong> This is some placeholder
+          content the home tab's associated content. Clicking another tab will
+          toggle the visibility of this one for the next.
         </TabPane>
         <TabPane id="v-pills-profile">
           <strong>Profile vertical content.</strong> This is some placeholder

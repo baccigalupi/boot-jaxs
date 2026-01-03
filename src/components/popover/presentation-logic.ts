@@ -13,6 +13,6 @@ export const popoverClass = ({
 }: PopoverClassProps): string => {
   const placementClass = placement !== 'auto' ? `bs-popover-${placement}` : ''
   const showClass = show ? 'show' : ''
-  
+
   return addClassesToBase('popover', [placementClass, showClass, propClasses])
 }

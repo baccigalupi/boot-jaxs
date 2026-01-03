@@ -18,5 +18,10 @@ export const spinnerClass = ({
   const sizeClass = size ? `spinner-${type}-${size}` : ''
   const variantClass = variant ? `text-${variant}` : ''
 
-  return addClassesToBase('spinner', [typeClass, sizeClass, variantClass, propClasses])
+  return addClassesToBase('spinner', [
+    typeClass,
+    sizeClass,
+    variantClass,
+    propClasses,
+  ])
 }

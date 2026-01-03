@@ -21,7 +21,11 @@ const PopoverTop = () => {
       >
         Popover on top
       </Button>
-      <Popover placement="top" show={true} style="position: absolute; top: 20px; left: 50px;">
+      <Popover
+        placement="top"
+        show={true}
+        style="position: absolute; top: 20px; left: 50px;"
+      >
         <PopoverHeader>Popover top</PopoverHeader>
         <PopoverBody>
           This is a popover on the top. Vivamus sagittis lacus vel augue laoreet
@@ -43,7 +47,11 @@ const PopoverRight = () => {
       >
         Popover on right
       </Button>
-      <Popover placement="right" show={true} style="position: absolute; top: 40px; left: 180px;">
+      <Popover
+        placement="right"
+        show={true}
+        style="position: absolute; top: 40px; left: 180px;"
+      >
         <PopoverHeader>Popover right</PopoverHeader>
         <PopoverBody>
           This is a popover on the right. Vivamus sagittis lacus vel augue
@@ -65,7 +73,11 @@ const PopoverBottom = () => {
       >
         Popover on bottom
       </Button>
-      <Popover placement="bottom" show={true} style="position: absolute; top: 65px; left: 50px;">
+      <Popover
+        placement="bottom"
+        show={true}
+        style="position: absolute; top: 65px; left: 50px;"
+      >
         <PopoverHeader>Popover bottom</PopoverHeader>
         <PopoverBody>
           This is a popover on the bottom. Vivamus sagittis lacus vel augue
@@ -78,7 +90,10 @@ const PopoverBottom = () => {
 
 const PopoverLeft = () => {
   return (
-    <div class="position-relative" style="height: 150px; padding-top: 50px; padding-left: 300px;">
+    <div
+      class="position-relative"
+      style="height: 150px; padding-top: 50px; padding-left: 300px;"
+    >
       <Button
         variant="secondary"
         data-bs-toggle="popover"
@@ -87,11 +102,15 @@ const PopoverLeft = () => {
       >
         Popover on left
       </Button>
-      <Popover placement="left" show={true} style="position: absolute; top: 35px; left: 20px;">
+      <Popover
+        placement="left"
+        show={true}
+        style="position: absolute; top: 35px; left: 20px;"
+      >
         <PopoverHeader>Popover left</PopoverHeader>
         <PopoverBody>
-          This is a popover on the left. Vivamus sagittis lacus vel augue laoreet
-          rutrum faucibus.
+          This is a popover on the left. Vivamus sagittis lacus vel augue
+          laoreet rutrum faucibus.
         </PopoverBody>
       </Popover>
     </div>
@@ -109,7 +128,11 @@ const PopoverWithoutHeader = () => {
       >
         Popover without header
       </Button>
-      <Popover placement="right" show={true} style="position: absolute; top: 40px; left: 240px;">
+      <Popover
+        placement="right"
+        show={true}
+        style="position: absolute; top: 40px; left: 240px;"
+      >
         <PopoverBody>
           This popover doesn't have a header. It only contains body content.
         </PopoverBody>
@@ -122,40 +145,51 @@ const AllDirections = () => {
   return (
     <div class="d-flex flex-column gap-3">
       <div class="position-relative" style="height: 200px; padding-top: 100px;">
-        <Button variant="secondary">
-          Top
-        </Button>
-        <Popover placement="top" show={true} style="position: absolute; top: 20px; left: 50px;">
+        <Button variant="secondary">Top</Button>
+        <Popover
+          placement="top"
+          show={true}
+          style="position: absolute; top: 20px; left: 50px;"
+        >
           <PopoverHeader>Popover on top</PopoverHeader>
           <PopoverBody>Top popover content</PopoverBody>
         </Popover>
       </div>
 
       <div class="position-relative" style="height: 150px; padding-top: 50px;">
-        <Button variant="secondary">
-          Right
-        </Button>
-        <Popover placement="right" show={true} style="position: absolute; top: 40px; left: 100px;">
+        <Button variant="secondary">Right</Button>
+        <Popover
+          placement="right"
+          show={true}
+          style="position: absolute; top: 40px; left: 100px;"
+        >
           <PopoverHeader>Popover on right</PopoverHeader>
           <PopoverBody>Right popover content</PopoverBody>
         </Popover>
       </div>
 
       <div class="position-relative" style="height: 200px; padding-top: 20px;">
-        <Button variant="secondary">
-          Bottom
-        </Button>
-        <Popover placement="bottom" show={true} style="position: absolute; top: 65px; left: 50px;">
+        <Button variant="secondary">Bottom</Button>
+        <Popover
+          placement="bottom"
+          show={true}
+          style="position: absolute; top: 65px; left: 50px;"
+        >
           <PopoverHeader>Popover on bottom</PopoverHeader>
           <PopoverBody>Bottom popover content</PopoverBody>
         </Popover>
       </div>
 
-      <div class="position-relative" style="height: 150px; padding-top: 50px; padding-left: 300px;">
-        <Button variant="secondary">
-          Left
-        </Button>
-        <Popover placement="left" show={true} style="position: absolute; top: 35px; left: 20px;">
+      <div
+        class="position-relative"
+        style="height: 150px; padding-top: 50px; padding-left: 300px;"
+      >
+        <Button variant="secondary">Left</Button>
+        <Popover
+          placement="left"
+          show={true}
+          style="position: absolute; top: 35px; left: 20px;"
+        >
           <PopoverHeader>Popover on left</PopoverHeader>
           <PopoverBody>Left popover content</PopoverBody>
         </Popover>
@@ -176,7 +210,11 @@ const DismissiblePopover = () => {
       >
         Dismissible popover
       </Button>
-      <Popover placement="right" show={true} style="position: absolute; top: 40px; left: 200px;">
+      <Popover
+        placement="right"
+        show={true}
+        style="position: absolute; top: 40px; left: 200px;"
+      >
         <PopoverHeader>Dismissible popover</PopoverHeader>
         <PopoverBody>
           Click outside this popover or press ESC to dismiss it. This uses the

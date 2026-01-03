@@ -4,14 +4,16 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { navClass } from './presentation-logic'
 
-export type NavProps = JaxsTypes.Props<HTMLAttributes & {
-  tabs?: boolean
-  pills?: boolean
-  underline?: boolean
-  fill?: boolean
-  justified?: boolean
-  vertical?: boolean
-}>
+export type NavProps = JaxsTypes.Props<
+  HTMLAttributes & {
+    tabs?: boolean
+    pills?: boolean
+    underline?: boolean
+    fill?: boolean
+    justified?: boolean
+    vertical?: boolean
+  }
+>
 
 export const Nav = ({
   children,
@@ -24,7 +26,14 @@ export const Nav = ({
   class: className,
   ...props
 }: NavProps) => {
-  const classes = navClass({ tabs, pills, underline, fill, justified, vertical })
+  const classes = navClass({
+    tabs,
+    pills,
+    underline,
+    fill,
+    justified,
+    vertical,
+  })
   const finalClasses = className ? `${classes} ${className}` : classes
 
   return (

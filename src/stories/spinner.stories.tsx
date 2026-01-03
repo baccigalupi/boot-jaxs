@@ -88,7 +88,10 @@ const SpinnerInButton = () => {
 
 const CenterSpinner = () => {
   return (
-    <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="height: 200px;"
+    >
       <div class="text-center">
         <Spinner type="border" label="Loading..." class="mb-3" />
         <p class="text-muted">Please wait...</p>

@@ -18,18 +18,18 @@ export const Progress = ({
   ...props
 }: ProgressProps) => {
   const classes = addClassesToBase('progress', propClasses)
-  
-  const heightStyle = height 
-    ? typeof height === 'number' 
-      ? `height: ${height}px` 
+
+  const heightStyle = height
+    ? typeof height === 'number'
+      ? `height: ${height}px`
       : `height: ${height}`
     : undefined
-  
+
   const combinedStyle = [style, heightStyle].filter(Boolean).join('; ')
 
   return (
-    <div 
-      class={classes} 
+    <div
+      class={classes}
       {...(combinedStyle && { style: combinedStyle })}
       {...props}
     >

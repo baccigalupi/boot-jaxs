@@ -6,7 +6,11 @@ import { addClassesToBase } from '../presentation-logic'
 
 export type TabContentProps = JaxsTypes.Props<HTMLAttributes>
 
-export const TabContent = ({ children, class: className, ...props }: TabContentProps) => {
+export const TabContent = ({
+  children,
+  class: className,
+  ...props
+}: TabContentProps) => {
   const classes = addClassesToBase('tab-content', className)
 
   return (

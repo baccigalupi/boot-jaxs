@@ -17,6 +17,11 @@ export const progressBarClass = ({
   const variantClass = variant ? `bg-${variant}` : ''
   const stripedClass = striped || animated ? 'progress-bar-striped' : ''
   const animatedClass = animated ? 'progress-bar-animated' : ''
-  
-  return addClassesToBase('progress-bar', [variantClass, stripedClass, animatedClass, propClasses])
+
+  return addClassesToBase('progress-bar', [
+    variantClass,
+    stripedClass,
+    animatedClass,
+    propClasses,
+  ])
 }

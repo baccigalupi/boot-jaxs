@@ -14,5 +14,9 @@ export const offcanvasClassName = ({
   const placementClass = `offcanvas-${placement}`
   const visibilityClass = visible ? 'show' : ''
 
-  return addClassesToBase('offcanvas', [placementClass, visibilityClass, propClasses])
+  return addClassesToBase('offcanvas', [
+    placementClass,
+    visibilityClass,
+    propClasses,
+  ])
 }

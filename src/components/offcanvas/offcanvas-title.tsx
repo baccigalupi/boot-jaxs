@@ -4,9 +4,11 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { addClassesToBase } from '@components/presentation-logic'
 
-export type OffcanvasTitleProps = JaxsTypes.Props<HTMLAttributes & {
-  id?: string
-}>
+export type OffcanvasTitleProps = JaxsTypes.Props<
+  HTMLAttributes & {
+    id?: string
+  }
+>
 
 export const OffcanvasTitle = ({
   children,

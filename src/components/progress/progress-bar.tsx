@@ -29,7 +29,7 @@ export const ProgressBar = ({
   ...props
 }: ProgressBarProps) => {
   const classes = progressBarClass({ striped, animated, variant, propClasses })
-  
+
   const percentage = ((value - min) / (max - min)) * 100
   const widthStyle = `width: ${percentage}%`
   const combinedStyle = [style, widthStyle].filter(Boolean).join('; ')

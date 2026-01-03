@@ -9,7 +9,9 @@ type OffcanvasHeaderCloseButtonProps = {
   show: boolean
 }
 
-const OffcanvasHeaderCloseButton = ({ show }: OffcanvasHeaderCloseButtonProps) => {
+const OffcanvasHeaderCloseButton = ({
+  show,
+}: OffcanvasHeaderCloseButtonProps) => {
   if (!show) return
 
   return <CloseButton data-bs-dismiss="offcanvas" aria-label="Close" />

@@ -24,7 +24,11 @@ export const Offcanvas = ({
   class: propClasses,
   ...props
 }: OffcanvasProps) => {
-  const offcanvasClasses = offcanvasClassName({ placement, visible, propClasses })
+  const offcanvasClasses = offcanvasClassName({
+    placement,
+    visible,
+    propClasses,
+  })
   const ariaHidden = visible ? 'false' : 'true'
 
   return (

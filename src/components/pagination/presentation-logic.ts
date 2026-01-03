@@ -26,5 +26,9 @@ export const paginationItemClass = ({
 }: PaginationItemClassProps): string => {
   const activeClass = active ? 'active' : ''
   const disabledClass = disabled ? 'disabled' : ''
-  return addClassesToBase('page-item', [activeClass, disabledClass, propClasses])
+  return addClassesToBase('page-item', [
+    activeClass,
+    disabledClass,
+    propClasses,
+  ])
 }

@@ -4,11 +4,13 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { tabPaneClass } from './presentation-logic'
 
-export type TabPaneProps = JaxsTypes.Props<HTMLAttributes & {
-  id: string
-  active?: boolean
-  fade?: boolean
-}>
+export type TabPaneProps = JaxsTypes.Props<
+  HTMLAttributes & {
+    id: string
+    active?: boolean
+    fade?: boolean
+  }
+>
 
 export const TabPane = ({
   children,

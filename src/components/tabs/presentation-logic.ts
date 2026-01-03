@@ -34,10 +34,7 @@ type NavLinkClassProps = {
 }
 
 export const navLinkClass = ({ active, disabled }: NavLinkClassProps) => {
-  const classes = [
-    active ? 'active' : '',
-    disabled ? 'disabled' : '',
-  ]
+  const classes = [active ? 'active' : '', disabled ? 'disabled' : '']
   return addClassesToBase('nav-link', classes)
 }
 
@@ -54,5 +51,8 @@ export const tabPaneClass = ({ active, fade, show }: TabPaneClassProps) => {
     active ? 'active' : '',
     show ? 'show' : '',
   ]
-  return classes.filter(c => c).join(' ').trim()
+  return classes
+    .filter((c) => c)
+    .join(' ')
+    .trim()
 }

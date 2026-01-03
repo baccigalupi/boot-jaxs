@@ -48,8 +48,8 @@ const OffcanvasEnd = () => {
       </OffcanvasHeader>
       <OffcanvasBody>
         <p>
-          Content for the right side offcanvas. This placement is the most common
-          and appears from the right edge of the viewport.
+          Content for the right side offcanvas. This placement is the most
+          common and appears from the right edge of the viewport.
         </p>
         <p>
           You can add any content here including forms, navigation menus, or any
@@ -96,8 +96,8 @@ const OffcanvasBottom = () => {
       </OffcanvasHeader>
       <OffcanvasBody>
         <p>
-          Content for the bottom offcanvas. This slides up from the bottom of the
-          viewport. Great for mobile-style bottom sheets.
+          Content for the bottom offcanvas. This slides up from the bottom of
+          the viewport. Great for mobile-style bottom sheets.
         </p>
       </OffcanvasBody>
     </Offcanvas>
