@@ -1,19 +1,15 @@
 import { addClassesToBase } from '@components/presentation-logic'
-import { PopoverPlacement } from '@components/types'
 
 type PopoverClassProps = {
-  placement?: PopoverPlacement
   show?: boolean
   propClasses?: string
 }
 
 export const popoverClass = ({
-  placement = 'top',
   show = false,
   propClasses,
 }: PopoverClassProps): string => {
-  const placementClass = placement !== 'auto' ? `bs-popover-${placement}` : ''
   const showClass = show ? 'show' : ''
 
-  return addClassesToBase('popover', [placementClass, showClass, propClasses])
+  return addClassesToBase('popover', [showClass, propClasses])
 }
