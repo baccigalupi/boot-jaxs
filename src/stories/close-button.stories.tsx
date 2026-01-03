@@ -25,13 +25,13 @@ const meta = {
   argTypes: {
     disabled: { control: 'boolean' },
     white: { control: 'boolean' },
-    dismissible: { control: 'boolean' },
+    show: { control: 'boolean' },
     onClick: { control: 'text' },
   },
   args: {
     disabled: false,
     white: false,
-    dismissible: true,
+    show: true,
     onClick: 'handle-close',
   },
 } satisfies Meta<CloseButtonProps>

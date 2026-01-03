@@ -4,24 +4,34 @@ import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
 import { closeButtonClasses } from './presentation-logic'
 
-export type CloseButtonProps = JaxsTypes.Props<
+type VisibleCloseButtonProps = JaxsTypes.Props<
   {
-    dismissible?: boolean
     disabled?: boolean
     white?: boolean
     onClick: string
+    show: true
+  } & HTMLAttributes
+>
+type HiddenCloseButtonProps = JaxsTypes.Props<
+  {
+    show: false
+    white?: boolean
+    onClick?: string
+    disabled?: boolean
   } & HTMLAttributes
 >
 
+export type CloseButtonProps = VisibleCloseButtonProps | HiddenCloseButtonProps
+
 export const CloseButton = ({
-  dismissible = true,
+  show = true,
   disabled = false,
   white = false,
   class: className,
   onClick,
   ...props
 }: CloseButtonProps) => {
-  if (!dismissible) return
+  if (!show) return
 
   const classes = closeButtonClasses({ white, propClasses: className })
 

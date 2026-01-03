@@ -24,7 +24,7 @@ export const ToastHeader = ({
   return (
     <div class={className} {...rest}>
       {children}
-      <CloseButton dismissible={dismissible} onClick={onClick} />
+      <CloseButton show={dismissible} onClick={onClick} />
     </div>
   )
 }

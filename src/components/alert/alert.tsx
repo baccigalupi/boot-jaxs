@@ -36,7 +36,7 @@ export const AlertTemplate = ({
   return (
     <div id={id} class={className} role="alert">
       {children}
-      <CloseButton dismissible={dismissible} onClick={onClick} />
+      <CloseButton show={dismissible} onClick={onClick} />
     </div>
   )
 }

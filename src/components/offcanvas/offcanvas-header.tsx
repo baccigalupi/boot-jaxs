@@ -23,7 +23,7 @@ export const OffcanvasHeader = ({
   return (
     <div class={classes} {...props}>
       {children}
-      <CloseButton dismissible={dismissible} onClick={onClick} />
+      <CloseButton show={dismissible} onClick={onClick} />
     </div>
   )
 }

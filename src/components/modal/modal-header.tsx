@@ -24,7 +24,7 @@ export const ModalHeader = ({
   return (
     <div class={classes} {...props}>
       {children}
-      <CloseButton dismissible={dismissible} onClick={onCloseClick} />
+      <CloseButton show={dismissible} onClick={onCloseClick} />
     </div>
   )
 }
