@@ -2,7 +2,7 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
 import { HTMLAttributes } from '../types'
-import { paginationItemClass } from './presentation-logic'
+import { paginationItemClass, ariaCurrent } from './presentation-logic'
 
 export type PaginationItemProps = JaxsTypes.Props<
   HTMLAttributes & {
@@ -19,9 +19,10 @@ export const PaginationItem = ({
   ...props
 }: PaginationItemProps) => {
   const classes = paginationItemClass({ active, disabled, propClasses })
+  const ariaCurrentValue = ariaCurrent(active)
 
   return (
-    <li class={classes} {...(active && { 'aria-current': 'page' })} {...props}>
+    <li class={classes} aria-current={ariaCurrentValue} {...props}>
       {children}
     </li>
   )

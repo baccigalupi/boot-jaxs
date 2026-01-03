@@ -1,7 +1,8 @@
 import { addClassesToBase } from '@components/presentation-logic'
+import { Size } from '@components/types'
 
 type PaginationClassProps = {
-  size?: 'sm' | 'lg'
+  size?: Size
   propClasses?: string
 }
 
@@ -31,4 +32,8 @@ export const paginationItemClass = ({
     disabledClass,
     propClasses,
   ])
+}
+
+export const ariaCurrent = (active: boolean): string | undefined => {
+  return active ? 'page' : 'false'
 }

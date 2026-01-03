@@ -23,7 +23,12 @@ export const OffcanvasTitle = ({
   const classes = addClassesToBase('offcanvas-title', className)
 
   return (
-    <Header level={headingLevel} class={classes} id={labelId(offCanvasId)} {...props}>
+    <Header
+      level={headingLevel}
+      class={classes}
+      id={labelId(offCanvasId)}
+      {...props}
+    >
       {children}
     </Header>
   )
