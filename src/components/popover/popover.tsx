@@ -1,12 +1,12 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
-import { HTMLAttributes } from '../types'
+import { HTMLAttributes, PopoverPlacement } from '../types'
 import { popoverClass } from './presentation-logic'
 
 export type PopoverProps = JaxsTypes.Props<
   HTMLAttributes & {
-    placement?: 'top' | 'right' | 'bottom' | 'left' | 'auto'
+    placement?: PopoverPlacement
     show?: boolean
   }
 >

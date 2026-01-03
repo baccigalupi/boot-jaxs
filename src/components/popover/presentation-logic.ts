@@ -1,7 +1,8 @@
 import { addClassesToBase } from '@components/presentation-logic'
+import { PopoverPlacement } from '@components/types'
 
 type PopoverClassProps = {
-  placement?: 'top' | 'right' | 'bottom' | 'left' | 'auto'
+  placement?: PopoverPlacement
   show?: boolean
   propClasses?: string
 }
