@@ -1,14 +1,14 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
-import { HTMLAttributes } from '../types'
-import { offcanvasClassName } from './presentation-logic'
+import { HTMLAttributes, OffcanvasPlacement } from '../types'
+import { offcanvasClassName, labelId } from './presentation-logic'
 import { booleanToString } from '@components/presentation-logic'
 
 export type OffcanvasProps = JaxsTypes.Props<
   {
     id: string
-    placement?: 'start' | 'end' | 'top' | 'bottom'
+    placement?: OffcanvasPlacement
     show?: boolean
   } & HTMLAttributes
 >
@@ -34,7 +34,7 @@ export const Offcanvas = ({
       class={offcanvasClasses}
       tabindex="-1"
       aria-hidden={ariaHidden}
-      aria-labelledby={`${id}-label`}
+      aria-labelledby={labelId(id)}
       {...props}
     >
       {children}

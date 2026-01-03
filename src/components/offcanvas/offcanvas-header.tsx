@@ -18,7 +18,7 @@ export const OffcanvasHeader = ({
   ...props
 }: OffcanvasHeaderProps) => {
   const classes = addClassesToBase('offcanvas-header', className)
-  const onClick = 'something-to-dismiss-offcanvas'
+  const onClick = 'something-to-dismiss-offcanvas' // TODO
 
   return (
     <div class={classes} {...props}>
