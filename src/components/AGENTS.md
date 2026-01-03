@@ -32,6 +32,7 @@ Bad example
   file `interactions.ts`
 - Prefer separate components with guard clauses to conditional logic within a
   functional component
+- Don't use an `data-bs-*` attributes
 
 ## TS
 
