@@ -13,6 +13,12 @@ export type SpinnerProps = JaxsTypes.Props<
   }
 >
 
+const SpinnerLabel = ({ label }: { label?: string }) => {
+  if (!label) return
+  
+  return <span class="visually-hidden">{label}</span>
+}
+
 export const Spinner = ({
   type = 'border',
   size,
@@ -25,7 +31,7 @@ export const Spinner = ({
 
   return (
     <div class={classes} role="status" {...props}>
-      {label && <span class="visually-hidden">{label}</span>}
+      <SpinnerLabel label={label} />
     </div>
   )
 }

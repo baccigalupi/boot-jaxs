@@ -39,7 +39,7 @@ const SmallSpinners = () => {
   )
 }
 
-const AllVariants = () => {
+const AllVariantSpinners = () => {
   return (
     <div class="d-flex flex-column gap-4">
       <div>
@@ -192,7 +192,7 @@ export const Small: Story = {
 }
 
 export const AllVariants: Story = {
-  render: () => renderJaxs(AllVariants()),
+  render: () => renderJaxs(AllVariantSpinners()),
   parameters: {
     docs: {
       source: {
