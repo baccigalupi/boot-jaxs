@@ -1,33 +1,35 @@
 import { addClassesToBase } from '@components/presentation-logic'
+import {
+  PlaceholderAnimations,
+  PlaceholderSizes,
+  StyleVariant,
+} from '@components/types'
 
 type PlaceholderClassProps = {
-  size?: 'xs' | 'sm' | 'lg'
-  color?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'light'
-    | 'dark'
-  animation?: 'glow' | 'wave'
+  size?: PlaceholderSizes
+  variant?: StyleVariant
+  animation?: PlaceholderAnimations
   propClasses?: string
+}
+
+export const widthToStyle = (width?: string | number): string | undefined => {
+  if (width === undefined) return undefined
+  return typeof width === 'number' ? `width: ${width}%` : `width: ${width}`
 }
 
 export const placeholderClass = ({
   size,
-  color,
+  variant,
   animation,
   propClasses,
 }: PlaceholderClassProps): string => {
   const sizeClass = size ? `placeholder-${size}` : ''
-  const colorClass = color ? `bg-${color}` : ''
+  const variantClass = variant ? `bg-${variant}` : ''
   const animationClass = animation ? `placeholder-${animation}` : ''
 
   return addClassesToBase('placeholder', [
     sizeClass,
-    colorClass,
+    variantClass,
     animationClass,
     propClasses,
   ])

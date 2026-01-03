@@ -5,24 +5,16 @@ import { HTMLAttributes } from '../types'
 import { CloseButton } from '@components/close-button/close-button'
 import { addClassesToBase } from '@components/presentation-logic'
 
-type ModalHeaderCloseButtonProps = {
-  show: boolean
-}
-
-const ModalHeaderCloseButton = ({ show }: ModalHeaderCloseButtonProps) => {
-  if (!show) return
-
-  return <CloseButton aria-label="Close" />
-}
-
 export type ModalHeaderProps = JaxsTypes.Props<
   {
-    closeButton?: boolean
+    dismissible?: boolean
+    onCloseClick?: string
   } & HTMLAttributes
 >
 
 export const ModalHeader = ({
-  closeButton = true,
+  dismissible = true,
+  onCloseClick = 'dismiss-modal',
   children,
   class: className,
   ...props
@@ -32,7 +24,7 @@ export const ModalHeader = ({
   return (
     <div class={classes} {...props}>
       {children}
-      <ModalHeaderCloseButton show={closeButton} />
+      <CloseButton dismissible={dismissible} onClick={onCloseClick} />
     </div>
   )
 }

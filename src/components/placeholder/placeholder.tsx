@@ -1,57 +1,57 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes } from 'jaxs'
-import { HTMLAttributes } from '../types'
-import { placeholderClass } from './presentation-logic'
+import {
+  HTMLAttributes,
+  PlaceholderAnimations,
+  PlaceholderSizes,
+  StyleVariant,
+} from '../types'
+import { placeholderClass, widthToStyle } from './presentation-logic'
 
 export type PlaceholderProps = JaxsTypes.Props<
   HTMLAttributes & {
-    size?: 'xs' | 'sm' | 'lg'
-    color?:
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'danger'
-      | 'warning'
-      | 'info'
-      | 'light'
-      | 'dark'
-    animation?: 'glow' | 'wave'
+    size?: PlaceholderSizes
+    variant?: StyleVariant
+    animation?: PlaceholderAnimations
     width?: string | number
-    as?: 'span' | 'div'
   }
 >
 
 export const Placeholder = ({
   children,
   size,
-  color,
+  variant,
   animation,
   width,
-  as = 'span',
   class: propClasses,
-  style,
   ...props
 }: PlaceholderProps) => {
-  const classes = placeholderClass({ size, color, animation, propClasses })
-
-  const widthStyle = width
-    ? typeof width === 'number'
-      ? `width: ${width}%`
-      : `width: ${width}`
-    : undefined
-
-  const combinedStyle = [style, widthStyle].filter(Boolean).join('; ')
-
-  const Tag = as
+  const classes = placeholderClass({ size, variant, animation, propClasses })
+  const widthStyle = widthToStyle(width)
 
   return (
-    <Tag
-      class={classes}
-      {...(combinedStyle && { style: combinedStyle })}
-      {...props}
-    >
+    <span class={classes} style={widthStyle} {...props}>
       {children}
-    </Tag>
+    </span>
+  )
+}
+
+export const PlaceholderBlock = ({
+  children,
+  size,
+  variant,
+  animation,
+  width,
+  class: propClasses,
+  ...props
+}: PlaceholderProps) => {
+  const classes = placeholderClass({ size, variant, animation, propClasses })
+  const widthStyle = widthToStyle(width)
+
+  return (
+    <div class={classes} style={widthStyle} {...props}>
+      {children}
+    </div>
   )
 }

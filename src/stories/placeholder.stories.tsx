@@ -31,7 +31,7 @@ const PlaceholderCard = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <Button variant="primary" href="#">
+            <Button variant="primary" onClick="on-click">
               Go somewhere
             </Button>
           </CardBody>
@@ -48,7 +48,7 @@ const PlaceholderCard = () => {
               <Placeholder width={4} /> <Placeholder width={6} />{' '}
               <Placeholder width={8} />
             </p>
-            <Button variant="primary" disabled>
+            <Button onClick="on-click" variant="primary" disabled>
               <Placeholder width={6} />
             </Button>
           </CardBody>
@@ -77,35 +77,35 @@ const PlaceholderSizes = () => {
   )
 }
 
-const PlaceholderColors = () => {
+const PlaceholderVariants = () => {
   return (
     <div>
       <p aria-hidden="true">
         <Placeholder width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="primary" width={12} />
+        <Placeholder variant="primary" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="secondary" width={12} />
+        <Placeholder variant="secondary" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="success" width={12} />
+        <Placeholder variant="success" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="danger" width={12} />
+        <Placeholder variant="danger" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="warning" width={12} />
+        <Placeholder variant="warning" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="info" width={12} />
+        <Placeholder variant="info" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="light" width={12} />
+        <Placeholder variant="light" width={12} />
       </p>
       <p aria-hidden="true">
-        <Placeholder color="dark" width={12} />
+        <Placeholder variant="dark" width={12} />
       </p>
     </div>
   )
@@ -166,7 +166,9 @@ const FullExample = () => {
               This is an example of fully loaded content. The text and button
               are visible and interactive.
             </p>
-            <Button variant="primary">Read more</Button>
+            <Button onClick="on-click" variant="primary">
+              Read more
+            </Button>
           </CardBody>
         </Card>
       </div>
@@ -182,7 +184,7 @@ const FullExample = () => {
               <Placeholder width={8} /> <Placeholder width={7} />{' '}
               <Placeholder width={4} />
             </p>
-            <Button variant="primary" disabled tabindex="-1">
+            <Button variant="primary" disabled={true} tabindex="-1">
               <Placeholder width={6} />
             </Button>
           </CardBody>
@@ -278,8 +280,8 @@ export const Sizes: Story = {
   },
 }
 
-export const Colors: Story = {
-  render: () => renderJaxs(PlaceholderColors()),
+export const Variants: Story = {
+  render: () => renderJaxs(PlaceholderVariants()),
   parameters: {
     docs: {
       source: {
@@ -289,16 +291,16 @@ export const Colors: Story = {
   <Placeholder width={12} />
 </p>
 <p aria-hidden="true">
-  <Placeholder color="primary" width={12} />
+  <Placeholder variant="primary" width={12} />
 </p>
 <p aria-hidden="true">
-  <Placeholder color="secondary" width={12} />
+  <Placeholder variant="secondary" width={12} />
 </p>
 <p aria-hidden="true">
-  <Placeholder color="success" width={12} />
+  <Placeholder variant="success" width={12} />
 </p>
 <p aria-hidden="true">
-  <Placeholder color="danger" width={12} />
+  <Placeholder variant="danger" width={12} />
 </p>`,
       },
     },

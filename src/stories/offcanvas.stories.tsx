@@ -16,7 +16,7 @@ const OffcanvasStart = () => {
     <Offcanvas
       id="offcanvas-start"
       placement="start"
-      visible={true}
+      show={true}
       class="position-static"
     >
       <OffcanvasHeader>
@@ -28,7 +28,9 @@ const OffcanvasStart = () => {
           have chosen. Like, text, images, lists, etc.
         </p>
         <div>
-          <Button variant="primary">Action</Button>
+          <Button variant="primary" onClick="on-click">
+            Action
+          </Button>
         </div>
       </OffcanvasBody>
     </Offcanvas>
@@ -40,7 +42,7 @@ const OffcanvasEnd = () => {
     <Offcanvas
       id="offcanvas-end"
       placement="end"
-      visible={true}
+      show={true}
       class="position-static"
     >
       <OffcanvasHeader>
@@ -65,7 +67,7 @@ const OffcanvasTop = () => {
     <Offcanvas
       id="offcanvas-top"
       placement="top"
-      visible={true}
+      show={true}
       class="position-static"
     >
       <OffcanvasHeader>
@@ -86,7 +88,7 @@ const OffcanvasBottom = () => {
     <Offcanvas
       id="offcanvas-bottom"
       placement="bottom"
-      visible={true}
+      show={true}
       class="position-static"
     >
       <OffcanvasHeader>
@@ -98,62 +100,6 @@ const OffcanvasBottom = () => {
         <p>
           Content for the bottom offcanvas. This slides up from the bottom of
           the viewport. Great for mobile-style bottom sheets.
-        </p>
-      </OffcanvasBody>
-    </Offcanvas>
-  )
-}
-
-const OffcanvasWithBackdrop = () => {
-  return (
-    <Offcanvas
-      id="offcanvas-backdrop"
-      placement="start"
-      visible={true}
-      backdrop={true}
-      class="position-static"
-    >
-      <OffcanvasHeader>
-        <OffcanvasTitle id="offcanvas-backdrop-label">
-          With Backdrop
-        </OffcanvasTitle>
-      </OffcanvasHeader>
-      <OffcanvasBody>
-        <p>
-          This offcanvas has a backdrop enabled (default behavior). The backdrop
-          darkens the page content behind the offcanvas.
-        </p>
-        <p>
-          Clicking the backdrop or the close button will dismiss the offcanvas.
-        </p>
-      </OffcanvasBody>
-    </Offcanvas>
-  )
-}
-
-const OffcanvasWithScroll = () => {
-  return (
-    <Offcanvas
-      id="offcanvas-scroll"
-      placement="start"
-      visible={true}
-      backdrop={false}
-      scroll={true}
-      class="position-static"
-    >
-      <OffcanvasHeader>
-        <OffcanvasTitle id="offcanvas-scroll-label">
-          With Body Scrolling
-        </OffcanvasTitle>
-      </OffcanvasHeader>
-      <OffcanvasBody>
-        <p>
-          This offcanvas allows body scrolling and has no backdrop. You can
-          scroll the page behind the offcanvas while it's open.
-        </p>
-        <p>
-          This is useful when you want to keep the main content accessible while
-          showing additional information in the offcanvas.
         </p>
       </OffcanvasBody>
     </Offcanvas>
@@ -189,7 +135,7 @@ export const Start: Story = {
 } from './components/offcanvas/offcanvas'
 import { Button } from './components/button/button'
 
-<Offcanvas id="offcanvas-start" placement="start" visible={true}>
+<Offcanvas id="offcanvas-start" placement="start" show={true}>
   <OffcanvasHeader>
     <OffcanvasTitle id="offcanvas-start-label">Offcanvas</OffcanvasTitle>
   </OffcanvasHeader>
@@ -215,7 +161,7 @@ export const End: Story = {
   OffcanvasTitle,
 } from './components/offcanvas/offcanvas'
 
-<Offcanvas id="offcanvas-end" placement="end" visible={true}>
+<Offcanvas id="offcanvas-end" placement="end" show={true}>
   <OffcanvasHeader>
     <OffcanvasTitle id="offcanvas-end-label">Offcanvas End</OffcanvasTitle>
   </OffcanvasHeader>
@@ -240,7 +186,7 @@ export const Top: Story = {
   OffcanvasTitle,
 } from './components/offcanvas/offcanvas'
 
-<Offcanvas id="offcanvas-top" placement="top" visible={true}>
+<Offcanvas id="offcanvas-top" placement="top" show={true}>
   <OffcanvasHeader>
     <OffcanvasTitle id="offcanvas-top-label">Offcanvas Top</OffcanvasTitle>
   </OffcanvasHeader>
@@ -265,68 +211,12 @@ export const Bottom: Story = {
   OffcanvasTitle,
 } from './components/offcanvas/offcanvas'
 
-<Offcanvas id="offcanvas-bottom" placement="bottom" visible={true}>
+<Offcanvas id="offcanvas-bottom" placement="bottom" show={true}>
   <OffcanvasHeader>
     <OffcanvasTitle id="offcanvas-bottom-label">Offcanvas Bottom</OffcanvasTitle>
   </OffcanvasHeader>
   <OffcanvasBody>
     <p>Content for the bottom offcanvas...</p>
-  </OffcanvasBody>
-</Offcanvas>`,
-      },
-    },
-  },
-}
-
-export const WithBackdrop: Story = {
-  render: () => renderJaxs(OffcanvasWithBackdrop()),
-  parameters: {
-    docs: {
-      source: {
-        code: `import {
-  Offcanvas,
-  OffcanvasHeader,
-  OffcanvasBody,
-  OffcanvasTitle,
-} from './components/offcanvas/offcanvas'
-
-<Offcanvas id="offcanvas-backdrop" placement="start" visible={true} backdrop={true}>
-  <OffcanvasHeader>
-    <OffcanvasTitle id="offcanvas-backdrop-label">With Backdrop</OffcanvasTitle>
-  </OffcanvasHeader>
-  <OffcanvasBody>
-    <p>This offcanvas has a backdrop enabled...</p>
-  </OffcanvasBody>
-</Offcanvas>`,
-      },
-    },
-  },
-}
-
-export const WithBodyScrolling: Story = {
-  render: () => renderJaxs(OffcanvasWithScroll()),
-  parameters: {
-    docs: {
-      source: {
-        code: `import {
-  Offcanvas,
-  OffcanvasHeader,
-  OffcanvasBody,
-  OffcanvasTitle,
-} from './components/offcanvas/offcanvas'
-
-<Offcanvas
-  id="offcanvas-scroll"
-  placement="start"
-  visible={true}
-  backdrop={false}
-  scroll={true}
->
-  <OffcanvasHeader>
-    <OffcanvasTitle id="offcanvas-scroll-label">With Body Scrolling</OffcanvasTitle>
-  </OffcanvasHeader>
-  <OffcanvasBody>
-    <p>This offcanvas allows body scrolling...</p>
   </OffcanvasBody>
 </Offcanvas>`,
       },

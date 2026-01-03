@@ -42,3 +42,6 @@ export type CaroselRide = 'carousel' | 'true' | undefined
 export type BooleanString = 'true' | 'false'
 export type ContentDirection = 'up' | 'down' | 'start' | 'end'
 export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+export type PlaceholderSizes = 'xs' | 'sm' | 'lg'
+export type PlaceholderAnimations = 'glow' | 'wave'
+export type OffcanvasPlacement = 'start' | 'end' | 'top' | 'bottom'

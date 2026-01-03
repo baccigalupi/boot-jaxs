@@ -1,18 +1,19 @@
 import { addClassesToBase } from '@components/presentation-logic'
+import { OffcanvasPlacement } from '@components/types'
 
 type OffcanvasClassNameProps = {
-  placement?: 'start' | 'end' | 'top' | 'bottom'
-  visible?: boolean
+  placement?: OffcanvasPlacement
+  show?: boolean
   propClasses?: string
 }
 
 export const offcanvasClassName = ({
   placement = 'start',
-  visible = false,
+  show = false,
   propClasses,
 }: OffcanvasClassNameProps): string => {
   const placementClass = `offcanvas-${placement}`
-  const visibilityClass = visible ? 'show' : ''
+  const visibilityClass = show ? 'show' : ''
 
   return addClassesToBase('offcanvas', [
     placementClass,
@@ -20,3 +21,5 @@ export const offcanvasClassName = ({
     propClasses,
   ])
 }
+
+export const labelId = (id: string) => `${id}-label`

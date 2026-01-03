@@ -16,5 +16,10 @@ export const Card = ({ children, class: className, ...props }: CardProps) => {
   )
 }
 
+export { CardBody } from './card-body'
+export { CardFooter } from './card-footer'
+export { CardGroup } from './card-group'
+export { CardHeader } from './card-header'
 export { CardTitle } from './card-title'
 export { CardSubtitle } from './card-subtitle'
+export { CardText } from './card-text'

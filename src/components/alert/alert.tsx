@@ -11,19 +11,6 @@ import {
 } from './interactions'
 import { CloseButton } from '@components/close-button/close-button'
 
-type ButtonProps = JaxsTypes.Props<
-  {
-    dismissible: boolean
-    onClick: string
-  } & HTMLAttributes
->
-
-const DismissibleButton = ({ dismissible, onClick }: ButtonProps) => {
-  if (!dismissible) return
-
-  return <CloseButton onClick={onClick} />
-}
-
 export type AlertProps = JaxsTypes.Props<
   {
     id: string
@@ -49,7 +36,7 @@ export const AlertTemplate = ({
   return (
     <div id={id} class={className} role="alert">
       {children}
-      <DismissibleButton dismissible={dismissible} onClick={onClick} />
+      <CloseButton dismissible={dismissible} onClick={onClick} />
     </div>
   )
 }
