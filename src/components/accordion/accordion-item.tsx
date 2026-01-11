@@ -1,21 +1,33 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx, JaxsTypes } from 'jaxs'
+import { jsx, JaxsTypes, bind } from 'jaxs'
 import { itemToggleInfo } from './item-toggle-info'
+import {
+  subscriptions,
+  viewModel,
+  toggle,
+  type AccordionState,
+} from './interactions'
+import { itemIsOpen, accordionItemId } from './presentation-logic'
 
 export type AccordionItemProps = JaxsTypes.Props<{
-  open: boolean
   id: string
+  accordionId: string
   title: string
 }>
 
-export const AccordionItem = ({
-  open,
+type AccordionItemTemplateProps = AccordionItemProps & {accordions: AccordionState}
+
+export const AccordionItemTemplate = ({
+  accordions,
   id,
+  accordionId,
   title,
   children,
-}: AccordionItemProps) => {
+}: AccordionItemTemplateProps) => {
+  const open = itemIsOpen({ accordions, accordionId, id })
   const toggleInfo = itemToggleInfo(open)
+  const onClick = toggle.eventGenerator(accordionItemId(accordionId, id))
 
   return (
     <div class="accordion-item">
@@ -25,6 +37,7 @@ export const AccordionItem = ({
           type="button"
           aria-expanded={toggleInfo.ariaExpanded()}
           aria-controls={id}
+          onClick={onClick}
         >
           {title}
         </button>
@@ -35,3 +48,9 @@ export const AccordionItem = ({
     </div>
   )
 }
+
+export const AccordionItem = bind({
+  Template: AccordionItemTemplate,
+  viewModel,
+  subscriptions,
+})

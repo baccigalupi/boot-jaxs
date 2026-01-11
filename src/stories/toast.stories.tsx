@@ -16,7 +16,7 @@ const meta = {
           <strong class="me-auto">Toast title</strong>
         </ToastHeader>
         <ToastBody>This is a simple toast notification</ToastBody>
-      </Toast>
+      </Toast>,
     ),
   parameters: {
     docs: {

@@ -17,9 +17,9 @@ export const Toast = ({
   class: propClasses,
   children,
   show = true,
-  ...rest 
+  ...rest
 }: ToastProps) => {
-  const className = toastClass({propClasses, show})
+  const className = toastClass({ propClasses, show })
 
   return (
     <div class={className} role="alert" {...rest}>

@@ -6,7 +6,11 @@ import { toastBodyClass } from './presentation-logic'
 
 export type ToastBodyProps = JaxsTypes.Props<HTMLAttributes>
 
-export const ToastBody = ({ class: propClasses, children, ...rest }: ToastBodyProps) => {
+export const ToastBody = ({
+  class: propClasses,
+  children,
+  ...rest
+}: ToastBodyProps) => {
   const className = toastBodyClass(propClasses)
 
   return (

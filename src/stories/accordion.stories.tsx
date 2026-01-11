@@ -13,8 +13,8 @@ import { renderJaxs } from '../../.storybook/render-jaxs'
 const AccordionItemList = ({ items }: { items: AccordionItemProps[] }) => {
   return (
     <>
-      {items.map(({ id, title, open, children }: AccordionItemProps) => (
-        <AccordionItem open={open} id={id} title={title}>
+      {items.map(({ id, title, accordionId, children }: AccordionItemProps) => (
+        <AccordionItem id={id} title={title} accordionId={accordionId}>
           {children}
         </AccordionItem>
       ))}
@@ -43,7 +43,7 @@ const meta = {
         code: `import { Accordion, AccordionItem } from './components/accordion/accordion'
 
 <Accordion id="accordionExample">
-  <AccordionItem id="item1" title="Accordion Item #1" open={true}>
+  <AccordionItem id="item1" title="Accordion Item #1">
     <strong>This is the first item's accordion body.</strong>
     It is shown by default, until the collapse plugin adds the appropriate
     classes that we use to style each element. These classes control the
@@ -53,7 +53,7 @@ const meta = {
     can go within the <code>.accordion-body</code>, though the transition
     does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item2" title="Accordion Item #2" open={false}>
+  <AccordionItem id="item2" title="Accordion Item #2">
     <strong>This is the second item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes
@@ -63,7 +63,7 @@ const meta = {
     about any HTML can go within the <code>.accordion-body</code>,
     though the transition does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item3" title="Accordion Item #3" open={false}>
+  <AccordionItem id="item3" title="Accordion Item #3">
     <strong>This is the third item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes
@@ -88,6 +88,7 @@ const meta = {
     flush: false,
     items: [
       {
+        accordionId: 'accordionExample',
         id: 'item1',
         title: 'Accordion Item #1',
         children: (
@@ -102,9 +103,9 @@ const meta = {
             though the transition does limit overflow.
           </>
         ),
-        open: true,
       },
       {
+        accordionId: 'accordionExample',
         id: 'item2',
         title: 'Accordion Item #2',
         children: (
@@ -119,9 +120,9 @@ const meta = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
       {
+        accordionId: 'accordionExample',
         id: 'item3',
         title: 'Accordion Item #3',
         children: (
@@ -136,7 +137,6 @@ const meta = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
     ],
   },
@@ -150,6 +150,7 @@ export const Default: Story = {
     id: 'accordionDefault',
     items: [
       {
+        accordionId: 'accordionDefault',
         id: 'item1',
         title: 'Accordion Item #1',
         children: (
@@ -164,9 +165,9 @@ export const Default: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: true,
       },
       {
+        accordionId: 'accordionDefault',
         id: 'item2',
         title: 'Accordion Item #2',
         children: (
@@ -181,9 +182,9 @@ export const Default: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
       {
+        accordionId: 'accordionDefault',
         id: 'item3',
         title: 'Accordion Item #3',
         children: (
@@ -198,7 +199,6 @@ export const Default: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
     ],
   },
@@ -206,7 +206,7 @@ export const Default: Story = {
     docs: {
       source: {
         code: `<Accordion id="accordionDefault">
-  <AccordionItem id="item1" title="Accordion Item #1" open={true}>
+  <AccordionItem accordionId="accordionDefault" id="item1" title="Accordion Item #1">
     <strong>This is the first item's accordion body.</strong>
     It is shown by default, until the collapse plugin adds the appropriate
     classes that we use to style each element. These classes control the
@@ -216,7 +216,7 @@ export const Default: Story = {
     can go within the <code>.accordion-body</code>, though the transition
     does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item2" title="Accordion Item #2" open={false}>
+  <AccordionItem accordionId="accordionDefault" id="item2" title="Accordion Item #2">
     <strong>This is the second item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes
@@ -226,7 +226,7 @@ export const Default: Story = {
     about any HTML can go within the <code>.accordion-body</code>,
     though the transition does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item3" title="Accordion Item #3" open={false}>
+  <AccordionItem accordionId="accordionDefault" id="item3" title="Accordion Item #3">
     <strong>This is the third item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes
@@ -249,6 +249,7 @@ export const Flush: Story = {
     items: [
       {
         id: 'item1',
+        accordionId: 'accordionFlush',
         title: 'Accordion Item #1',
         children: (
           <>
@@ -262,10 +263,10 @@ export const Flush: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: true,
       },
       {
         id: 'item2',
+        accordionId: 'accordionFlush',
         title: 'Accordion Item #2',
         children: (
           <>
@@ -279,10 +280,10 @@ export const Flush: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
       {
         id: 'item3',
+        accordionId: 'accordionFlush',
         title: 'Accordion Item #3',
         children: (
           <>
@@ -296,7 +297,6 @@ export const Flush: Story = {
             though the transition does limit overflow.
           </>
         ),
-        open: false,
       },
     ],
   },
@@ -304,7 +304,7 @@ export const Flush: Story = {
     docs: {
       source: {
         code: `<Accordion id="accordionFlush" flush={true}>
-  <AccordionItem id="item1" title="Accordion Item #1" open={true}>
+  <AccordionItem accordionId="accordionFlush" id="item1" title="Accordion Item #1">
     <strong>This is the first item's accordion body.</strong>
     It is shown by default, until the collapse plugin adds the appropriate
     classes that we use to style each element. These classes control the
@@ -314,7 +314,7 @@ export const Flush: Story = {
     can go within the <code>.accordion-body</code>, though the transition
     does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item2" title="Accordion Item #2" open={false}>
+  <AccordionItem accordionId="accordionFlush" id="item2" title="Accordion Item #2">
     <strong>This is the second item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes
@@ -324,7 +324,7 @@ export const Flush: Story = {
     about any HTML can go within the <code>.accordion-body</code>,
     though the transition does limit overflow.
   </AccordionItem>
-  <AccordionItem id="item3" title="Accordion Item #3" open={false}>
+  <AccordionItem accordionId="accordionFlush" id="item3" title="Accordion Item #3">
     <strong>This is the third item's accordion body.</strong>
     It is hidden by default, until the collapse plugin adds the 
     appropriate classes that we use to style each element. These classes

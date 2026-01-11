@@ -9,7 +9,7 @@ type VisibleCloseButtonProps = JaxsTypes.Props<
     disabled?: boolean
     white?: boolean
     onClick: string
-    show: true
+    show?: true
   } & HTMLAttributes
 >
 type HiddenCloseButtonProps = JaxsTypes.Props<

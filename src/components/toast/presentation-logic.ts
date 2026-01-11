@@ -1,6 +1,12 @@
 import { addClassesToBase } from '@components/presentation-logic'
 
-export const toastClass = ({propClasses, show}: {propClasses?: string, show?: boolean}): string => {
+export const toastClass = ({
+  propClasses,
+  show,
+}: {
+  propClasses?: string
+  show?: boolean
+}): string => {
   const showClass = show ? 'show' : ''
   return addClassesToBase('toast', [showClass, propClasses])
 }

@@ -5,6 +5,7 @@
 ### Always keep business logic outside of JSX/TSX
 
 Good example
+
 ```typescript
   const className = buttonClass({ variant, outline, size, propClass })
 
@@ -16,6 +17,7 @@ Good example
 ```
 
 Bad example
+
 ```typescript
   return (
     <button
@@ -45,6 +47,7 @@ Bad example
 - Export and test helper functions that hide the class
 
 Example
+
 ```typescript
 export class ActiveInfo {
   active: boolean
@@ -76,12 +79,14 @@ export const getActiveInfo = (active: boolean | undefined) => {
 ```
 
 ## Testing
-
-### Test all exported functions
+- Test all exported functions
+- Only nest tests in describes when there are more than one for a function.
+- Start with only one test and confirm with the user each use case
 
 ### Don't test implementation. Test side-effects and return values
 
 Good example
+
 ```typescript
 it('only calls publish once and removes the listener', () => {
   const publish = vi.fn()
@@ -95,6 +100,7 @@ it('only calls publish once and removes the listener', () => {
 ```
 
 Bad example
+
 ```typescript
 it('only calls publish once and removes the listener', () => {
   const publish = vi.fn()
@@ -110,6 +116,7 @@ it('only calls publish once and removes the listener', () => {
 ### Test each bit of logic, but don't duplicate that testing in a shared example
 
 Good example
+
 ```typescript
 it('when a variant is passed in, it uses that styling', () => {
   const className = buttonClass({ variant: 'success' })
@@ -119,6 +126,7 @@ it('when a variant is passed in, it uses that styling', () => {
 ```
 
 Bad example
+
 ```typescript
 it('combines all possible options correctly', () => {
   const className = buttonClass({
@@ -134,6 +142,7 @@ it('combines all possible options correctly', () => {
 ### Don't test things implemented elsewhere
 
 Good example
+
 ```typescript
 it('when a variant is passed in, it uses that styling', () => {
   const className = buttonClass({ variant: 'success' })
@@ -143,6 +152,7 @@ it('when a variant is passed in, it uses that styling', () => {
 ```
 
 Bad example
+
 ```typescript
 // This is implemented in `addClassesToBase` not in `buttonClass`
 it('handles propClass being undefined', () => {
@@ -154,12 +164,12 @@ it('handles propClass being undefined', () => {
 
 ### Testing TXS
 
-- Make sure tsx test files have the right pragma: 
-    `import { /** @jsx jsx */ jsx } from 'jaxs'`
+- Make sure tsx test files have the right pragma:
+  `import { /** @jsx jsx */ jsx } from 'jaxs'`
 - Use the test helper `renderToString` for rendering components
 - Components can return undefined (typically with guard clausses) instead of
   renderable content. In those cases check for undefined:
-  
+
 ```typescript
   it('does not render when dismissible is false', () => {
     const component = <CloseButton dismissible={false} onClick="handle-close" />
