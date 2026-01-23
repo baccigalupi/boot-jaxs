@@ -16,7 +16,9 @@ export type AccordionItemProps = JaxsTypes.Props<{
   title: string
 }>
 
-type AccordionItemTemplateProps = AccordionItemProps & {accordions: AccordionState}
+type AccordionItemTemplateProps = AccordionItemProps & {
+  accordions: AccordionState
+}
 
 export const AccordionItemTemplate = ({
   accordions,

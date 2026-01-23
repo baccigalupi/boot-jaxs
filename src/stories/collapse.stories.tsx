@@ -4,7 +4,7 @@ import { jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
 import { renderJaxs } from '../../.storybook/render-jaxs'
 import { Collapse } from '../components/collapse/collapse'
-import { Button } from '../components/button/button'
+import { CollapseButton } from '@components/collapse/button'
 
 const meta = {
   title: 'Bootstrap/Collapse',
@@ -12,8 +12,10 @@ const meta = {
   render: () =>
     renderJaxs(
       <>
-        <Button onClick="toggle-collapse">Toggle Collapse</Button>
-        <Collapse id="collapseExample" show={false}>
+        <CollapseButton collapseId="collapseExample">
+          Toggle Collapse
+        </CollapseButton>
+        <Collapse id="collapseExample" class='collapsing'>
           <div class="card card-body">
             Some placeholder content for the collapse component. This panel is
             hidden by default but revealed when the user activates the relevant
@@ -29,12 +31,14 @@ const meta = {
         code: `import { Collapse } from './components/collapse/collapse'
 import { Button } from './components/button/button'
 
-<Button onClick="toggle-collapse">Toggle Collapse</Button>
-<Collapse id="collapseExample" show={false}>
-  <div class="card card-body">
-    Some placeholder content for the collapse component.
-  </div>
-</Collapse>`,
+<>
+  <CollapseButton collapseId="collapseExample">Toggle Collapse</CollapseButton>
+  <Collapse id="collapseExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component.
+    </div>
+  </Collapse>
+</>`,
       },
     },
   },
@@ -47,8 +51,10 @@ export const Default: Story = {
   render: () =>
     renderJaxs(
       <>
-        <Button onClick="toggle-collapse">Toggle Collapse</Button>
-        <Collapse id="collapseDefault" show={false}>
+        <CollapseButton collapseId="collapseDefault">
+          Toggle Collapse
+        </CollapseButton>
+        <Collapse id="collapseDefault">
           <div class="card card-body">
             Some placeholder content for the collapse component. This panel is
             hidden by default but revealed when the user activates the relevant
@@ -60,8 +66,8 @@ export const Default: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button onClick="toggle-collapse">Toggle Collapse</Button>
-<Collapse id="collapseDefault" show={false}>
+        code: `<CollapseButton collapseId="collapseDefault">Toggle Collapse</CollapseButton>
+<Collapse id="collapseDefault">
   <div class="card card-body">
     Some placeholder content for the collapse component.
   </div>
@@ -75,8 +81,10 @@ export const InitiallyShown: Story = {
   render: () =>
     renderJaxs(
       <>
-        <Button onClick="toggle-collapse">Toggle Collapse</Button>
-        <Collapse id="collapseShown" show={true}>
+        <CollapseButton collapseId="collapseShown">
+          Toggle Collapse
+        </CollapseButton>
+        <Collapse id="collapseShown">
           <div class="card card-body">
             This collapse panel is initially visible because show is set to
             true.
@@ -87,8 +95,8 @@ export const InitiallyShown: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Button onClick="toggle-collapse">Toggle Collapse</Button>
-<Collapse id="collapseShown" show={true}>
+        code: `<CollapseButton collapseId="collapseShown">Toggle Collapse</CollapseButton>
+<Collapse id="collapseShown">
   <div class="card card-body">
     This collapse panel is initially visible.
   </div>
@@ -102,12 +110,12 @@ export const Horizontal: Story = {
   render: () =>
     renderJaxs(
       <div>
-        <Button onClick="toggle-horizontal-collapse">
+        <CollapseButton collapseId="collapseHorizontal">
           Toggle Horizontal Collapse
-        </Button>
+        </CollapseButton>
         <div style="min-height: 120px;">
-          <Collapse id="collapseHorizontal" show={false} horizontal={true}>
-            <div class="card card-body" style="width: 300px;">
+          <Collapse id="collapseHorizontal" horizontal={true}>
+            <div class="card card-body">
               This is a horizontal collapse. The content collapses horizontally
               instead of vertically.
             </div>
@@ -122,11 +130,11 @@ export const Horizontal: Story = {
           'Use the horizontal prop to make the collapse animate horizontally instead of vertically.',
       },
       source: {
-        code: `<Button onClick="toggle-horizontal-collapse">
+        code: `<CollapseButton collapseId="collapseHorizontal">
   Toggle Horizontal Collapse
-</Button>
-<Collapse id="collapseHorizontal" show={false} horizontal={true}>
-  <div class="card card-body" style="width: 300px;">
+</CollapseButton>
+<Collapse id="collapseHorizontal" horizontal={true}>
+  <div class="card card-body">
     This is a horizontal collapse.
   </div>
 </Collapse>`,
@@ -139,14 +147,16 @@ export const MultipleTargets: Story = {
   render: () =>
     renderJaxs(
       <div>
-        <Button onClick="toggle-first" class="me-2">
+        <CollapseButton collapseId="collapseFirst" class="me-2">
           Toggle First
-        </Button>
-        <Button onClick="toggle-second">Toggle Second</Button>
-        <Button onClick="toggle-both">Toggle Both</Button>
+        </CollapseButton>
+        <CollapseButton collapseId="collapseSecond">
+          Toggle Second
+        </CollapseButton>
+        <CollapseButton collapseId="collapseBoth">Toggle Both</CollapseButton>
         <div class="row mt-3">
           <div class="col">
-            <Collapse id="collapseFirst" show={false}>
+            <Collapse id="collapseFirst">
               <div class="card card-body">
                 This is the first collapsible element. It can be toggled
                 independently.
@@ -154,7 +164,7 @@ export const MultipleTargets: Story = {
             </Collapse>
           </div>
           <div class="col">
-            <Collapse id="collapseSecond" show={false}>
+            <Collapse id="collapseSecond">
               <div class="card card-body">
                 This is the second collapsible element. It can be toggled
                 independently.
@@ -170,10 +180,10 @@ export const MultipleTargets: Story = {
         story: 'Multiple collapse components can be controlled independently.',
       },
       source: {
-        code: `<Button onClick="toggle-first">Toggle First</Button>
-<Button onClick="toggle-second">Toggle Second</Button>
+        code: `<CollapseButton collapseId="collapseFirst">Toggle First</CollapseButton>
+<CollapseButton collapseId="collapseSecond">Toggle Second</CollapseButton>
 
-<Collapse id="collapseFirst" show={false}>
+<Collapse id="collapseFirst">
   <div class="card card-body">
     This is the first collapsible element.
   </div>

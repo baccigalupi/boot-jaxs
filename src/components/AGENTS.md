@@ -79,6 +79,7 @@ export const getActiveInfo = (active: boolean | undefined) => {
 ```
 
 ## Testing
+
 - Test all exported functions
 - Only nest tests in describes when there are more than one for a function.
 - Start with only one test and confirm with the user each use case

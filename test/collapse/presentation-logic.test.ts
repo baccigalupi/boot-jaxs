@@ -25,4 +25,16 @@ describe('collapseClasses', () => {
 
     expect(className).toBe('collapse my-custom-class')
   })
+
+  it('when animating, it uses collapsing base class', () => {
+    const className = collapseClasses({ animating: true })
+
+    expect(className).toBe('collapsing')
+  })
+
+  it('when animating horizontal is has the right classes', () => {
+    const className = collapseClasses({ animating: true, horizontal: true })
+
+    expect(className).toBe('collapsing collapse-horizontal')
+  })
 })

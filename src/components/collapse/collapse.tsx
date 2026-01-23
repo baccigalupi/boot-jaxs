@@ -1,26 +1,34 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx, JaxsTypes } from 'jaxs'
+import { jsx, JaxsTypes, bind } from 'jaxs'
 import { HTMLAttributes } from '../types'
-import { collapseClasses } from './presentation-logic'
+import { collapseClasses, isAnimating, isShowing } from './presentation-logic'
+import { viewModel, subscriptions, CollapsesState } from './interactions'
 
 export type CollapseProps = JaxsTypes.Props<
   {
     id: string
-    show?: boolean
     horizontal?: boolean
+    collapseCollection: CollapsesState
   } & HTMLAttributes
 >
 
-export const Collapse = ({
+export const CollapseTemplate = ({
   id,
-  show = false,
   horizontal = false,
   children,
-  class: className,
+  class: propClasses,
+  collapseCollection = [],
   ...props
 }: CollapseProps) => {
-  const classes = collapseClasses({ show, horizontal, propClasses: className })
+  const show = isShowing({ collapseCollection, id })
+  const animating = isAnimating({ collapseCollection, id })
+  const classes = collapseClasses({
+    show,
+    animating,
+    horizontal,
+    propClasses,
+  })
 
   return (
     <div id={id} class={classes} {...props}>
@@ -28,3 +36,9 @@ export const Collapse = ({
     </div>
   )
 }
+
+export const Collapse = bind({
+  Template: CollapseTemplate,
+  viewModel,
+  subscriptions,
+})

@@ -29,7 +29,6 @@ const onToggle = ({ state, eventName }: JaxsTypes.ListenerKit<unknown>) => {
   if (accordion.includes(itemId)) {
     ArrayModifiers.remove(accordion, itemId)
   } else {
-    console.log(ArrayModifiers)
     ArrayModifiers.push(accordion, itemId)
   }
 
