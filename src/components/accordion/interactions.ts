@@ -11,10 +11,7 @@ export type AccordionState = Record<string, string[]>
 const initialState = {} as AccordionState
 export const storeName = getStoreName(component)
 export const subscriptions = [storeName]
-export const viewModel = (subscriptions: { [storeName]: AccordionState }) => {
-  const accordions = subscriptions[storeName]
-  return { accordions }
-}
+export type SubscriptionMap = { [storeName]: AccordionState }
 
 export const toggle = createEventManagers<AccordionState>({
   component,

@@ -15,7 +15,7 @@ const meta = {
         <CollapseButton collapseId="collapseExample">
           Toggle Collapse
         </CollapseButton>
-        <Collapse id="collapseExample" class='collapsing'>
+        <Collapse id="collapseExample" class="collapsing">
           <div class="card card-body">
             Some placeholder content for the collapse component. This panel is
             hidden by default but revealed when the user activates the relevant

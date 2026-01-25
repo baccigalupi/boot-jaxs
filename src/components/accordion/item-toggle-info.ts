@@ -7,7 +7,7 @@ export class ItemToggleInfo {
     this.open = open
   }
 
-  ariaExpanded(): string {
+  ariaExpanded(): 'true' | 'false' {
     return this.open ? 'true' : 'false'
   }
 

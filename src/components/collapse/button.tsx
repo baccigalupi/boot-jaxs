@@ -22,7 +22,13 @@ export const CollapseButton = ({
   const ariaExpanded = false // TODO: derive from state
 
   return (
-    <Button aria-controls={ariaControls} aria-expanded={ariaExpanded} class={propClasses} onClick={onClick} {...props}>
+    <Button
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
+      class={propClasses}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </Button>
   )

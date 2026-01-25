@@ -1,50 +1,47 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes, bind } from 'jaxs'
-import { itemToggleInfo } from './item-toggle-info'
-import {
-  subscriptions,
-  viewModel,
-  toggle,
-  type AccordionState,
-} from './interactions'
-import { itemIsOpen, accordionItemId } from './presentation-logic'
+import { subscriptions } from './interactions'
+import { viewModel } from './view-model'
 
-export type AccordionItemProps = JaxsTypes.Props<{
+export type AccordionItemProps = {
   id: string
   accordionId: string
   title: string
-}>
-
-type AccordionItemTemplateProps = AccordionItemProps & {
-  accordions: AccordionState
 }
 
+export type AccordionItemTemplateProps = JaxsTypes.Props<{
+  id: string
+  title: string
+  triggerClass: string
+  bodyClass: string
+  ariaExpanded: 'true' | 'false'
+  onClick: string
+}>
+
 export const AccordionItemTemplate = ({
-  accordions,
   id,
-  accordionId,
   title,
   children,
+  triggerClass,
+  bodyClass,
+  ariaExpanded,
+  onClick,
 }: AccordionItemTemplateProps) => {
-  const open = itemIsOpen({ accordions, accordionId, id })
-  const toggleInfo = itemToggleInfo(open)
-  const onClick = toggle.eventGenerator(accordionItemId(accordionId, id))
-
   return (
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button
-          class={toggleInfo.accordionButtonClass()}
+          class={triggerClass}
           type="button"
-          aria-expanded={toggleInfo.ariaExpanded()}
+          aria-expanded={ariaExpanded}
           aria-controls={id}
           onClick={onClick}
         >
           {title}
         </button>
       </h2>
-      <div id={id} class={toggleInfo.accordionCollapseClass()}>
+      <div id={id} class={bodyClass}>
         <div class="accordion-body">{children}</div>
       </div>
     </div>
