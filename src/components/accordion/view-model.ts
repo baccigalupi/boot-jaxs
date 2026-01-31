@@ -3,26 +3,69 @@ import type {
   AccordionItemProps,
   AccordionItemTemplateProps,
 } from './accordion-item'
-import { itemToggleInfo } from './item-toggle-info'
 import { toggle } from './interactions'
 import { itemIsOpen, accordionItemId } from './presentation-logic'
+import { addClassesToBase } from '@components/presentation-logic'
+
+export class AccordionViewModel {
+  subscriptions: SubscriptionMap
+  id: string
+  accordionId: string
+
+  constructor(
+    subscriptions: SubscriptionMap,
+    { id, accordionId }: AccordionItemProps,
+  ) {
+    this.subscriptions = subscriptions
+    this.id = id
+    this.accordionId = accordionId
+  }
+
+  isOpen(): boolean {
+    return itemIsOpen({
+      accordions: this.subscriptions[storeName],
+      id: this.id,
+      accordionId: this.accordionId,
+    })
+  }
+
+  ariaExpanded(): 'true' | 'false' {
+    return this.isOpen() ? 'true' : 'false'
+  }
+
+  visibilityClass(): string {
+    return this.isOpen() ? 'show' : ''
+  }
+
+  accordionCollapseClass(): string {
+    return addClassesToBase(
+      'accordion-collapse collapse',
+      this.visibilityClass(),
+    )
+  }
+
+  accordionButtonClass(): string {
+    const collapsedClass = this.isOpen() ? '' : 'collapsed'
+    return addClassesToBase('accordion-button', collapsedClass)
+  }
+
+  onClick(): string {
+    return toggle.eventGenerator(accordionItemId(this.accordionId, this.id))
+  }
+
+  toProps() {
+    return {
+      triggerClass: this.accordionButtonClass(),
+      bodyClass: this.accordionCollapseClass(),
+      ariaExpanded: this.ariaExpanded(),
+      onClick: this.onClick(),
+    }
+  }
+}
 
 export const viewModel = (
   subscriptions: SubscriptionMap,
-  { id, accordionId }: AccordionItemProps,
+  props: AccordionItemProps,
 ): Partial<AccordionItemTemplateProps> => {
-  const isOpen = itemIsOpen({
-    accordions: subscriptions[storeName],
-    id,
-    accordionId,
-  })
-  const toggleInfo = itemToggleInfo(isOpen)
-  const itemId = accordionItemId(accordionId, id)
-
-  return {
-    triggerClass: toggleInfo.accordionButtonClass(),
-    bodyClass: toggleInfo.accordionCollapseClass(),
-    ariaExpanded: toggleInfo.ariaExpanded(),
-    onClick: toggle.eventGenerator(itemId),
-  }
+  return new AccordionViewModel(subscriptions, props).toProps()
 }

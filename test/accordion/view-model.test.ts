@@ -5,10 +5,6 @@ import {
   storeName,
 } from '@components/accordion/interactions'
 
-// export type AccordionItemProps = JaxsTypes.Props<{
-//   onClick: string
-// }>
-
 describe('accordion view model', () => {
   it('when the accordion store is completely empty, sets the attributes to not-open', () => {
     const subscriptions = {
