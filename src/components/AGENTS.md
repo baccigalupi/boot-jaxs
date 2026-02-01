@@ -114,7 +114,14 @@ it('only calls publish once and removes the listener', () => {
 })
 ```
 
-### Test each bit of logic, but don't duplicate that testing in a shared example
+### Test each bit of logic independently, not combinations or variations
+
+Test each parameter or logic branch in isolation. Do not write:
+
+1. **Combination tests** - multiple tested features together to verify they work together
+2. **Variation tests** - the same logic path with different data variations
+
+Each distinct logic path gets one test, not multiple tests with different input variations.
 
 Good example
 
@@ -124,11 +131,24 @@ it('when a variant is passed in, it uses that styling', () => {
 
   expect(className).toBe('btn btn-success')
 })
+
+it('when size is passed in, it uses that styling', () => {
+  const className = buttonClass({ size: 'lg' })
+
+  expect(className).toBe('btn btn-lg')
+})
+
+it('includes custom classes from propClass', () => {
+  const className = buttonClass({ propClass: 'my-custom-class' })
+
+  expect(className).toBe('btn btn-primary my-custom-class')
+})
 ```
 
-Bad example
+Bad examples
 
 ```typescript
+// Don't combine already-tested features just to verify they work together
 it('combines all possible options correctly', () => {
   const className = buttonClass({
     variant: 'secondary',
@@ -137,6 +157,20 @@ it('combines all possible options correctly', () => {
   })
 
   expect(className).toBe('btn btn-secondary btn-lg my-custom-class')
+})
+
+// Don't test the same logic path with different data variations
+// (both test that custom classes are included—same code path)
+it('includes custom classes from propClass', () => {
+  const className = buttonClass({ propClass: 'my-custom-class' })
+
+  expect(className).toBe('btn btn-primary my-custom-class')
+})
+
+it('handles multiple custom classes', () => {
+  const className = buttonClass({ propClass: 'custom-class another-class' })
+
+  expect(className).toBe('btn btn-primary custom-class another-class')
 })
 ```
 

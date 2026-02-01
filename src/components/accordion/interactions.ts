@@ -4,7 +4,11 @@ import {
   createStore,
   getStoreName,
 } from '@components/event-generation'
-import { idsFromString } from './presentation-logic'
+
+export const idsFromString = (idString: string) => {
+  const [accordionId, itemId] = idString.split(':')
+  return { accordionId, itemId }
+}
 
 export const component = 'accordion'
 export type AccordionState = Record<string, string[]>

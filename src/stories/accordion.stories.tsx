@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx } from 'jaxs'
+import { JaxsTypes, jsx } from 'jaxs'
 import type { Meta, StoryObj } from '@storybook/html'
 import {
   Accordion,
@@ -13,11 +13,18 @@ import { renderJaxs } from '../../.storybook/render-jaxs'
 const AccordionItemList = ({ items }: { items: AccordionItemProps[] }) => {
   return (
     <>
-      {items.map(({ id, title, accordionId, children }: AccordionItemProps) => (
-        <AccordionItem id={id} title={title} accordionId={accordionId}>
-          {children}
-        </AccordionItem>
-      ))}
+      {items.map(
+        ({
+          id,
+          title,
+          accordionId,
+          children,
+        }: JaxsTypes.Props<AccordionItemProps>) => (
+          <AccordionItem id={id} title={title} accordionId={accordionId}>
+            {children}
+          </AccordionItem>
+        ),
+      )}
     </>
   )
 }

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx, JaxsTypes, bind } from 'jaxs'
+import { jsx, bind, Props } from 'jaxs'
 import { subscriptions } from './interactions'
-import { viewModel } from './view-model'
+import { viewModel } from './item-view-model'
 
 export type AccordionItemProps = {
   id: string
@@ -10,14 +10,15 @@ export type AccordionItemProps = {
   title: string
 }
 
-export type AccordionItemTemplateProps = JaxsTypes.Props<{
-  id: string
-  title: string
+export type AccordionItemViewModelProps = {
   triggerClass: string
   bodyClass: string
   ariaExpanded: 'true' | 'false'
   onClick: string
-}>
+}
+
+export type AccordionItemTemplateProps = AccordionItemViewModelProps &
+  AccordionItemProps
 
 export const AccordionItemTemplate = ({
   id,
@@ -27,7 +28,7 @@ export const AccordionItemTemplate = ({
   bodyClass,
   ariaExpanded,
   onClick,
-}: AccordionItemTemplateProps) => {
+}: Props<AccordionItemTemplateProps>) => {
   return (
     <div class="accordion-item">
       <h2 class="accordion-header">

@@ -3,6 +3,7 @@ import { createApp } from 'jaxs'
 import {
   registerAccordions,
   storeName,
+  idsFromString,
 } from '@components/accordion/interactions'
 
 describe('accordion interactions', () => {
@@ -47,5 +48,12 @@ describe('accordion interactions', () => {
 
     app.publish('boot-jaxs:accordion:close:accordion-1:item-2', null)
     expect(store.value).toEqual({ 'accordion-1': ['item-1'] })
+  })
+
+  it('idsFromString unpacks a colon-separated id string', () => {
+    const idString = 'my-accordion:item-123'
+    const result = idsFromString(idString)
+
+    expect(result).toEqual({ accordionId: 'my-accordion', itemId: 'item-123' })
   })
 })

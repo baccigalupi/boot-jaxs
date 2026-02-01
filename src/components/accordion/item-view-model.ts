@@ -2,9 +2,9 @@ import { type SubscriptionMap, storeName } from './interactions'
 import type {
   AccordionItemProps,
   AccordionItemTemplateProps,
+  AccordionItemViewModelProps,
 } from './accordion-item'
 import { toggle } from './interactions'
-import { itemIsOpen, accordionItemId } from './presentation-logic'
 import { addClassesToBase } from '@components/presentation-logic'
 
 export class AccordionViewModel {
@@ -22,11 +22,8 @@ export class AccordionViewModel {
   }
 
   isOpen(): boolean {
-    return itemIsOpen({
-      accordions: this.subscriptions[storeName],
-      id: this.id,
-      accordionId: this.accordionId,
-    })
+    const accordions = this.subscriptions[storeName]
+    return (accordions[this.accordionId] || []).includes(this.id)
   }
 
   ariaExpanded(): 'true' | 'false' {
@@ -50,7 +47,9 @@ export class AccordionViewModel {
   }
 
   onClick(): string {
-    return toggle.eventGenerator(accordionItemId(this.accordionId, this.id))
+    return toggle.eventGenerator(
+      this.accordionItemId(this.accordionId, this.id),
+    )
   }
 
   toProps() {
@@ -61,11 +60,15 @@ export class AccordionViewModel {
       onClick: this.onClick(),
     }
   }
+
+  private accordionItemId(accordionId: string, itemId: string): string {
+    return `${accordionId}:${itemId}`
+  }
 }
 
 export const viewModel = (
   subscriptions: SubscriptionMap,
   props: AccordionItemProps,
-): Partial<AccordionItemTemplateProps> => {
+): AccordionItemViewModelProps => {
   return new AccordionViewModel(subscriptions, props).toProps()
 }

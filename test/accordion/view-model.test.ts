@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { viewModel } from '@components/accordion/view-model'
+import { viewModel } from '@components/accordion/item-view-model'
 import {
   type AccordionState,
   storeName,

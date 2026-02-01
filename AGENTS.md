@@ -21,6 +21,7 @@ framework and the Bootstrap library.
 
 ## Debugging Conventions
 
+- **Always check for errors before hypothesizing**: When the user reports an error or type issue, FIRST use the `get_errors` tool to check the actual errors in the file. Do NOT hypothesize or guess what might be wrong. Get the facts first.
 - **Use editor tools, not command line, to determine TypeScript type issues**: Use the `get_errors` tool to check for TypeScript compilation errors rather than running build commands in the terminal. This provides immediate, accurate type information from the editor's language server.
 - **Use read_file instead of terminal commands**: When you need to examine file contents, always use the `read_file` tool instead of terminal commands like `grep`, `cat`, or similar. The read_file tool provides proper context and doesn't require terminal interaction.
 
