@@ -9,7 +9,8 @@ export const component = 'alert'
 export type AlertsState = string[]
 const initialState = [] as AlertsState
 export const storeName = getStoreName(component)
-export const viewModelSubscriptions = [storeName]
+export const subscriptions = [storeName]
+export type SubscriptionMap = { [storeName]: AlertsState }
 
 export const add = createEventManagers<AlertsState>({
   component,
@@ -44,9 +45,4 @@ export const registerAlerts = (app: JaxsTypes.App) => {
 
   app.subscribe(remove.matcher, removeAlert)
   app.subscribe(add.matcher, addAlert)
-}
-
-export const viewModel = (subscriptions: { [storeName]: AlertsState }) => {
-  const alerts = subscriptions[storeName]
-  return { alerts }
 }
