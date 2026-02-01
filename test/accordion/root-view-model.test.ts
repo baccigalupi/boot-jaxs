@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { viewModel } from '@components/accordion/root-view-model'
+import { viewModel } from '@components/accordion/accordion-view-model'
 
 describe('accordion root viewModel', () => {
   describe('class', () => {

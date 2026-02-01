@@ -2,7 +2,7 @@
 /** @jsxFrag jsx.fragment */
 import { jsx, bind, Props } from 'jaxs'
 import { subscriptions } from './interactions'
-import { viewModel } from './item-view-model'
+import { viewModel } from './accordion-item-view-model'
 
 export type AccordionItemProps = {
   id: string

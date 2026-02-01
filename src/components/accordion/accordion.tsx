@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
 import { jsx, JaxsTypes, withViewModel } from 'jaxs'
-import { viewModel } from './root-view-model'
+import { viewModel } from './accordion-view-model'
 export { AccordionItem, type AccordionItemProps } from './accordion-item'
 
 export type AccordionTemplateProps = {
