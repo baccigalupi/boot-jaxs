@@ -2,7 +2,11 @@ import { /** @jsx jsx */ jsx } from 'jaxs'
 import { describe, it, expect } from 'vitest'
 import { Accordion, AccordionItem } from '@components/accordion/accordion'
 import { registerAccordions } from '@components/accordion/interactions'
-import { buildAppForRendering, renderWithApp, renderWithRegistrations } from '../support/render-to-string'
+import {
+  buildAppForRendering,
+  renderWithApp,
+  renderWithRegistrations,
+} from '../support/render-to-string'
 
 describe('Accordion', () => {
   it('renders a flush accordion with items using the right classes', () => {
@@ -41,6 +45,8 @@ describe('Accordion', () => {
 
     const output = renderWithApp(<MyAccordion />, app)
 
-    expect(output).toContain('<div id="item-2" class="accordion-collapse collapse show">')
+    expect(output).toContain(
+      '<div id="item-2" class="accordion-collapse collapse show">',
+    )
   })
 })

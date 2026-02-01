@@ -1,8 +1,8 @@
 /** @jsx jsx */
 /** @jsxFrag jsx.fragment */
-import { jsx, JaxsTypes } from 'jaxs'
+import { jsx, JaxsTypes, withViewModel } from 'jaxs'
 import { HTMLAttributes } from '../types'
-import { closeButtonClasses } from './presentation-logic'
+import { viewModel } from './view-model'
 
 type VisibleCloseButtonProps = JaxsTypes.Props<
   {
@@ -23,22 +23,26 @@ type HiddenCloseButtonProps = JaxsTypes.Props<
 
 export type CloseButtonProps = VisibleCloseButtonProps | HiddenCloseButtonProps
 
-export const CloseButton = ({
+export type CloseButtonTemplateProps = {
+  class: string
+  show?: boolean
+  disabled?: boolean
+  onClick?: string
+}
+
+export const CloseButtonTemplate = ({
+  class: className,
   show = true,
   disabled = false,
-  white = false,
-  class: className,
   onClick,
   ...props
-}: CloseButtonProps) => {
+}: JaxsTypes.Props<CloseButtonTemplateProps & HTMLAttributes>) => {
   if (!show) return
-
-  const classes = closeButtonClasses({ white, propClasses: className })
 
   return (
     <button
       type="button"
-      class={classes}
+      class={className}
       aria-label="Close"
       disabled={disabled}
       onClick={onClick}
@@ -46,3 +50,8 @@ export const CloseButton = ({
     />
   )
 }
+
+export const CloseButton = withViewModel({
+  Template: CloseButtonTemplate,
+  viewModel,
+})
